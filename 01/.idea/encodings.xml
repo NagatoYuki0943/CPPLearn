@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/Sort/00bubble.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Sort/00insert.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Sort/00merge.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Sort/00quick.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/Sort/00select.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/main.cpp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/study01/56point.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/test00.cpp" charset="ISO-8859-1" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
