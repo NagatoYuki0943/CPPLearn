@@ -29,7 +29,6 @@ public:
     T2 m_Age;
 };
 
-
 //1.指定传入的类型  ---  直接显示对象的数据类型   Person<string,int> &p
 void printPerson1(Person<string, int> &p) {
     p.showPerson();
@@ -41,7 +40,6 @@ void test01() {
     //名字:孙悟空
     //年龄:500
 }
-
 
 //2.参数模板化     ---  将对象中的参数变为模板进行传递
 template<class T1, class T2>
@@ -58,7 +56,6 @@ void test02() {
     //年龄:400
 }
 
-
 //3.整个类模板化   ---  将这个对象类型 模板化进行传递
 template<class T>
 void printPerson3(T &p) {
@@ -72,8 +69,6 @@ void test03(){
     //名字:沙和尚
     //年龄:300
 }
-
-
 
 int main() {
     test01();

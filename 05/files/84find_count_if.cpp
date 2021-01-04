@@ -44,7 +44,6 @@ void test01() {
 class Person {
 public:
     Person(string name, int age) : m_Name(name), m_Age(age) {
-
     }
 
     string m_Name;

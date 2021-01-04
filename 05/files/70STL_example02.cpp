@@ -19,7 +19,6 @@ using namespace std;
 #define MEISHU 1
 #define YANFA 2
 
-
 //Worker类
 class Worker {
 public:

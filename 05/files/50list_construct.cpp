@@ -45,7 +45,6 @@ void test01() {
     list<int> l4(l3);
     printList(l4);      //1 2 3 4 5
 
-
     //n个elem
     list<int> l5(5, 999);
     printList(l5);      //999 999 999 999 999

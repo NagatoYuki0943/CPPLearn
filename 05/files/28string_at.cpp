@@ -17,12 +17,10 @@ void read() {
 
     for (int i = 0; i < str.size(); ++i) {
         cout << str[i] << " ";  //h e l l o
-
     }
     cout << endl;
     for (int i = 0; i < str.size(); ++i) {
         cout << str.at(i) << " ";   //h e l l o
-
     }
     cout << endl;
 }

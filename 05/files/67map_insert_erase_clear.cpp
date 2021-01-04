@@ -11,7 +11,7 @@ using namespace std;
  *  insert(elem);                           //在容器中插入元素。
  *
  *  erase(iterator pos);                    //删除pos迭代器所指的元素，返回下一个元素的迭代器。
- *  erase(iterator beg,iterator end);       //删除区间[beg,end)的所有元素 ，返回下一个元素的迭代器。
+ *  erase(iterator beg,iterator end);       //删除区间[beg,end)的所有元素 ，返回下一个元素的迭代器。 beg和end可以++,--,不能+1,-1,不支持随机访问
  *
  *  erase(key);                             //删除容器中值为key的元素。
  *

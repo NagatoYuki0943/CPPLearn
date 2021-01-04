@@ -18,7 +18,6 @@ using namespace std;
  * 函数返回结束位置的的迭代器**
  */
 
-
 //打印函数
 void printDeque(int v) {
     cout << v << " ";

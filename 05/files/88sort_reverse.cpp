@@ -14,9 +14,11 @@ using namespace std;
  *  beg 开始迭代器
  *  end 结束迭代器
  */
+
 void printVector(int v){
     cout << v << " ";
 }
+
 void test01() {
     vector<int> v{1, 2, 3, 4, 5, 6, 0};
     for_each(v.begin(),v.end(),printVector);    //1 2 3 4 5 6 0

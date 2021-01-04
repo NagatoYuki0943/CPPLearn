@@ -13,14 +13,13 @@ using namespace std;
  *  beg 开始迭代器
  *  end 结束迭代器
  *  value 统计的元素
- *
  */
+
 //内置数据类型
 void test01() {
     deque<int> d{1, 2, 3, 4, 1, 5, 4, 6, 2, 1, 3, 5, 63, 1};
     int sum = count(d.begin(), d.end(), 1);
     cout << "sum 1 is " << sum << endl;     //sum 1 is 4
-
 }
 
 class Person {

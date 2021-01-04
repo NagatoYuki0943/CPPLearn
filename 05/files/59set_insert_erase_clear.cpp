@@ -8,11 +8,11 @@ using namespace std;
  * set容器进行插入数据和删除数据
  * 函数原型：
  *  insert(elem);           //在容器中插入元素。
- *  insert(operator beg,operator end);  beg和end可以使用 ++ -- ,不能使用 +1 -1
+ *  insert(operator beg,operator end);  beg和end可以使用 ++ -- ,不能使用 +1 -1   set和map不支持随机访问
  *
  *  erase(pos);             //删除pos迭代器所指的元素，返回下一个元素的迭代器。
- *  erase(operator beg,operator end);  //beg和end可以使用 ++ -- ,不能使用 +1 -1
- *                          //删除区间[beg,end)的所有元素 ，返回下一个元素的迭代器。
+ *  erase(operator beg,operator end);  //beg和end可以使用 ++ -- ,不能使用 +1 -1  set和map不支持随机访问
+ *                          //删除区间(beg,end)的所有元素 ，返回下一个元素的迭代器。
  *  erase(elem);            //删除容器中值为elem的元素。
  *
  *  clear();                //清除所有元素

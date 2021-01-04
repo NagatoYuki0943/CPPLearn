@@ -39,7 +39,6 @@ void printArray(T arr[], int len) {
     cout << endl;
 }
 
-
 void test01() {
     char charArr[]{'a', 'c', 'd', 'v', 'r', 'c', 'x'};
     int len = sizeof(charArr) / sizeof(char);
@@ -51,7 +50,6 @@ void test01() {
     downSort(intArr, len);
     printArray(intArr, len);
 }
-
 
 int main() {
     test01();

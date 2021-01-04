@@ -10,11 +10,10 @@ using namespace std;
  * <numeric>体积很小，只包括几个在序列上面进行简单数学运算的模板函数
  * <functional>定义了一些模板类,用以声明函数对象。
  *
- *
  * for_each
  * 实现遍历容器
  * 函数原型：
- * for_each(iterator beg, iterator end, _func);  `
+ * for_each(iterator beg, iterator end, _func);
  *   遍历算法 遍历容器元素
  *   beg 开始迭代器
  *   end 结束迭代器

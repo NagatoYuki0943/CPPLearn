@@ -8,20 +8,14 @@ using namespace std;
  *  3.如果利用显示指定类型的方式,可以发生隐式类型转换
  */
 
-
 int myAdd01(int a, int b) {
     return a + b;
 }
-
-
 
 template<typename T>
 T myAdd02(T a, T b) {
     return a + b;
 }
-
-
-
 
 void test01() {
     int a = 1, b = 2;
@@ -47,11 +41,7 @@ void test01() {
     cout << res << endl;    //100
 }
 
-
-
 int main() {
-
     test01();
-
     return 0;
 }

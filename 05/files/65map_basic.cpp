@@ -14,22 +14,23 @@ using namespace std;
  * 优点：
  *  可以根据key值快速找到value值
  *
- * map和multimap区别*：
+ * map和multimap区别：
  *  map不允许容器中有重复key值元素
  *  multimap允许容器中有重复key值元素
  *
  * map构造和赋值
  *  对map容器进行构造和赋值操作
  *  函数原型：
- *  构造：
- *   map<T1, T2> mp;                    //map默认构造函数:
- *   map<T1, T2> mp = {pair<T1,T2>(值1,值2),pair<T1,T2>(值1,值2),pair<T1,T2>(值1,值2),...};    ={}初始化
- *   map(const map &mp);                //拷贝构造函数
- *   map(operator beg ,operator end);   //拷贝区间构造
+ * 构造：
+ *  map<T1, T2> mp;                    //map默认构造函数:
+ *  map<T1, T2> mp = {pair<T1,T2>(值1,值2),pair<T1,T2>(值1,值2),pair<T1,T2>(值1,值2),...};    ={}初始化
+ *  map(const map &mp);                //拷贝构造函数
+ *  map(operator beg ,operator end);   //拷贝区间构造  beg和end可以使用 ++ -- ,不能使用 +1 -1   set和map不支持随机访问
  *
- *  赋值：
- *   map& operator=(const map &mp);    //重载等号操作符
- *   没有assign()方法赋值
+ * 赋值：
+ *  map& operator=(const map &mp);    //重载等号操作符
+ *  没有assign()方法赋值
+ *  也没有push和pop方法,要使用insert插入,erase删除
  */
 void printMap(const map<int,int> m) {
     for (map<int,int>::const_iterator i =m.begin(); i !=m.end() ; ++i) {

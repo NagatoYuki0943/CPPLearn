@@ -10,9 +10,7 @@ using namespace std;
  */
 class Person {
 public:
-    Person(string name, int age, int height, int weight) : m_Name(name), m_Age(age), m_Height(height),
-                                                           m_Weight(weight) {
-
+    Person(string name, int age, int height, int weight) : m_Name(name), m_Age(age), m_Height(height),m_Weight(weight) {
     }
 
     string m_Name;
@@ -20,10 +18,6 @@ public:
     int m_Height;
     int m_Weight;
 };
-
-void printList() {
-
-}
 
 void printList(const list<Person> &L) {
     for (list<Person>::const_iterator i = L.begin(); i != L.end(); ++i) {

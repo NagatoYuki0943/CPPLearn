@@ -46,7 +46,6 @@ void test01() {
 class Person {
 public:
     Person(string name, int age) : m_Name(name), m_Age(age) {
-
     }
 
     //重载 == 号,让底层知道如何对比Person数据类型
@@ -57,7 +56,6 @@ public:
             return false;
         }
     }
-
 
     string m_Name;
     int m_Age;
@@ -93,7 +91,6 @@ void test02() {
     } else {
         cout << "not found" << endl;
     }
-
 }
 
 int main() {

@@ -9,7 +9,7 @@ using namespace std;
  * 函数原型:
  *  vector& operator=(const vector &vec);   //重载等号操作符
  *  直接用 = {值1,值2,值3,...} 也可以
- *  assign(iterator beg, iterator end);                       //将[beg, end)区间中的数据拷贝赋值给本身。
+ *  assign(iterator beg, iterator end);     //将[beg, end)区间中的数据拷贝赋值给本身。
  *  assign(n, elem);                        //将n个elem拷贝赋值给本身。
  */
 
@@ -21,7 +21,6 @@ void printVector(vector<int> &v) {
     }
     cout << endl;
 }
-
 
 void assign() {
     vector<int> v1{1, 2, 3, 4, 5};

@@ -21,7 +21,7 @@ using namespace std;
  * 构造：
  *  set<T> st;                          //默认构造函数：
  *  set(const set &st);                 //拷贝构造函数
- *  set(operator beg,operator end);     //beg和end可以使用 ++ -- ,不能使用 +1 -1
+ *  set(operator beg,operator end);     //拷贝区间构造  beg和end可以使用 ++ -- ,不能使用 +1 -1   set和map不支持随机访问
  *                                      //区间拷贝
  *  set<int> s1{5, 2, 1, 1, 5, 6, 9, 8, 2, 1, 2};   = {} 构造
  *
@@ -30,6 +30,8 @@ using namespace std;
  *  没有assign()方法
  *  也没有push和pop方法,要使用insert插入,erase删除
  */
+
+//打印set
 void printSet(const set<int> &s) {
     for (set<int>::const_iterator i = s.begin(); i != s.end(); ++i) {
         cout << *i << " ";
@@ -37,6 +39,7 @@ void printSet(const set<int> &s) {
     cout << endl;
 }
 
+//打印multiset
 void printMultiset(const multiset<int> &s) {
     for (multiset<int>::const_iterator i = s.begin(); i != s.end(); ++i) {
         cout << *i << " ";
@@ -54,7 +57,6 @@ void test01() {
     //拷贝构造
     set<int> s2(s1);
     printSet(s2);       //1 2 5 6 8 9
-
 
     set<int> s3(++s2.begin(), --s2.end());   //2 5 6 8
     printSet(s3);

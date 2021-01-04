@@ -6,8 +6,8 @@ using namespace std;
 /**
  * queue 常用接口
  * 构造函数：
- *  queue<T> que;`                  //queue采用模板类实现，queue对象的默认构造形式
- *  queue(const queue &que);`       //拷贝构造函数
+ *  queue<T> que;                  //queue采用模板类实现，queue对象的默认构造形式
+ *  queue(const queue &que);       //拷贝构造函数
  *
  * 赋值操作：
  *  queue& operator=(const queue &que);   //重载等号操作符

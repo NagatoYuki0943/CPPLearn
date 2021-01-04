@@ -35,7 +35,6 @@ void printVector(vector<int> &v) {
     cout << endl;
 }
 
-
 void test01() {
     //默认构造
     vector<int> v1;
@@ -44,22 +43,18 @@ void test01() {
     }
     printVector(v1);    //0 1 2 3 4 5 6 7 8 9
 
-
     //通过区间方式添加
     //begin()是第一个,end()是最后一个的下一个
     vector<int> v2(v1.begin() + 1, v1.end() - 1);
     printVector(v2);    //1 2 3 4 5 6 7 8
 
-
     //n个elem构造
     vector<int> v3(10, 100);
     printVector(v3);    //100 100 100 100 100 100 100 100 100 100
 
-
     //拷贝构造
     vector<int> v4(v3);
     printVector(v4);    //100 100 100 100 100 100 100 100 100 100
-
 
     //初始化
     vector<int> v5{1, 2, 3, 4, 5, 6};
