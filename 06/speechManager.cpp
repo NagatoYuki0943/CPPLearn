@@ -23,11 +23,11 @@ SpeechManager::~SpeechManager() {
 //显示菜单
 void SpeechManager::showMenu() {
     cout << "***************************************************************" << endl;
-    cout << "*************  welcome come to the speech contest  ************" << endl;
-    cout << "*************        1.start speech contest        ************" << endl;
+    cout << "*************  Welcome come to the speech contest  ************" << endl;
+    cout << "*************        1.Start speech contest        ************" << endl;
     cout << "*************        2.View past records           ************" << endl;
     cout << "*************        3.Clear contest records       ************" << endl;
-    cout << "*************        0.exit contest program        ************" << endl;
+    cout << "*************        0.Cxit contest program        ************" << endl;
     cout << "***************************************************************" << endl;
     cout << endl;
 }
@@ -134,7 +134,7 @@ void SpeechManager::speechDraw() {
             cout << *i << " ";
         }
         cout << endl;
-
+        //10003 10012 10004 10009 10010 10008 10001 10002 10007 10011 10005 10006
     } else {
         //第二轮
         //随机打乱
@@ -144,6 +144,7 @@ void SpeechManager::speechDraw() {
             cout << v2[i] << " ";
         }
         cout << endl;
+        //10008 10011 10001 10012 10007 10004
     }
     cout << "-----------------------------------------------------------------------" << endl;
     system("pause");
@@ -159,8 +160,8 @@ void SpeechManager::speechContest() {
     //统计人员个数,6人一组
     int number = 0;
 
-
-    vector<int> v_Src;  //比赛选手容器
+    //比赛选手容器
+    vector<int> v_Src;
     if (this->m_Index == 1) {
         //第1轮
         v_Src = v1;
@@ -209,6 +210,7 @@ void SpeechManager::speechContest() {
         if (number % 6 == 0) {
             cout << "The " << number / 6 << " group is ranked as follows:" << endl;
             for (multimap<double, int, greater<double>>::iterator j = groupScore.begin(); j != groupScore.end(); ++j) {
+                //j->second是编号,m_Speaker是map, m_Speaker[j->second]直接访问的就是后面的元素,在通过 . 找到名字和分数,分数是两个,要分开输出
                 cout << "Number : " << j->second << " Name : " << this->m_Speaker[j->second].m_Name
                      << " Score : " << m_Speaker[j->second].m_Score[this->m_Index - 1] << endl;
             }
@@ -221,11 +223,12 @@ void SpeechManager::speechContest() {
                     // *j 的值是编号,取出来,放进v2
                     v2.push_back((*j).second);
                 } else {
+                    // *j 的值是编号,取出来,放进vVictory
                     vVictory.push_back((*j).second);
                 }
             }
 
-            //清空小组容器
+            //清空小组容器,每次找出前三名就要清空,不能再外面清空,不然每次都会被清空
             groupScore.clear();
             cout << endl;
         }
@@ -252,6 +255,7 @@ void SpeechManager::showScore() {
     cout << v.size() << endl; //6
 
     for (vector<int>::iterator i = v.begin(); i != v.end(); ++i) {
+        //*i是编号,m_Speaker是map, m_Speaker[*i]直接访问的就是后面的元素,在通过 . 找到名字和分数,分数是两个,要分开输出
         cout << "Number : " << *i << " Speaker : " << this->m_Speaker[*i].m_Name << " Score : "
              << this->m_Speaker[*i].m_Score[this->m_Index - 1] << endl;
     }
@@ -270,6 +274,7 @@ void SpeechManager::saveRecord() {
     ofs.open("speech.csv", ios::out | ios::app); //out写文件,app(append)附加
 
     //将所有冠军文件保存
+    //*i是编号,m_Speaker是map, m_Speaker[*i]直接访问的就是后面的元素,在通过 . 找到数,分数是两个,要分开输出
     for (vector<int>::iterator i = vVictory.begin(); i != vVictory.end(); ++i) {
         ofs << *i << "," << m_Speaker[*i].m_Score[1] << ",";
     }
@@ -323,7 +328,6 @@ void SpeechManager::loadRecord() {
     //第0届
     int index = 0;
 
-
     while (ifs >> data) {
         //cout << data << endl;
         //10002,86.675,10009,81.3,10007,78.55,  有数据,成功
@@ -333,13 +337,13 @@ void SpeechManager::loadRecord() {
         //存放6个string字符串
         vector<string> v;
 
-
         //查到逗号的位置,默认没查到
         int pos = -1;
         //查询起始位置
         int start = 0;
 
         while (true) {
+            //find 第一个参数是查找的字符,第二个参数是起始位置
             pos = data.find(",", start);
 
             if (pos == -1) {
@@ -350,14 +354,14 @@ void SpeechManager::loadRecord() {
             string temp = data.substr(start, pos - start);
             //cout << temp << " ";    //10002 86.675 10009 81.3 10007 78.55 *
 
-            //将提取出来的字符串放入v
+            //将提取出来的字符串放入v,v里面存放的依次是编号和分数,都是字符串类型,是一样的
             v.push_back(temp);
 
             //修改start位置,逗号后面
             start = pos + 1;
         }
 
-        //index是第几届,v代表第几届的成绩
+        //index是第几届,v是一个vector,v代表第几届的成绩,v里面存放的依次是编号和分数,都是字符串类型,是一样的
         this->m_Record.insert(make_pair(index, v));
         index++;
     }
@@ -391,7 +395,7 @@ void SpeechManager::showRecord() {
     } else{
 
         for (int i = 0; i < m_Record.size(); ++i) {
-            //m_Record
+            //m_Record是map,通过下标访问实际的vector,里面的vector存放的依次是编号和分数,通过下标依次访问
             cout << "The " << i + 1 << " advantage :" << endl;
             cout << "  champion number     : " << this->m_Record[i][0] << "    champion score     : " << this->m_Record[i][1]
                  << endl;
