@@ -762,6 +762,7 @@ void SpeechManager::saveRecord()
 {
 	ofstream ofs;
 	ofs.open("speech.csv", ios::out | ios::app); // 用输出的方式打开文件  -- 写文件
+    											 // out写文件,app(append)附加
 
 	//将每个人数据写入到文件中
 	for (vector<int>::iterator it = vVictory.begin(); it != vVictory.end(); it++)
@@ -775,6 +776,9 @@ void SpeechManager::saveRecord()
 	ofs.close();
     
 	cout << "记录已经保存" << endl;
+    
+    //清屏
+    system("cls");
 }
 ```
 
@@ -833,7 +837,8 @@ void SpeechManager::saveRecord()
 void SpeechManager::loadRecord()
 {
 	ifstream ifs("speech.csv", ios::in); //输入流对象 读取文件
-
+	
+    //文件不存在
 	if (!ifs.is_open())
 	{
 		this->fileIsEmpty = true;
@@ -842,6 +847,7 @@ void SpeechManager::loadRecord()
 		return;
 	}
 
+    //直接读到文件尾,文件为空
 	char ch;
 	ifs >> ch;
 	if (ifs.eof())
