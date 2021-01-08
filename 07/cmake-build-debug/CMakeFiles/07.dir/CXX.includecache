@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/C++/Clion/07/identity.h
+iostream
+-
+string
+-
+
+D:/C++/Clion/07/student.cpp
+student.h
+D:/C++/Clion/07/student.h
+
+D:/C++/Clion/07/student.h
+identity.h
+D:/C++/Clion/07/identity.h
+
+D:/C++/Clion/07/teacher.cpp
+teacher.h
+D:/C++/Clion/07/teacher.h
+
+D:/C++/Clion/07/teacher.h
+identity.h
+D:/C++/Clion/07/identity.h
+
