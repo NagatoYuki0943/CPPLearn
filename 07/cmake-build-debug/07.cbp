@@ -89,6 +89,12 @@
 		<Unit filename="D:/C++/Clion/07/manager.h">
 			<Option target="07"/>
 		</Unit>
+		<Unit filename="D:/C++/Clion/07/orderFile.cpp">
+			<Option target="07"/>
+		</Unit>
+		<Unit filename="D:/C++/Clion/07/orderFile.h">
+			<Option target="07"/>
+		</Unit>
 		<Unit filename="D:/C++/Clion/07/student.cpp">
 			<Option target="07"/>
 		</Unit>

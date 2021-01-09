@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "07.pdb"
   "CMakeFiles/07.dir/main.cpp.obj"
   "CMakeFiles/07.dir/manager.cpp.obj"
+  "CMakeFiles/07.dir/orderFile.cpp.obj"
   "CMakeFiles/07.dir/student.cpp.obj"
   "CMakeFiles/07.dir/teacher.cpp.obj"
   "lib07.dll.a"

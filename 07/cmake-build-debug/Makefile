@@ -196,6 +196,33 @@ manager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\07.dir\build.make CMakeFiles/07.dir/manager.cpp.s
 .PHONY : manager.cpp.s
 
+orderFile.obj: orderFile.cpp.obj
+
+.PHONY : orderFile.obj
+
+# target to build an object file
+orderFile.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\07.dir\build.make CMakeFiles/07.dir/orderFile.cpp.obj
+.PHONY : orderFile.cpp.obj
+
+orderFile.i: orderFile.cpp.i
+
+.PHONY : orderFile.i
+
+# target to preprocess a source file
+orderFile.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\07.dir\build.make CMakeFiles/07.dir/orderFile.cpp.i
+.PHONY : orderFile.cpp.i
+
+orderFile.s: orderFile.cpp.s
+
+.PHONY : orderFile.s
+
+# target to generate assembly for a file
+orderFile.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\07.dir\build.make CMakeFiles/07.dir/orderFile.cpp.s
+.PHONY : orderFile.cpp.s
+
 student.obj: student.cpp.obj
 
 .PHONY : student.obj
@@ -265,6 +292,9 @@ help:
 	@echo ... manager.obj
 	@echo ... manager.i
 	@echo ... manager.s
+	@echo ... orderFile.obj
+	@echo ... orderFile.i
+	@echo ... orderFile.s
 	@echo ... student.obj
 	@echo ... student.i
 	@echo ... student.s

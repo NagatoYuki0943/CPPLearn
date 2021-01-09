@@ -6,11 +6,53 @@
 
 #IncludeRegexTransform: 
 
+D:/C++/Clion/07/computerRoom.h
+iostream
+-
+
+D:/C++/Clion/07/globalFile.h
+
 D:/C++/Clion/07/identity.h
 iostream
 -
 string
 -
+fstream
+-
+globalFile.h
+D:/C++/Clion/07/globalFile.h
+vector
+-
+algorithm
+-
+
+D:/C++/Clion/07/main.cpp
+iostream
+-
+string
+-
+fstream
+-
+identity.h
+D:/C++/Clion/07/identity.h
+student.h
+D:/C++/Clion/07/student.h
+teacher.h
+D:/C++/Clion/07/teacher.h
+manager.h
+D:/C++/Clion/07/manager.h
+globalFile.h
+D:/C++/Clion/07/globalFile.h
+
+D:/C++/Clion/07/manager.h
+identity.h
+D:/C++/Clion/07/identity.h
+student.h
+D:/C++/Clion/07/student.h
+teacher.h
+D:/C++/Clion/07/teacher.h
+computerRoom.h
+D:/C++/Clion/07/computerRoom.h
 
 D:/C++/Clion/07/student.cpp
 student.h
@@ -19,10 +61,8 @@ D:/C++/Clion/07/student.h
 D:/C++/Clion/07/student.h
 identity.h
 D:/C++/Clion/07/identity.h
-
-D:/C++/Clion/07/teacher.cpp
-teacher.h
-D:/C++/Clion/07/teacher.h
+computerRoom.h
+D:/C++/Clion/07/computerRoom.h
 
 D:/C++/Clion/07/teacher.h
 identity.h

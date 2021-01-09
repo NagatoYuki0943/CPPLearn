@@ -11,8 +11,12 @@ using namespace std;
 
 #include <iostream>
 #include <string>
+#include <fstream>
+#include "globalFile.h"
+#include <vector>
+#include <algorithm>
 
-//身份抽象类
+//身份抽象类 (多态要使用父类的指针或者引用指向子类,不然不能用)
 class Identity {
 public:
     //操作菜单基类 纯虚函数

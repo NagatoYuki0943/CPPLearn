@@ -6,7 +6,7 @@ Teacher::Teacher() {
 }
 
 //有参构造(职工编号,姓名,密码)
-Teacher::Teacher(int empId,string name,string pwd) {
+Teacher::Teacher(int empId, string name, string pwd) {
 
 }
 

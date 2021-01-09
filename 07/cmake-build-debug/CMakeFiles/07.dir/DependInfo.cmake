@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "D:/C++/Clion/07/main.cpp" "D:/C++/Clion/07/cmake-build-debug/CMakeFiles/07.dir/main.cpp.obj"
   "D:/C++/Clion/07/manager.cpp" "D:/C++/Clion/07/cmake-build-debug/CMakeFiles/07.dir/manager.cpp.obj"
+  "D:/C++/Clion/07/orderFile.cpp" "D:/C++/Clion/07/cmake-build-debug/CMakeFiles/07.dir/orderFile.cpp.obj"
   "D:/C++/Clion/07/student.cpp" "D:/C++/Clion/07/cmake-build-debug/CMakeFiles/07.dir/student.cpp.obj"
   "D:/C++/Clion/07/teacher.cpp" "D:/C++/Clion/07/cmake-build-debug/CMakeFiles/07.dir/teacher.cpp.obj"
   )

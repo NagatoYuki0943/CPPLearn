@@ -3,4 +3,4 @@ project(07)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(07 main.cpp student.cpp teacher.cpp manager.cpp)
+add_executable(07 main.cpp student.cpp teacher.cpp manager.cpp orderFile.cpp)

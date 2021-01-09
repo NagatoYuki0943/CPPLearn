@@ -20,7 +20,7 @@ public:
     Teacher(int empId, string name, string pwd);
 
     //菜单界面
-    void operMenu();
+    void operMenu() override;
 
     //查看所有预约
     void showAllOrder();

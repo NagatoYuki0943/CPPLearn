@@ -12,7 +12,7 @@
 #pragma once
 
 #include "identity.h"
-
+#include "computerRoom.h"
 
 class Student : public Identity {
 public:
@@ -23,8 +23,7 @@ public:
     Student(int id, string name, string pwd);
 
     //菜单界面
-
-    void operMenu();
+    void operMenu() override;
 
     //申请预约
     void applyOrder();
@@ -38,8 +37,14 @@ public:
     //取消预约
     void cancelOrder();
 
+    //初始化机房信息
+    void initComputer();
+
     //学号
     int m_Id;
+
+    //机房容器
+    vector<ComputerRoom> vCom;
 
 };
 
