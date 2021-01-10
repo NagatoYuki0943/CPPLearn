@@ -29,7 +29,7 @@ public:
     void operMenu() override;
 
     //检测重复 参数:(传入id，传入类型) 返回值：(true 代表有重复，false代表没有重复)
-    bool checkRepeat(int id ,int type);
+    bool checkRepeat(int id, int type);
 
     //添加账号
     void addPerson();
@@ -51,10 +51,10 @@ public:
 
 
     //学生容器
-    vector <Student> vStu;
+    vector<Student> vStu;
 
     //教师容器
-    vector <Teacher> vTea;
+    vector<Teacher> vTea;
 
     //机房容器
     vector<ComputerRoom> vCom;

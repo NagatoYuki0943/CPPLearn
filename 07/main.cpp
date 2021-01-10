@@ -43,7 +43,7 @@ void managerMenu(Identity *&manager) {
             man->showComputer();
 
         } else if (select == 4) {      //清空预约
-            cout << "Clear File" << endl;
+            cout << "Clear Order" << endl;
             man->cleanFile();
 
         } else if (select == 0) {
@@ -62,6 +62,7 @@ void managerMenu(Identity *&manager) {
 }
 
 
+//学生子菜单
 //机房预约系统.cpp中，当用户登录的是学生，添加学生菜单接口
 //将不同的分支提供出来
 //  申请预约
@@ -70,7 +71,7 @@ void managerMenu(Identity *&manager) {
 //  取消预约
 //  注销登录
 //  实现注销功能
-//Identity * &manager 传入的是manager,用Identity类型的指针保存
+//Identity * &manager 传入的是student,用Identity类型的指针保存
 void studentMenu(Identity *&student) {
     while (true) {
         //学生子菜单
@@ -79,21 +80,17 @@ void studentMenu(Identity *&student) {
         Student *stu = (Student *) student;
         int select = 0;
         cin >> select;
-        if (select == 1) {        ////申请预约
+        if (select == 1) {          //申请预约
             stu->applyOrder();
-            break;
 
-        } else if (select == 2) {
+        } else if (select == 2) {   //查看自身预约
             stu->showMyOrder();
-            break;
 
-        } else if (select == 3) {
+        } else if (select == 3) {   //查看所有预约
             stu->showAllOrder();
-            break;
 
-        } else if (select == 4) {
+        } else if (select == 4) {   //取消预约
             stu->cancelOrder();
-            break;
 
         } else if (select == 0) {
             //销毁堆区对象
@@ -110,6 +107,44 @@ void studentMenu(Identity *&student) {
     }
 }
 
+
+//教师子菜单
+//在机房预约系统.cpp中，当用户登录的是教师，添加教师菜单接口
+//将不同的分支提供出来
+//  查看所有预约
+//  审核预约
+//  注销登录
+//  实现注销功能
+
+
+void TeacherMenu(Identity *&teacher) {
+    while (true) {
+        //教师菜单
+        teacher->operMenu();
+
+        //类型转换
+        Teacher *tea = (Teacher *) teacher;
+        int select = 0;
+        cin >> select;
+        if (select == 1) {        //查看所有预约
+            tea->showAllOrder();
+
+        } else if (select == 2) {  //审核预约
+            tea->validOrder();
+
+        } else if (select == 0) {   //退出
+            delete teacher;
+            cout << "Logout successfully" << endl;
+            system("pause");
+            system("cls");
+            return;
+
+        } else {
+            //清空,上面会重新显示菜单
+            system("cls");
+        }
+    }
+}
 
 //login登录功能,参数1:操作文件名称;参数2:操作人类型
 void LoginIn(string fileName, int type) {
@@ -199,7 +234,7 @@ void LoginIn(string fileName, int type) {
                 person = new Teacher(id, name, pwd);
 
                 //进入教师子菜单
-
+                TeacherMenu(person);
                 return;
             }
         }

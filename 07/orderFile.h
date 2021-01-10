@@ -8,8 +8,9 @@
 using namespace std;
 
 #include <iostream>
-#include "identity.h"
 #include <map>
+#include <fstream>
+#include "identity.h"
 #include "globalFile.h"
 
 class OrderFile {

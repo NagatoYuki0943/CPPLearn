@@ -28,7 +28,7 @@ void Manager::operMenu() {
     cout << "\t\t|                                |\n";
     cout << "\t\t|          3.Show Computer       |\n";
     cout << "\t\t|                                |\n";
-    cout << "\t\t|          4.Clear File          |\n";
+    cout << "\t\t|          4.Clear Order          |\n";
     cout << "\t\t|                                |\n";
     cout << "\t\t|          0.Exit                |\n";
     cout << "\t\t|                                |\n";

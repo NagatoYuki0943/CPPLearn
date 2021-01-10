@@ -13,6 +13,7 @@
 
 #include "identity.h"
 #include "computerRoom.h"
+#include "orderFile.h"
 
 class Student : public Identity {
 public:
