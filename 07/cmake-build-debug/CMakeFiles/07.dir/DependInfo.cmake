@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "D:/C++/Clion/07/computerRoom.cpp" "D:/C++/Clion/07/cmake-build-debug/CMakeFiles/07.dir/computerRoom.cpp.obj"
   "D:/C++/Clion/07/main.cpp" "D:/C++/Clion/07/cmake-build-debug/CMakeFiles/07.dir/main.cpp.obj"
   "D:/C++/Clion/07/manager.cpp" "D:/C++/Clion/07/cmake-build-debug/CMakeFiles/07.dir/manager.cpp.obj"
   "D:/C++/Clion/07/orderFile.cpp" "D:/C++/Clion/07/cmake-build-debug/CMakeFiles/07.dir/orderFile.cpp.obj"

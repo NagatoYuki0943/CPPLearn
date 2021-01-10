@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="D:/C++/Clion/07/computerRoom.cpp">
+			<Option target="07"/>
+		</Unit>
+		<Unit filename="D:/C++/Clion/07/computerRoom.h">
+			<Option target="07"/>
+		</Unit>
 		<Unit filename="D:/C++/Clion/07/main.cpp">
 			<Option target="07"/>
 		</Unit>

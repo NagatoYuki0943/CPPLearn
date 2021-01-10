@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "07.exe"
   "07.exe.manifest"
   "07.pdb"
+  "CMakeFiles/07.dir/computerRoom.cpp.obj"
   "CMakeFiles/07.dir/main.cpp.obj"
   "CMakeFiles/07.dir/manager.cpp.obj"
   "CMakeFiles/07.dir/orderFile.cpp.obj"

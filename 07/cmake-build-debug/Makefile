@@ -142,6 +142,33 @@ depend:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\07.dir\build.make CMakeFiles/07.dir/build
 .PHONY : 07/fast
 
+computerRoom.obj: computerRoom.cpp.obj
+
+.PHONY : computerRoom.obj
+
+# target to build an object file
+computerRoom.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\07.dir\build.make CMakeFiles/07.dir/computerRoom.cpp.obj
+.PHONY : computerRoom.cpp.obj
+
+computerRoom.i: computerRoom.cpp.i
+
+.PHONY : computerRoom.i
+
+# target to preprocess a source file
+computerRoom.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\07.dir\build.make CMakeFiles/07.dir/computerRoom.cpp.i
+.PHONY : computerRoom.cpp.i
+
+computerRoom.s: computerRoom.cpp.s
+
+.PHONY : computerRoom.s
+
+# target to generate assembly for a file
+computerRoom.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\07.dir\build.make CMakeFiles/07.dir/computerRoom.cpp.s
+.PHONY : computerRoom.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -286,6 +313,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... 07
+	@echo ... computerRoom.obj
+	@echo ... computerRoom.i
+	@echo ... computerRoom.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
