@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/C++/Clion/06/main.cpp" "D:/C++/Clion/06/cmake-build-debug/CMakeFiles/06.dir/main.cpp.obj"
-  "D:/C++/Clion/06/speechManager.cpp" "D:/C++/Clion/06/cmake-build-debug/CMakeFiles/06.dir/speechManager.cpp.obj"
+  "D:/C++/CLion/06/main.cpp" "D:/C++/CLion/06/cmake-build-debug/CMakeFiles/06.dir/main.cpp.obj"
+  "D:/C++/CLion/06/speechManager.cpp" "D:/C++/CLion/06/cmake-build-debug/CMakeFiles/06.dir/speechManager.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

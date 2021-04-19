@@ -32,9 +32,10 @@ void test01(){
     mySwap(a,b);
     cout << a << endl;
     cout << b << endl;
-    int c = 3,d = 4;
+
 
     //2.显示声明类型
+    int c = 3,d = 4;
     mySwap<int>(c,d);
     cout << c << endl;
     cout << d << endl;
