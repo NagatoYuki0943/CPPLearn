@@ -27,8 +27,6 @@ void test01() {
     deque<int> d1{1, 2, 3, 4, 5};
     cout << d1.front() << " " << d1.back() << endl; //1 5
     printDeque(d1);                                 //1-1 2-2 3-3 4-4 5-5
-
-
 }
 
 int main() {

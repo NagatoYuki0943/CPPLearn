@@ -20,8 +20,8 @@ void printSet(const set<int> &s) {
 
 class MyCompare {
 public:
-    //重载小括号,改为降序
-    bool operator()(int a, int b) {
+    //重载小括号,改为降序 加上const才不会报错
+    bool operator()(int a, int b) const {
         return a > b;
     }
 };

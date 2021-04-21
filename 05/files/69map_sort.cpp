@@ -12,8 +12,8 @@ using namespace std;
 
 class MyCompare {
 public:
-    //重载()
-    bool operator()(int v1, int v2) {
+    //重载() 加上const才不会报错
+    bool operator()(int v1, int v2) const  {
         //降序
         return v1 > v2;
     }

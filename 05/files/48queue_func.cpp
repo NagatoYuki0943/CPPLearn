@@ -41,9 +41,6 @@ void test01() {
     cout << endl;
 
     cout << "q1's size is " << q1.size() << endl;       //q1's size is 0
-
-
-
 }
 
 int main() {
