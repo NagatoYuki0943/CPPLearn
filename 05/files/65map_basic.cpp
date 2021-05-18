@@ -12,7 +12,7 @@ using namespace std;
  *  map/multimap属于关联式容器，底层结构是用二叉树实现。set底层也是二叉树
  *
  * 优点：
- *  可以根据key值快速找到value值
+ *  可以根据key值快速找到value值,使用数组的方式 my_map[key] 获取value
  *
  * map和multimap区别：
  *  map不允许容器中有重复key值元素
@@ -41,6 +41,10 @@ void printMap(const map<int,int> m) {
 void test01(){
     // = {pair<类型1,类型2>(值1,值2),pair<类型1,类型2>(值1,值2),pair<类型1,类型2>(值1,值2),...}
     map<int,int> m0{pair<int,int>(1,10),pair<int,int>(1,20),pair<int,int>(4,40)};
+
+    //通过key值可以获取value值
+    cout << m0[4] << endl;  //40
+
     printMap(m0);   //1 10 | 4 40 |
 
     //默认构造
@@ -52,6 +56,7 @@ void test01(){
     m1.insert(pair<int,int>(4,40));
     m1.insert(pair<int,int>(3,30));
     m1.insert(pair<int,int>(2,20));
+
 
     printMap(m1);   //1 10 | 2 20 | 3 30 | 4 40 |
 
