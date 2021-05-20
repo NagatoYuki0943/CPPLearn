@@ -19,7 +19,7 @@ using namespace std;
 //  清空预约
 //  注销登录
 //  实现注销功能
-//Identity * &manager 传入的是manager,用Identity类型的指针保存
+//Identity * &manager 传入的是manager的引用,用Identity类型的指针保存
 void managerMenu(Identity *&manager) {
     while (true) {
         //管理员菜单
@@ -71,7 +71,7 @@ void managerMenu(Identity *&manager) {
 //  取消预约
 //  注销登录
 //  实现注销功能
-//Identity * &manager 传入的是student,用Identity类型的指针保存
+//Identity * &manager 传入的是student的引用,用Identity类型的指针保存
 void studentMenu(Identity *&student) {
     while (true) {
         //学生子菜单
@@ -115,8 +115,7 @@ void studentMenu(Identity *&student) {
 //  审核预约
 //  注销登录
 //  实现注销功能
-
-
+//Identity * &manager 传入的是student的引用,用Identity类型的指针保存
 void TeacherMenu(Identity *&teacher) {
     while (true) {
         //教师菜单
