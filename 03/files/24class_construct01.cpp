@@ -72,9 +72,6 @@ void test01() {
      */
     Person p8 = 10; //有参调用  相当于 Person p8=Person(10)
     Person p9 = p8; //拷贝调用  相当于 Person p9=Person(p8)
-
-
-
 }
 
 int main() {

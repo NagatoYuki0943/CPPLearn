@@ -53,6 +53,7 @@ void test01() {
         cout << buf0 << endl;
     }*/
 
+
     //第二种
     cout << "2:" << endl;
     /*char buf1[1024]={0};
@@ -66,9 +67,10 @@ void test01() {
     cout << "3:" << endl;
     string buf2;
     ///getline(基础输入流,保存位置)
-    /*while (getline(ifs,buf2)){
+/*    while (getline(ifs,buf2)){
         cout << buf2 << endl;
     }*/
+
 
     //第四种:一个一个字符读
     cout << "4:" << endl;
@@ -82,7 +84,6 @@ void test01() {
 
     //5.关闭文件
     ifs.close();
-
 }
 
 int main() {

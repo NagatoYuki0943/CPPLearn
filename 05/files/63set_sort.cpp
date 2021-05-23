@@ -21,6 +21,7 @@ void printSet(const set<int> &s) {
 class MyCompare {
 public:
     //重载小括号,改为降序 加上const才不会报错
+    //成员函数后加const我们称为这个函数为常函数,常函数不可以修改成员函数
     bool operator()(int a, int b) const {
         return a > b;
     }

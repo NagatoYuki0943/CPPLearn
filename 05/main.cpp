@@ -2,16 +2,18 @@
 
 using namespace std;
 
+int a[] = {1, 2, 3, 4};
+
+void func1(int b[]){
+    b[0] = 10;
+}
+
+void func2(int b[]){
+    cout << b[0] << endl;
+}
+
 int main() {
-    int a = 10;
-    //取地址
-    cout << &a << endl; //0x62fe1c
-    //指针, &a取地址
-    int *b = &a;
-    cout << b << endl;  //0x62fe1c
-    cout << *b << endl; //10
-    //引用
-    int &c = a;
-    cout << c << endl;  //10
+    func1(a);
+    func2(a);
     return 0;
 }

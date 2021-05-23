@@ -48,7 +48,6 @@ void test01(){
     ofs << "姓名:张三" << endl; //endl 换行
     ofs << "性别:男" << endl;
     ofs << "年龄:18" << endl;
-    ofs.write();
     ofs.close();
 }
 int main() {

@@ -17,13 +17,18 @@ public:
     ///纯虚函数,前面必须有virtual后面才能等于0
     ///当类中有了纯虚函数,这个类也成抽象类
     virtual void func() = 0;
+
+
+    virtual ~Base() = 0;
 };
 
 class Son : public Base {
 public:
-    void func() {
+    void func() override {
         cout << "func函数调用" << endl;
     }
+
+    ~Son() override = default;
 };
 
 void test01() {

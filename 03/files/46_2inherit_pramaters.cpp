@@ -35,7 +35,6 @@ public:
     Car(string name) : Vehicle(name) {
         m_Name = name;
     }
-
 };
 
 void test() {

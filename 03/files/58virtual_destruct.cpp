@@ -44,12 +44,12 @@ Animal::~Animal() {
 
 class Cat : public Animal {
 public:
-    Cat(string name) {
+    explicit Cat(string name) {
         cout << "Cat的构造函数调用" << endl;
         m_Name = new string(name);
     }
 
-    ~Cat() {///默认不会调用这个析构函数
+    ~Cat() override {///默认不会调用这个析构函数
         //销毁堆区数据
         if (m_Name != NULL) {
             cout << "Cat的析构函数调用" << endl;
@@ -58,7 +58,7 @@ public:
         }
     }
 
-    void Speak() {
+    void Speak() override {
         cout << *m_Name << "在说话" << endl;
     }
 

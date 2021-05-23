@@ -61,21 +61,21 @@ private:
 //Intel
 class IntelCPU : public CPU {
 public:
-    virtual void Calculator() {
+    void Calculator() override {
         cout << "这是intel的CPU开始计算了!" << endl;
     }
 };
 
 class IntelGPU : public GPU {
 public:
-    virtual void Display() {
+    void Display() override {
         cout << "这是intel的GPU开始显示了!" << endl;
     }
 };
 
 class IntelMEM : public Mem {
 public:
-    virtual void Storage() {
+    void Storage() override {
         cout << "这是intel的MEM开始存储了了!" << endl;
     }
 };
@@ -83,21 +83,21 @@ public:
 //Lenovo
 class LenovoCPU : public CPU {
 public:
-    virtual void Calculator() {
+    void Calculator() override {
         cout << "这是Lenovo的CPU开始计算了!" << endl;
     }
 };
 
 class LenovoGPU : public GPU {
 public:
-    virtual void Display() {
+    void Display() override {
         cout << "这是Lenovo的GPU开始显示了!" << endl;
     }
 };
 
 class LenovoMEM : public Mem {
 public:
-    virtual void Storage() {
+    void Storage() override {
         cout << "这是Lenovo的MEM开始存储了了!" << endl;
     }
 };
@@ -107,13 +107,13 @@ void test01() {
     CPU *intelCPU = new IntelCPU;   //父类指针指向子类
     GPU *intelGPU = new IntelGPU;
     Mem *intelMEM = new IntelMEM;
-    Computer *computer1 = new Computer(intelCPU, intelGPU, intelMEM);
+    auto *computer1 = new Computer(intelCPU, intelGPU, intelMEM);
     computer1->work();
     cout << "----------" << endl;
     delete computer1; //Computer类的析构函数会删除三个指针,就不用手写了
 
     //第二台电脑
-    Computer *computer2 = new Computer(new LenovoCPU, new LenovoGPU, new LenovoMEM);
+    auto *computer2 = new Computer(new LenovoCPU, new LenovoGPU, new LenovoMEM);
     /**
      * computer1->work();  //这一行会打印computer2的数据,如果注释了上面的delete computer1就会打印computer1的
      */
@@ -122,7 +122,7 @@ void test01() {
     delete computer2; //Computer类的析构函数会删除三个指针,就不用手写了
 
     //第三台电脑
-    Computer *computer3 = new Computer(new IntelCPU, new LenovoGPU, new IntelMEM);
+    auto *computer3 = new Computer(new IntelCPU, new LenovoGPU, new IntelMEM);
     computer3->work();
     cout << "----------" << endl;
     delete computer3; //Computer类的析构函数会删除三个指针,就不用手写了

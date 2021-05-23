@@ -33,22 +33,22 @@ public:
 //咖啡
 class Coffee : public AbstractDrinking {
     //煮水
-    virtual void Boil() {
+    void Boil() {
         cout << "煮矿泉水" << endl;
     }
 
     //冲泡
-    virtual void Brew() {
+    void Brew() {
         cout << "冲泡咖啡" << endl;
     }
 
     //倒入杯中
-    virtual void PourInCup() {
+    void PourInCup() {
         cout << "倒入杯中" << endl;
     }
 
     //加入辅料
-    virtual void AddSomething() {
+    void AddSomething() {
         cout << "加入糖和牛奶" << endl;
     }
 };
@@ -56,22 +56,23 @@ class Coffee : public AbstractDrinking {
 //茶叶
 class Tea : public AbstractDrinking {
     //煮水
-    virtual void Boil() {
+    // 新的写法可以使用 override 关键字
+    void Boil() override {
         cout << "煮纯净水" << endl;
     }
 
     //冲泡
-    virtual void Brew() {
+    void Brew() override {
         cout << "冲泡茶叶" << endl;
     }
 
     //倒入杯中
-    virtual void PourInCup() {
+    void PourInCup() override {
         cout << "倒入杯中" << endl;
     }
 
     //加入辅料
-    virtual void AddSomething() {
+    void AddSomething() override {
         cout << "加入柠檬" << endl;
     }
 };

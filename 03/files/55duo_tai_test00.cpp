@@ -57,7 +57,6 @@ public:
 
     int m_Num1;
     int m_Num2;
-
 };
 
 //设计加法计算器类
