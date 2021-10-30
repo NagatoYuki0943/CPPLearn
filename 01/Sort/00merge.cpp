@@ -3,12 +3,12 @@
 using namespace std;
 /**
  * merge
- * ¹é²¢Ëã·¨
- * ½«ÒÑÓĞĞòµÄ×ÓĞòÁĞºÏ²¢£¬µÃµ½ÍêÈ«ÓĞĞòµÄĞòÁĞ£»¼´ÏÈÊ¹Ã¿¸ö×ÓĞòÁĞÓĞĞò£¬ÔÙÊ¹×ÓĞòÁĞ¶Î¼äÓĞĞò¡£Èô½«Á½¸öÓĞĞò±íºÏ²¢³ÉÒ»¸öÓĞĞò±í£¬³ÆÎª¶şÂ·¹é²¢¡£
- * ¹é²¢ÅÅĞòÖ÷Òª·ÖÎªÈı²½£¬Ò»ÊÇ¶ÔÊı×éµÄ»®·Ö£¬¶şÊÇ¶ÔÊı×éµÄÅÅĞò£¬ÈıÊÇ¶ÔÊı×éµÄºÏ²¢
+ * å½’å¹¶ç®—æ³•
+ * å°†å·²æœ‰åºçš„å­åºåˆ—åˆå¹¶ï¼Œå¾—åˆ°å®Œå…¨æœ‰åºçš„åºåˆ—ï¼›å³å…ˆä½¿æ¯ä¸ªå­åºåˆ—æœ‰åºï¼Œå†ä½¿å­åºåˆ—æ®µé—´æœ‰åºã€‚è‹¥å°†ä¸¤ä¸ªæœ‰åºè¡¨åˆå¹¶æˆä¸€ä¸ªæœ‰åºè¡¨ï¼Œç§°ä¸ºäºŒè·¯å½’å¹¶ã€‚
+ * å½’å¹¶æ’åºä¸»è¦åˆ†ä¸ºä¸‰æ­¥ï¼Œä¸€æ˜¯å¯¹æ•°ç»„çš„åˆ’åˆ†ï¼ŒäºŒæ˜¯å¯¹æ•°ç»„çš„æ’åºï¼Œä¸‰æ˜¯å¯¹æ•°ç»„çš„åˆå¹¶
  */
 
-///ºÏ²¢Ëã·¨
+///åˆå¹¶ç®—æ³•
 void merge(int *arr, int start, int end, int *result) {
     int left_length = (end - start + 1) / 2 + 1;
     int left_index = start;
@@ -27,9 +27,9 @@ void merge(int *arr, int start, int end, int *result) {
         result[result_index++] = arr[right_index++];
 }
 
-///·Ö¸îÅÅĞò
+///åˆ†å‰²æ’åº
 void merge_sort(int *arr, int start, int end, int *result) {
-    if (1 == end - start)   //Ö»ÓĞÁ½¸öÊı
+    if (1 == end - start)   //åªæœ‰ä¸¤ä¸ªæ•°
     {
         if (arr[start] > arr[end]) {
             int temp = arr[start];
@@ -37,16 +37,16 @@ void merge_sort(int *arr, int start, int end, int *result) {
             arr[end] = temp;
         }
         return;
-    } else if (end == start)  //Ö»Ê£ÏÂÒ»¸öÊı
+    } else if (end == start)  //åªå‰©ä¸‹ä¸€ä¸ªæ•°
         return;
     else {
-        //¶àÓàÁ½¸öÊı£¬½øĞĞ·Ö¸î£¬Ö±µ½²»´óÓÚ¶şÎ»ÖÃ
+        //å¤šä½™ä¸¤ä¸ªæ•°ï¼Œè¿›è¡Œåˆ†å‰²ï¼Œç›´åˆ°ä¸å¤§äºäºŒä½ç½®
         merge_sort(arr, start, (end - start + 1) / 2 + start, result);
         merge_sort(arr, (end - start + 1) / 2 + start + 1, end, result);
-        //ºÏ²¢Ëã·¨
+        //åˆå¹¶ç®—æ³•
         merge(arr, start, end, result);
 
-        //ÈÃÔ­Êı×éµÈÓÚÁÙÊ±Êı×é
+        //è®©åŸæ•°ç»„ç­‰äºä¸´æ—¶æ•°ç»„
         for (int i = start; i <= end; ++i) {
             arr[i] = result[i];
         }

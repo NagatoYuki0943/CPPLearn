@@ -2,65 +2,65 @@
 
 using namespace std;
 /**
- *��������ע�⣬������һ��Ԫ�ر���ǰ��һ��Ԫ��С����������Ԫ�ؽ���λ�ã�Ȼ�������Ƚ��������Ԫ����ǰ��һ��Ԫ�صĴ�С��
- *��С������Ҫ����������Ԫ��λ�ã�һֱ���������Ԫ������ȷ��λ��Ϊֹ
+ *插入排序。注意，若后面一个元素比其前面一个元素小，则将这两个元素交换位置，然后再来比较这个插入元素与前面一个元素的大小，
+ *若小，则还需要交换这两个元素位置，一直到这个插入元素在正确的位置为止
  */
-//��������
+//升序排序
 void UpInsertSort(int arr[], int len) {
-    //1��ȷ��������ٻأ�����һ������һ���Բ��뵽�Ե�λ�ã�ͬʱ��һ��λ�ü����ǶԵ�
-    for (int i = 1; i < len; i++)  //i�ӵ�һ����ʼ,�����һ��
+    //1，确定插入多少回，假设一个数字一次性插入到对的位置，同时第一个位置假设是对的
+    for (int i = 1; i < len; i++)  //i从第一个开始,到最后一个
     {
-        //��ȡ��ֵ
+        //获取初值
         int temp = arr[i];
-        //�ж����޽���������
+        //判断有无交换的条件
         bool flag = false;
-        //��i��ʼ,��������Ƚ�,ֱ�������
-        int j = i - 1;  //Ҫ�����渳ֵ,��Ȼ�����޷�����
-        for (; j >= 0; j--)  //j��i-1��ʼ,�����ҵ���0��
+        //从i开始,从右往左比较,直到最左侧
+        int j = i - 1;  //要从外面赋值,不然下面无法交换
+        for (; j >= 0; j--)  //j从i-1开始,往左找到第0个
         {
             if (arr[j] > temp) {
-                //���ݺ���
+                //数据后移
                 arr[j + 1] = arr[j];
 
-                //˵����ǰλ���н���
+                //说明当前位置有交换
                 flag = true;
             } else {
-                //˵����ǰ�ڶԵ�λ��,ǰ��Ķ���tempС
+                //说明当前在对的位置,前面的都比temp小
                 break;
             }
         }
         if (flag) {
-            arr[j + 1] = temp; //j������֮���-1,��Ҫ������ǰһ��λ��, ����Ҫ+1
+            arr[j + 1] = temp; //j运行完之后会-1,到要交换的前一个位置, 所以要+1
         }
     }
 }
 
-//��������
+//降序排序
 void DownInsertSort(int arr[], int len) {
-    //1��ȷ��������ٻأ�����һ������һ���Բ��뵽�Ե�λ�ã�ͬʱ��һ��λ�ü����ǶԵ�
-    for (int i = 1; i < len; i++)  //i�ӵ�һ����ʼ,�����һ��
+    //1，确定插入多少回，假设一个数字一次性插入到对的位置，同时第一个位置假设是对的
+    for (int i = 1; i < len; i++)  //i从第一个开始,到最后一个
     {
-        //��ȡ��ֵ
+        //获取初值
         int temp = arr[i];
-        //�ж����޽���������
+        //判断有无交换的条件
         bool flag = false;
-        //��i��ʼ,��������Ƚ�,ֱ�������
-        int j = i - 1;  //Ҫ�����渳ֵ,��Ȼ�����޷�����
-        for (; j >= 0; j--)  //j��i-1��ʼ,�����ҵ���0��
+        //从i开始,从右往左比较,直到最左侧
+        int j = i - 1;  //要从外面赋值,不然下面无法交换
+        for (; j >= 0; j--)  //j从i-1开始,往左找到第0个
         {
             if (temp > arr[j]) {
-                //���ݺ���
+                //数据后移
                 arr[j + 1] = arr[j];
 
-                //˵����ǰλ���н���
+                //说明当前位置有交换
                 flag = true;
             } else {
-                //˵����ǰ�ڶԵ�λ��,ǰ��Ķ���tempС
+                //说明当前在对的位置,前面的都比temp小
                 break;
             }
         }
         if (flag) {
-            arr[j + 1] = temp; //j������֮���-1,��Ҫ������ǰһ��λ��, ����Ҫ+1
+            arr[j + 1] = temp; //j运行完之后会-1,到要交换的前一个位置, 所以要+1
         }
     }
 }
@@ -76,11 +76,11 @@ int main() {
     int arr[] = {4, 5, 1, 3, 2};
     int len = sizeof(arr) / sizeof(arr[0]);
     OutPut(arr, len);
-    //������������
+    //调用升序排序
     UpInsertSort(arr, len);
     OutPut(arr, len);
 
-    //���ý�������
+    //调用降序排序
     DownInsertSort(arr, len);
     OutPut(arr, len);
 

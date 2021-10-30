@@ -2,11 +2,11 @@
 
 using namespace std;
 /**
- * ð������
- * ����:ÿ�ζ��ӵ�һ����ʼ����,���ڵıȽϽ����ķŵ�����,ÿ�Ƚ�һ�����ľͷŵ����
- * ����,ÿ�ζ������һ����ʼ����,���ڵıȽϽ����ķŵ���ǰ��,ÿ�Ƚ�һ�����ľͷŵ�ǰ��
+ * 冒泡排序
+ * 升序:每次都从第一个开始排序,相邻的比较将最大的放到最后边,每比较一次最大的就放到后边
+ * 降序,每次都从最后一个开始排序,相邻的比较将最大的放到最前边,每比较一次最大的就放到前边
  */
-//�������
+//输出函数
 void OutPut(int *arr, int len) {
     for (int i = 0; i < len; i++) {
         cout << arr[i] << "\t";
@@ -14,57 +14,57 @@ void OutPut(int *arr, int len) {
     cout << endl;
 }
 
-//ð������
-void func1(int *arr, int len) {  //��������ͷ��ָ�룬����ֱ�Ӵ����������֣���Ϊ�������־���ָ��
-    //��������
+//冒泡排序
+void func1(int *arr, int len) {  //传入数组头的指针，可以直接传入数组名字，因为数组名字就是指针
+    //升序排列
     int sum = 0;
-    for (int i = 0; i < len - 1; i++) {     //�Ƚ�len-1��,���糤��Ϊ10,len-1=9,��0-8һ��9��
-        //�ж����޽����ı�־
+    for (int i = 0; i < len - 1; i++) {     //比较len-1次,比如长度为10,len-1=9,从0-8一共9次
+        //判断有无交换的标志
         bool flag = true;
-        for (int j = 0; j < len - 1 - i; j++) { //jÿ�ζ��ӵ�һ����ʼ��,��С��len-1-I,��һ�α�9��,�ڶ��α�8��,�Դ�����
-            if (arr[j] > arr[j + 1]) {         //����������Լ�С�ͽ���λ��
+        for (int j = 0; j < len - 1 - i; j++) { //j每次都从第一个开始比,到小于len-1-I,第一次比9次,第二次比8次,以此类推
+            if (arr[j] > arr[j + 1]) {         //遇到后面比自己小就交换位置
                 flag = false;
                 int tmp = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = tmp;
             }
         }
-        //û�з���������˵���Ѿ��źã��˳�����
+        //没有发生交换，说明已经排好，退出排序
         if (flag) {
             break;
         }
         sum++;
     }
-    cout << sum << "��" << endl;
-    cout << "�������У�";
+    cout << sum << "次" << endl;
+    cout << "升序排列：";
     OutPut(arr, len);
 
-    //��������
-    for (int i = 0; i < len - 1; i++) {      //�Ƚ�len-1��,���糤��Ϊ10,len-1=9,��0-8һ��9��
-        //�ж����޽����ı�־
+    //降序排列
+    for (int i = 0; i < len - 1; i++) {      //比较len-1次,比如长度为10,len-1=9,从0-8一共9次
+        //判断有无交换的标志
         bool flag = true;
-        //������,������Եõ���һ��������
-        for (int j = len - 1; j > i; j--) {  //jÿ�ζ������һ����ʼ��,��С��len-1-I,��һ�α�9��,�ڶ��α�8��,�Դ�����
-            if (arr[j] > arr[j - 1]) {     //����ǰ����Լ�С�ͽ���λ��
+        //倒着排,降序可以得到第一个是最大的
+        for (int j = len - 1; j > i; j--) {  //j每次都从最后一个开始比,到小于len-1-I,第一次比9次,第二次比8次,以此类推
+            if (arr[j] > arr[j - 1]) {     //遇到前面比自己小就交换位置
                 flag = false;
                 int tmp = arr[j];
                 arr[j] = arr[j - 1];
                 arr[j - 1] = tmp;
             }
         }
-        //û�з���������˵���Ѿ��źã��˳�����
+        //没有发生交换，说明已经排好，退出排序
         if (flag) {
             break;
         }
     }
-    cout << "�������У�";
+    cout << "降序排列：";
     OutPut(arr, len);
 }
 
 int main() {
     int arr[] = {0, 2, 5, 4, 8, 6, 9, 54, 1, 8};
     int len = sizeof(arr) / sizeof(arr[0]);
-    func1(arr, len);   //����������һ��ָ��
+    func1(arr, len);   //数组名字是一个指针
 
     return 0;
 }

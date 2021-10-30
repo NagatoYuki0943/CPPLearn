@@ -1,12 +1,12 @@
 #include <iostream>
 
 using namespace std;
-///Ñ¡ÔñÅÅÐò
+///é€‰æ‹©æŽ’åº
 /**
- *ÏÈÈÏÎªµÚÒ»¸öÊÇ×îÐ¡µÄ»òÕß×î´óµÄ,´ÓÏÂÒ»¸ö¿ªÊ¼ÕÒ,Èç¹ûÕÒµ½±ÈµÚÒ»¸öÐ¡µÄ»òÕß´óµÄ,½»»»Á½ÕßÎ»ÖÃ
+ *å…ˆè®¤ä¸ºç¬¬ä¸€ä¸ªæ˜¯æœ€å°çš„æˆ–è€…æœ€å¤§çš„,ä»Žä¸‹ä¸€ä¸ªå¼€å§‹æ‰¾,å¦‚æžœæ‰¾åˆ°æ¯”ç¬¬ä¸€ä¸ªå°çš„æˆ–è€…å¤§çš„,äº¤æ¢ä¸¤è€…ä½ç½®
  */
 
-//Êä³ö
+//è¾“å‡º
 void OutPut(int a[], int len) {
     for (int i = 0; i < len; i++) {
         cout << a[i] << " ";
@@ -14,14 +14,14 @@ void OutPut(int a[], int len) {
     cout << endl;
 }
 
-//ÉýÐò
+//å‡åº
 void UpSort(int a[], int len) {
-    cout << "ÉýÐòÅÅÁÐ" << endl;
+    cout << "å‡åºæŽ’åˆ—" << endl;
     int min;
-    for (int i = 0; i < len - 1; i++) {   // i´Ó0¿ªÊ¼,µ½Ð¡ÓÚlen-1½áÊø
+    for (int i = 0; i < len - 1; i++) {   // iä»Ž0å¼€å§‹,åˆ°å°äºŽlen-1ç»“æŸ
         min = i;
-        for (int j = i + 1; j < len; j++) { //j´Ói+1¿ªÊ¼,µ½len-1½áÊø
-            if (a[min] > a[j]) {        //ºÍ½µÐòÎ¨Ò»µÄÇø±ð
+        for (int j = i + 1; j < len; j++) { //jä»Ži+1å¼€å§‹,åˆ°len-1ç»“æŸ
+            if (a[min] > a[j]) {        //å’Œé™åºå”¯ä¸€çš„åŒºåˆ«
                 min = j;
             }
         }
@@ -34,14 +34,14 @@ void UpSort(int a[], int len) {
     OutPut(a, len);
 }
 
-//½µÐò
+//é™åº
 void DownSort(int a[], int len) {
-    cout << "½µÐòÅÅÁÐ" << endl;
+    cout << "é™åºæŽ’åˆ—" << endl;
     int max;
-    for (int i = 0; i < len - 1; i++) {    // i´Ó0¿ªÊ¼,µ½Ð¡ÓÚlen-1½áÊø
+    for (int i = 0; i < len - 1; i++) {    // iä»Ž0å¼€å§‹,åˆ°å°äºŽlen-1ç»“æŸ
         max = i;
-        for (int j = i + 1; j < len; j++) {  //j´Ói+1¿ªÊ¼,µ½len-1½áÊø
-            if (a[max] < a[j]) {         //ºÍÉýÐòÎ¨Ò»µÄÇø±ð
+        for (int j = i + 1; j < len; j++) {  //jä»Ži+1å¼€å§‹,åˆ°len-1ç»“æŸ
+            if (a[max] < a[j]) {         //å’Œå‡åºå”¯ä¸€çš„åŒºåˆ«
                 max = j;
             }
         }
