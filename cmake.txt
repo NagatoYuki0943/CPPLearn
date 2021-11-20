@@ -1,0 +1,36 @@
+#声明要求的cmake最低版本
+cmake_minimum_required( VERSION 2.8 )
+
+#声明一个cmake工程
+project( HelloSLAM )
+
+# 包含子项目。 多层目录 01是子目录,里面有自己的cmakelist.txt
+add_subdirectory ("01")
+
+#添加一个可执行程序
+#语法：add_executable( 程序名 源代码文件 ）
+add_executable( helloSLAM helloSLAM.cpp )
+
+#添加一个库
+#语法：add_library( 库名称 源代码文件 ），会生成 lib库名称.a（静态库）
+#语法：add_library( 库名称 SHARED 源代码文件 ），会生成 lib库名称.so （共享库）
+add_library( hello libHelloSLAM.cpp )
+
+#将可执行程序链接到库
+#语法：target_link_libraries ( 程序名 库名称 ）
+target_link_libraries ( helloSLAM hello )
+
+#指定头文件目录
+#以eigen为例，eigen的头文件目录为"/usr/include/eigen3"
+include_directories( "/usr/include/eigen3" )
+
+#CLion编译的程序是用cmake方法编译的，在windows上exe文件需要libgcc才能运行
+
+解决方法
+
+修改CMAKElist文件，添加让链接器静态链接libgcc和libstdc++的指令
+
+set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++")
+或set(CMAKE_EXE_LINKER_FLAGS "-static")
+
+程序便可以执行

@@ -1,0 +1,3 @@
+Developer Command Prompt for VS 2019
+1.切换到cpp目录
+2. cl  /d1 reportSingleClassLayout类名 文件名.cpp
