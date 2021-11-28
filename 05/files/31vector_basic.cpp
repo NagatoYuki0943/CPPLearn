@@ -29,8 +29,11 @@ using namespace std;
 //打印vector
 void printVector(vector<int> &v) {
     //begin()是第一个,end()是最后一个的下一个
-    for (vector<int>::iterator it = v.begin(); it != v.end(); it++) {
-        cout << *it << " ";
+//    for (vector<int>::iterator it = v.begin(); it != v.end(); it++) {
+//        cout << *it << " ";
+//    }
+    for (int & it : v) {
+        cout << it << " ";
     }
     cout << endl;
 }
@@ -38,13 +41,14 @@ void printVector(vector<int> &v) {
 void test01() {
     //默认构造
     vector<int> v1;
+    v1.reserve(10);
     for (int i = 0; i < 10; ++i) {
         v1.push_back(i);
     }
     printVector(v1);    //0 1 2 3 4 5 6 7 8 9
 
     //通过区间方式添加
-    //begin()是第一个,end()是最后一个的下一个
+    //begin()是第0个,end()是最后一个的下一个
     vector<int> v2(v1.begin() + 1, v1.end() - 1);
     printVector(v2);    //1 2 3 4 5 6 7 8
 

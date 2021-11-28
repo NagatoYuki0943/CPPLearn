@@ -1,3 +1,0 @@
-C:\ABC\JetBrains\CLion\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\Speech_contest_process_management_system.dir/objects.a
-D:\C++\mingw64\bin\ar.exe cr CMakeFiles\Speech_contest_process_management_system.dir/objects.a @CMakeFiles\Speech_contest_process_management_system.dir\objects1.rsp
-D:\C++\mingw64\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\Speech_contest_process_management_system.dir/objects.a -Wl,--no-whole-archive  -o Speech_contest_process_management_system.exe -Wl,--out-implib,libSpeech_contest_process_management_system.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Speech_contest_process_management_system.dir\linklibs.rsp

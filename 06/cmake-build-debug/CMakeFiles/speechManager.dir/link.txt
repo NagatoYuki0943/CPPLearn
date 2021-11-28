@@ -1,3 +1,0 @@
-C:\ABC\JetBrains\CLion\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\speechManager.dir/objects.a
-D:\C++\mingw64\bin\ar.exe cr CMakeFiles\speechManager.dir/objects.a @CMakeFiles\speechManager.dir\objects1.rsp
-D:\C++\mingw64\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\speechManager.dir/objects.a -Wl,--no-whole-archive  -o speechManager.exe -Wl,--out-implib,libspeechManager.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\speechManager.dir\linklibs.rsp
