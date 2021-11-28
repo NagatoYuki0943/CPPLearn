@@ -1,3 +1,0 @@
-D:/C++/Clion/07/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/C++/Clion/07/cmake-build-debug/CMakeFiles/07.dir
-D:/C++/Clion/07/cmake-build-debug/CMakeFiles/rebuild_cache.dir

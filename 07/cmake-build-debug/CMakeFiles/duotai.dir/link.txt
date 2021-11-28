@@ -1,3 +1,0 @@
-C:\ABC\JetBrains\CLion\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\duotai.dir/objects.a
-D:\C++\mingw64\bin\ar.exe cr CMakeFiles\duotai.dir/objects.a @CMakeFiles\duotai.dir\objects1.rsp
-D:\C++\mingw64\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\duotai.dir/objects.a -Wl,--no-whole-archive  -o duotai.exe -Wl,--out-implib,libduotai.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\duotai.dir\linklibs.rsp
