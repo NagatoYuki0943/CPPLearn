@@ -28,7 +28,7 @@ void test01() {
 
     //通过迭代器访问数据中的数据
     vector<int>::iterator itBegin = v.begin();  //起始迭代器,指向容器中的第一个元素
-    vector<int>::iterator itEnd = v.end();  //容器中最后一个元素的下一个位置
+    auto itEnd = v.end();  //容器中最后一个元素的下一个位置
 
     //第一种遍历,把迭代器当做指针
     while (itBegin != itEnd) {
@@ -39,7 +39,7 @@ void test01() {
     cout << "--------------------" << endl;
 
     //第二种遍历方式
-    for (vector<int>::iterator it = v.begin(); it != v.end(); it++) {
+    for (auto it = v.begin(); it != v.end(); it++) {
         //*it是上面的<>中的数据类型
         cout << *it << " ";     //10 20 30 40
     }

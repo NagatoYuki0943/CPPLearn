@@ -38,6 +38,13 @@ void test01() {
         //直接使用指针效果也一样
         cout << "name : " << it->m_Name << " age : " << it->m_Age << endl;  //name : aaa age : 60 ...
     }
+    //另一种写法
+    for (auto & it : v) {
+        //*it解引用是Person *it是上面的<>中的数据类型
+        //cout << "name : " << (*it).m_Name << " age : " << (*it).m_Age << endl;  //name : aaa age : 60 ...
+        //直接使用指针效果也一样
+        cout << "name : " << it.m_Name << " age : " << it.m_Age << endl;  //name : aaa age : 60 ...
+    }
     cout << "----------------------------" << endl;
 }
 
