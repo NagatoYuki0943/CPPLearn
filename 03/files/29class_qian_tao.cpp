@@ -4,22 +4,22 @@
 using namespace std;
 
 /**
- * c++ÖÐµÄ³ÉÔ±¿ÉÒÔÊ¹ÁíÒ»¸öÀàÖÐµÄ¶ÔÏó,³ÉÎª¶ÔÏó³ÉÔ±
- * ÏÈ¹¹ÔìÆäËûµÄclass,ºó¹¹Ôì×Ô¼ºµÄclass    ÏÈ¹¹½¨Phone,ºó¹¹½¨person    ÏÈÄÚºóÍâ
- * ÏÈÊÍ·Å×Ô¼ºµÄclass,ºóÊÍ·ÅÆäËûµÄclass    ÏÈÎö¹¹Person,ºóÎö¹¹Phone    ÏÈÍâºóÄÚ
+ * c++ä¸­çš„æˆå‘˜å¯ä»¥ä½¿å¦ä¸€ä¸ªç±»ä¸­çš„å¯¹è±¡,æˆä¸ºå¯¹è±¡æˆå‘˜
+ * å…ˆæž„é€ å…¶ä»–çš„class,åŽæž„é€ è‡ªå·±çš„class    å…ˆæž„å»ºPhone,åŽæž„å»ºperson    å…ˆå†…åŽå¤–
+ * å…ˆé‡Šæ”¾è‡ªå·±çš„class,åŽé‡Šæ”¾å…¶ä»–çš„class    å…ˆæžæž„Person,åŽæžæž„Phone    å…ˆå¤–åŽå†…
  */
 class Phone {
-    //Ãû×Ö
+    //åå­—
 public:
     Phone(string pName) : m_PName(pName) {
-        cout << "PhoneµÄ¹¹Ôìº¯Êýµ÷ÓÃ" << endl;
+        cout << "Phoneçš„æž„é€ å‡½æ•°è°ƒç”¨" << endl;
     }
 
     ~Phone() {
-        cout << "PhoneµÄÎö¹¹º¯Êýµ÷ÓÃ" << endl;
+        cout << "Phoneçš„æžæž„å‡½æ•°è°ƒç”¨" << endl;
     }
 
-    //Æ·ÅÆ
+    //å“ç‰Œ
     string m_PName;
 
 
@@ -27,23 +27,23 @@ public:
 
 class Person {
 public:
-    Person(string name, string pName) : m_Name(name), m_Phone(pName) { //ºóÃæÏàµ±ÓÚ Phone m_Phone=pName ÒþÊ½×ª»»·¨
-        cout << "PersonµÄ¹¹Ôìº¯Êýµ÷ÓÃ" << endl;
+    Person(string name, string pName) : m_Name(name), m_Phone(pName) { //åŽé¢ç›¸å½“äºŽ Phone m_Phone=pName éšå¼è½¬æ¢æ³•
+        cout << "Personçš„æž„é€ å‡½æ•°è°ƒç”¨" << endl;
     }
 
     ~Person() {
-        cout << "PersonµÄÎö¹¹º¯Êýµ÷ÓÃ" << endl;
+        cout << "Personçš„æžæž„å‡½æ•°è°ƒç”¨" << endl;
     }
 
-    //ÐÕÃû
+    //å§“å
     string m_Name;
-    //ÊÖ»ú
+    //æ‰‹æœº
     Phone m_Phone;
 };
 
 void test01() {
-    Person p("Ð¡Ã÷", "Æ»¹û");
-    cout << p.m_Name << "ÄÃ×Å" << p.m_Phone.m_PName << "ÊÖ»ú" << endl;
+    Person p("å°æ˜Ž", "è‹¹æžœ");
+    cout << p.m_Name << "æ‹¿ç€" << p.m_Phone.m_PName << "æ‰‹æœº" << endl;
 
 }
 

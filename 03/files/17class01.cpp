@@ -3,35 +3,35 @@
 
 using namespace std;
 /**
- * C++ÀàÖÐµÄÊôÐÔºÍÐÐÎª Í³³ÆÎª³ÉÔ±
- * ÊôÐÔ:³ÉÔ±ÊôÐÔ ³ÉÔ±±äÁ¿
- * ÐÐÎª:³ÉÔ±º¯Êý ³ÉÔ±·½·¨
- * C#ÖÐÓÐÊôÐÔ,·½·¨ºÍÊÂ¼þ
- * PHPÖÐÓÐÊôÐÔ,·½·¨ºÍ³£Á¿(³£Á¿Ö»ÄÜÓÉÀà·ÃÎÊ)
+ * C++ç±»ä¸­çš„å±žæ€§å’Œè¡Œä¸º ç»Ÿç§°ä¸ºæˆå‘˜
+ * å±žæ€§:æˆå‘˜å±žæ€§ æˆå‘˜å˜é‡
+ * è¡Œä¸º:æˆå‘˜å‡½æ•° æˆå‘˜æ–¹æ³•
+ * C#ä¸­æœ‰å±žæ€§,æ–¹æ³•å’Œäº‹ä»¶
+ * PHPä¸­æœ‰å±žæ€§,æ–¹æ³•å’Œå¸¸é‡(å¸¸é‡åªèƒ½ç”±ç±»è®¿é—®)
  */
 
-//Éè¼ÆÒ»¸öÑ§ÉúÀà,ÊôÐÔÓÐÐÕÃûºÍÑ§ºÅ,¿ÉÒÔ¸øÐÕÃûºÍÑ§ºÅ¸³Öµ,¿ÉÒÔÏÔÊ¾Ñ§ÉúµÄÐÕÃûºÍÑ§ºÅ
+//è®¾è®¡ä¸€ä¸ªå­¦ç”Ÿç±»,å±žæ€§æœ‰å§“åå’Œå­¦å·,å¯ä»¥ç»™å§“åå’Œå­¦å·èµ‹å€¼,å¯ä»¥æ˜¾ç¤ºå­¦ç”Ÿçš„å§“åå’Œå­¦å·
 class student {
-public://¹«¹²È¨ÏÞ
+public://å…¬å…±æƒé™
     int s_id;
     string s_name;
 
-    //¸øidÐÕÃû¸³Öµ
+    //ç»™idå§“åèµ‹å€¼
     void setid_name(int id, string name) {
         s_id = id;
         s_name = name;
     }
 
-    //Êä³ö
+    //è¾“å‡º
     void showStudent() {
-        cout << "Ñ§ÉúIDÊÇ:" << s_id << " ÐÕÃûÊÇ:" << s_name << endl;
+        cout << "å­¦ç”ŸIDæ˜¯:" << s_id << " å§“åæ˜¯:" << s_name << endl;
     }
 };
 
 int main() {
-    //´´½¨¾ßÌåÑ§Éú
+    //åˆ›å»ºå…·ä½“å­¦ç”Ÿ
     student xiaoming;
-    xiaoming.setid_name(5, "Ð¡Ã÷");
+    xiaoming.setid_name(5, "å°æ˜Ž");
     xiaoming.showStudent();
 
     system("pause");

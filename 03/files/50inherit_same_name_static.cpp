@@ -3,18 +3,18 @@
 using namespace std;
 
 /**
- * ¾²Ì¬³ÉÔ±ºÍ·Ç¾²Ì¬³ÉÔ±³öÏÖÍ¬Ãû,´¦Àí·½Ê½Ò»Ñù
- * ¾²Ì¬³ÉÔ±:¾²Ì¬Êý¾Ý:ËùÓÐ¶ÔÏó¹²ÏíÍ¬Ò»·ÝÊý¾Ý;ÀàÄÚÉùÃ÷,ÀàÍâ³õÊ¼»¯;±àÒë½×¶Î·ÖÅäÄÚ´æ
- *        ¾²Ì¬³ÉÔ±º¯Êý:ËùÓÐ¶ÔÏó¹²ÏíÍ¬Ò»·ÝÊý¾Ý;·ÃÎÊ¾²Ì¬³ÉÔ±±äÁ¿
- *      ·ÃÎÊ×ÓÀàÍ¬Ãû³ÉÔ±,Ö±½Ó·ÃÎÊ¼´¿É
- *      ·ÃÎÊ¸¸Àà³ÉÔ±,ÐèÒª¼Ó×÷ÓÃÓò
+ * é™æ€æˆå‘˜å’Œéžé™æ€æˆå‘˜å‡ºçŽ°åŒå,å¤„ç†æ–¹å¼ä¸€æ ·
+ * é™æ€æˆå‘˜:é™æ€æ•°æ®:æ‰€æœ‰å¯¹è±¡å…±äº«åŒä¸€ä»½æ•°æ®;ç±»å†…å£°æ˜Ž,ç±»å¤–åˆå§‹åŒ–;ç¼–è¯‘é˜¶æ®µåˆ†é…å†…å­˜
+ *        é™æ€æˆå‘˜å‡½æ•°:æ‰€æœ‰å¯¹è±¡å…±äº«åŒä¸€ä»½æ•°æ®;è®¿é—®é™æ€æˆå‘˜å˜é‡
+ *      è®¿é—®å­ç±»åŒåæˆå‘˜,ç›´æŽ¥è®¿é—®å³å¯
+ *      è®¿é—®çˆ¶ç±»æˆå‘˜,éœ€è¦åŠ ä½œç”¨åŸŸ
  *
- *  s.m_A        === Son::m_A        s.func()       == Son::func()         //×ÓÀà
- *  s.Base::m_A  === Son::Base::m_A  s.Base::func() == Son::Base::func()   //¸¸Àà
- *                   Ç°Ò»¸ö::ÊÇÍ¨¹ýÀàÃûSon·½Ê½·ÃÎÊ,µÚ¶þ¸ö::ÊÇ·ÃÎÊSase×÷ÓÃÓòÏÂµÄm_A
+ *  s.m_A        === Son::m_A        s.func()       == Son::func()         //å­ç±»
+ *  s.Base::m_A  === Son::Base::m_A  s.Base::func() == Son::Base::func()   //çˆ¶ç±»
+ *                   å‰ä¸€ä¸ª::æ˜¯é€šè¿‡ç±»åSonæ–¹å¼è®¿é—®,ç¬¬äºŒä¸ª::æ˜¯è®¿é—®Saseä½œç”¨åŸŸä¸‹çš„m_A
  *
- *  ×¢Òâ:Èç¹û×ÓÀàÖÐ³öÏÖºÍ¸¸ÀàÍ¬ÃûµÄº¯Êý³ÉÔ±º¯Êý,×ÓÀàµÄÍ¬Ãû³ÉÔ±»áÒþ²Øµô¸¸ÀàÖÐËùÓÐµÄÍ¬Ãûº¯Êý(ÖØÔØº¯ÊýÒ²»á±»Ó°²Ø)
- *      ÒªÓÃBase::·½Ê½·ÃÎÊ¸¸ÀàÖÐµÄÖØÔØº¯Êý
+ *  æ³¨æ„:å¦‚æžœå­ç±»ä¸­å‡ºçŽ°å’Œçˆ¶ç±»åŒåçš„å‡½æ•°æˆå‘˜å‡½æ•°,å­ç±»çš„åŒåæˆå‘˜ä¼šéšè—æŽ‰çˆ¶ç±»ä¸­æ‰€æœ‰çš„åŒåå‡½æ•°(é‡è½½å‡½æ•°ä¹Ÿä¼šè¢«å½±è—)
+ *      è¦ç”¨Base::æ–¹å¼è®¿é—®çˆ¶ç±»ä¸­çš„é‡è½½å‡½æ•°
  */
 class Base {
 public:
@@ -29,7 +29,7 @@ public:
     }
 };
 
-//ÀàÍâ³õÊ¼»¯
+//ç±»å¤–åˆå§‹åŒ–
 int Base::m_A = 100;
 
 class Son : public Base {
@@ -45,33 +45,33 @@ public:
     }
 };
 
-//ÀàÍâ³õÊ¼»¯
+//ç±»å¤–åˆå§‹åŒ–
 int Son::m_A = 200;
 
 
-///Í¬Ãû¾²Ì¬³ÉÔ±ÊôÐÔ
+///åŒåé™æ€æˆå‘˜å±žæ€§
 void test01() {
     Son s;
-    //Í¨¹ý¶ÔÏó·ÃÎÊ
-    cout << "SonÏÂ:\t" << s.m_A << endl;           //200
-    cout << "BaseÏÂ:\t" << s.Base::m_A << endl;    //100
-    //Í¨¹ýÀàÃû·ÃÎÊ
-    cout << "SonÏÂ:\t" << Son::m_A << endl;        //200
-    cout << "BaseÏÂ:\t" << Son::Base::m_A << endl; //100  Ç°Ò»¸ö::ÊÇÍ¨¹ýÀàÃûSon·½Ê½·ÃÎÊ,µÚ¶þ¸ö::ÊÇ·ÃÎÊSase×÷ÓÃÓòÏÂµÄm_A
+    //é€šè¿‡å¯¹è±¡è®¿é—®
+    cout << "Sonä¸‹:\t" << s.m_A << endl;           //200
+    cout << "Baseä¸‹:\t" << s.Base::m_A << endl;    //100
+    //é€šè¿‡ç±»åè®¿é—®
+    cout << "Sonä¸‹:\t" << Son::m_A << endl;        //200
+    cout << "Baseä¸‹:\t" << Son::Base::m_A << endl; //100  å‰ä¸€ä¸ª::æ˜¯é€šè¿‡ç±»åSonæ–¹å¼è®¿é—®,ç¬¬äºŒä¸ª::æ˜¯è®¿é—®Saseä½œç”¨åŸŸä¸‹çš„m_A
 
 }
 
-//Í¬Ãû¾²Ì¬º¯Êý
+//åŒåé™æ€å‡½æ•°
 void test02() {
     Son s;
-    //Í¨¹ý¶ÔÏó·ÃÎÊ
+    //é€šè¿‡å¯¹è±¡è®¿é—®
     s.func();
     s.Base::func();
-    s.Base::func(5);      //·ÃÎÊ¸¸ÀàÖØÔØº¯Êý
-    //Í¨¹ýÀàÃû·ÃÎÊ
+    s.Base::func(5);      //è®¿é—®çˆ¶ç±»é‡è½½å‡½æ•°
+    //é€šè¿‡ç±»åè®¿é—®
     Son::func();
     Son::Base::func();
-    Son::Base::func(5);   //·ÃÎÊ¸¸ÀàÖØÔØº¯Êý
+    Son::Base::func(5);   //è®¿é—®çˆ¶ç±»é‡è½½å‡½æ•°
 }
 
 int main() {

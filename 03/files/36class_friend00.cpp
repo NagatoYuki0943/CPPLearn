@@ -3,39 +3,39 @@
 
 using namespace std;
 /**
- * ÔÚ³ÌÐòÀï,ÓÐÐ©Ë½ÓÐÊôÐÔ,Ò²ÏëÈÃÀàÍâÌØÊâµÄÒ»Ð©º¯Êý»òÕßÀà½øÐÐ·ÃÎÊ,¾ÍÐèÒªÓÃµ½ÓÃµ½ÓÑÔªµÄ¼¼Êõ
- * ÓÑÔªµÄÄ¿µÄÊÇÈÃÒ»¸öº¯Êý»òÕßÀà·ÃÎÊÁíÒ»¸öÀàµÄË½ÓÐ³ÉÔ±
- * ¹Ø¼ü×Ö:friend
+ * åœ¨ç¨‹åºé‡Œ,æœ‰äº›ç§æœ‰å±žæ€§,ä¹Ÿæƒ³è®©ç±»å¤–ç‰¹æ®Šçš„ä¸€äº›å‡½æ•°æˆ–è€…ç±»è¿›è¡Œè®¿é—®,å°±éœ€è¦ç”¨åˆ°ç”¨åˆ°å‹å…ƒçš„æŠ€æœ¯
+ * å‹å…ƒçš„ç›®çš„æ˜¯è®©ä¸€ä¸ªå‡½æ•°æˆ–è€…ç±»è®¿é—®å¦ä¸€ä¸ªç±»çš„ç§æœ‰æˆå‘˜
+ * å…³é”®å­—:friend
  *
- * ÓÑÔªµÄÈýÖÖÊµÏÖ:
- *      È«¾Öº¯Êý×öÓÑÔª(²»ÔÚÈÎºÎÀà»òÕßº¯ÊýÖÐ),Ò²¿ÉÒÔ°ÑÕû¸öº¯ÊýÐ´ÔÚclassÀïÃæµ±×öÓÑÔªº¯Êý
- *      Àà×öÓÑÔª(ÆäËûµÄÀà)
- *      ³ÉÔ±º¯Êý×öÓÑÔª
+ * å‹å…ƒçš„ä¸‰ç§å®žçŽ°:
+ *      å…¨å±€å‡½æ•°åšå‹å…ƒ(ä¸åœ¨ä»»ä½•ç±»æˆ–è€…å‡½æ•°ä¸­),ä¹Ÿå¯ä»¥æŠŠæ•´ä¸ªå‡½æ•°å†™åœ¨classé‡Œé¢å½“åšå‹å…ƒå‡½æ•°
+ *      ç±»åšå‹å…ƒ(å…¶ä»–çš„ç±»)
+ *      æˆå‘˜å‡½æ•°åšå‹å…ƒ
  */
 
-//½¨ÖþÎï
+//å»ºç­‘ç‰©
 class Building {
-    ///È«¾Öº¯Êý×öÓÑÔª,ÔÚÀàÖÐÉùÃ÷,GoodFriend¿ÉÒÔ·ÃÎÊÀàÖÐµÄË½ÓÐ³ÉÔ±,²»ÓÃ¹Ü×÷ÓÃÓò
+    ///å…¨å±€å‡½æ•°åšå‹å…ƒ,åœ¨ç±»ä¸­å£°æ˜Ž,GoodFriendå¯ä»¥è®¿é—®ç±»ä¸­çš„ç§æœ‰æˆå‘˜,ä¸ç”¨ç®¡ä½œç”¨åŸŸ
     friend void GoodFriend(Building &build);
 
 public:
-    Building() : m_SittingRoom("¿ÍÌü"), m_Bedroom("ÎÔÊÒ") {
+    Building() : m_SittingRoom("å®¢åŽ…"), m_Bedroom("å§å®¤") {
     }
 
-    string m_SittingRoom; //¿ÍÌü
+    string m_SittingRoom; //å®¢åŽ…
 private:
-    string m_Bedroom;     //ÎÔÊÒ
+    string m_Bedroom;     //å§å®¤
 };
 
-//È«¾Öº¯Êý
+//å…¨å±€å‡½æ•°
 void GoodFriend(Building &build) {
-    cout << "ºÃÅóÓÑµÄÈ«¾Öº¯ÊýÕýÔÚ·ÃÎÊ:" << build.m_SittingRoom << endl;
-    cout << "ºÃÅóÓÑµÄÈ«¾Öº¯ÊýÕýÔÚ·ÃÎÊ:" << build.m_Bedroom << endl;
+    cout << "å¥½æœ‹å‹çš„å…¨å±€å‡½æ•°æ­£åœ¨è®¿é—®:" << build.m_SittingRoom << endl;
+    cout << "å¥½æœ‹å‹çš„å…¨å±€å‡½æ•°æ­£åœ¨è®¿é—®:" << build.m_Bedroom << endl;
 }
 
 void test01() {
     Building building;
-    GoodFriend(building); //´«Èëbuild¶ÔÏó
+    GoodFriend(building); //ä¼ å…¥buildå¯¹è±¡
 
 }
 

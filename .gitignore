@@ -5,4 +5,5 @@
 05/cmake-build-debug/*
 06/cmake-build-debug/*
 07/cmake-build-debug/*
+08/cmake-build-debug/*
 !.gitignore

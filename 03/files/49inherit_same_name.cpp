@@ -2,30 +2,30 @@
 
 using namespace std;
 /**
- * ·ÃÎÊ×ÓÀàÍ¬Ãû³ÉÔ±,Ö±½Ó·ÃÎÊ¼´¿É
- * ·ÃÎÊ¸¸ÀàÍ¬Ãû³ÉÔ±,ÐèÒª¼Ó×÷ÓÃÓò
+ * è®¿é—®å­ç±»åŒåæˆå‘˜,ç›´æŽ¥è®¿é—®å³å¯
+ * è®¿é—®çˆ¶ç±»åŒåæˆå‘˜,éœ€è¦åŠ ä½œç”¨åŸŸ
  *      class Son
  *      class Son : public Base
- *      Í¨¹ý×ÓÀà¶ÔÏó·ÃÎÊ¸¸ÀàÖÐÍ¬Ãû³ÉÔ±ÊôÐÔ  s1.Base::m_A
- *      Í¨¹ý×ÓÀà¶ÔÏóµ÷ÓÃ¸¸ÀàÍ¬Ãûº¯Êý       s2.Base::func();
- *      µ÷ÓÃ¸¸ÀàÖÐµÄÖØÔØº¯Êý              s2.Base::func(10);
- *   Èç¹û×ÓÀàÖÐ³öÏÖºÍ¸¸ÀàÍ¬ÃûµÄº¯Êý³ÉÔ±º¯Êý,×ÓÀàµÄÍ¬Ãû³ÉÔ±»áÒþ²Øµô¸¸ÀàÖÐËùÓÐµÄÍ¬Ãûº¯Êý(ÖØÔØº¯ÊýÒ²»á±»Ó°²Ø)
- *   ÒªÓÃBase::·½Ê½·ÃÎÊ¸¸ÀàÖÐµÄÖØÔØº¯Êý
+ *      é€šè¿‡å­ç±»å¯¹è±¡è®¿é—®çˆ¶ç±»ä¸­åŒåæˆå‘˜å±žæ€§  s1.Base::m_A
+ *      é€šè¿‡å­ç±»å¯¹è±¡è°ƒç”¨çˆ¶ç±»åŒåå‡½æ•°       s2.Base::func();
+ *      è°ƒç”¨çˆ¶ç±»ä¸­çš„é‡è½½å‡½æ•°              s2.Base::func(10);
+ *   å¦‚æžœå­ç±»ä¸­å‡ºçŽ°å’Œçˆ¶ç±»åŒåçš„å‡½æ•°æˆå‘˜å‡½æ•°,å­ç±»çš„åŒåæˆå‘˜ä¼šéšè—æŽ‰çˆ¶ç±»ä¸­æ‰€æœ‰çš„åŒåå‡½æ•°(é‡è½½å‡½æ•°ä¹Ÿä¼šè¢«å½±è—)
+ *   è¦ç”¨Base::æ–¹å¼è®¿é—®çˆ¶ç±»ä¸­çš„é‡è½½å‡½æ•°
  */
 
 /**
- * ×¢Òâ
- * (1)  PHPÃ»ÓÐÍ¬Ãûº¯Êý,ËùÒÔ×ÓÀà³öÏÖÍ¬Ãûº¯Êý¾ÍÊÇÖØÐ´,C++ºÍC#³öÏÖÍ¬Ãûº¯ÊýËãÊÇÒþ²Ø,Ê¹ÓÃÁËvirtual»òabstract²ÅÊÇÖØÐ´
- *      PHP×ÓÀà·½·¨ÖØÐ´¸¸Àà·½·¨²»ÄÜ±È¸¸Àà¸üÑÏ¸ñ,¼´¸¸Àà·½·¨Èç¹ûÊÇpublic,×ÓÀà·½·¨±ØÐëÊÇpublic;¸¸Àà·½·¨Èç¹ûÊÇprotected,×ÓÀà·½·¨¿ÉÒÔÊ¹public»òprotected
- *      C++ÖÐÃ»ÓÐÕâÌõ¹æÔò
- *      C#Ê¹ÓÃvirtual/abstractºÍoverrideÖØÐ´Ê±²»ÄÜÐÞ¸Ä·ÃÎÊÐÞÊÎ·û
+ * æ³¨æ„
+ * (1)  PHPæ²¡æœ‰åŒåå‡½æ•°,æ‰€ä»¥å­ç±»å‡ºçŽ°åŒåå‡½æ•°å°±æ˜¯é‡å†™,C++å’ŒC#å‡ºçŽ°åŒåå‡½æ•°ç®—æ˜¯éšè—,ä½¿ç”¨äº†virtualæˆ–abstractæ‰æ˜¯é‡å†™
+ *      PHPå­ç±»æ–¹æ³•é‡å†™çˆ¶ç±»æ–¹æ³•ä¸èƒ½æ¯”çˆ¶ç±»æ›´ä¸¥æ ¼,å³çˆ¶ç±»æ–¹æ³•å¦‚æžœæ˜¯public,å­ç±»æ–¹æ³•å¿…é¡»æ˜¯public;çˆ¶ç±»æ–¹æ³•å¦‚æžœæ˜¯protected,å­ç±»æ–¹æ³•å¯ä»¥ä½¿publicæˆ–protected
+ *      C++ä¸­æ²¡æœ‰è¿™æ¡è§„åˆ™
+ *      C#ä½¿ç”¨virtual/abstractå’Œoverrideé‡å†™æ—¶ä¸èƒ½ä¿®æ”¹è®¿é—®ä¿®é¥°ç¬¦
  *
- * (2)  PHP7ÒªÇó±»ÖØÐ´µÄ·½·¨±ØÐëÓë¸¸Àà±£³Ö²ÎÊýÒ»ÖÂ(ÊýÁ¿ºÍÀàÐÍ)
- *      C++ÖÐÃ»ÓÐÕâÌõ¹æÔò
- *      C#Ê¹ÓÃvirtual/abstractºÍoverrideÖØÐ´Ê±Ò²Òª²ÎÊýÒ»ÖÂ(ÊýÁ¿ºÍÀàÐÍ),²»ÊÇÖØÐ´¾ÍÃ»ÎÊÌâ
- *      C#Ê¹ÓÃ¸²¸Ç²»ÊÇÖØÐ´,(¸¸ÀàÎÞ²ÎÊý,×ÓÀàÓÐ²ÎÊý)²»¸ø²ÎÊýµ÷ÓÃ¸¸Àà·½·¨,¸ø²ÎÊýµ÷ÓÃ×ÓÀà·½·¨
+ * (2)  PHP7è¦æ±‚è¢«é‡å†™çš„æ–¹æ³•å¿…é¡»ä¸Žçˆ¶ç±»ä¿æŒå‚æ•°ä¸€è‡´(æ•°é‡å’Œç±»åž‹)
+ *      C++ä¸­æ²¡æœ‰è¿™æ¡è§„åˆ™
+ *      C#ä½¿ç”¨virtual/abstractå’Œoverrideé‡å†™æ—¶ä¹Ÿè¦å‚æ•°ä¸€è‡´(æ•°é‡å’Œç±»åž‹),ä¸æ˜¯é‡å†™å°±æ²¡é—®é¢˜
+ *      C#ä½¿ç”¨è¦†ç›–ä¸æ˜¯é‡å†™,(çˆ¶ç±»æ— å‚æ•°,å­ç±»æœ‰å‚æ•°)ä¸ç»™å‚æ•°è°ƒç”¨çˆ¶ç±»æ–¹æ³•,ç»™å‚æ•°è°ƒç”¨å­ç±»æ–¹æ³•
  *
- *  phpÊ¹ÓÃ parent::¸¸Àà·½·¨() µ÷ÓÃ¸¸Àà·½·¨,ÎÞÂÛ¾²Ì¬,¶¯Ì¬¶¼Ê¹ÓÃparent::
+ *  phpä½¿ç”¨ parent::çˆ¶ç±»æ–¹æ³•() è°ƒç”¨çˆ¶ç±»æ–¹æ³•,æ— è®ºé™æ€,åŠ¨æ€éƒ½ä½¿ç”¨parent::
  */
 
 class Base {
@@ -35,12 +35,12 @@ public:
     }
 
     void func() {
-        cout << "Base - func()µ÷ÓÃ" << endl;
+        cout << "Base - func()è°ƒç”¨" << endl;
     }
 
-    //·¢Éúº¯ÊýÖØÔØ
+    //å‘ç”Ÿå‡½æ•°é‡è½½
     void func(int a) {
-        cout << "Base - func(int a)µ÷ÓÃ" << endl;
+        cout << "Base - func(int a)è°ƒç”¨" << endl;
     }
 
     int m_A;
@@ -53,26 +53,26 @@ public:
     }
 
     void func() {
-        cout << "Son - func()µ÷ÓÃ" << endl;
+        cout << "Son - func()è°ƒç”¨" << endl;
     }
 
     int m_A;
 };
 
-//Í¬Ãû³ÉÔ±ÊôÐÔ´¦Àí·½Ê½
+//åŒåæˆå‘˜å±žæ€§å¤„ç†æ–¹å¼
 void test01() {
     Son s1;
-    cout << "m_A=" << s1.m_A << endl;         //Ä¬ÈÏ´òÓ¡×ÓÀà×ÔÉíµÄÊôÐÔ
-    cout << "Son-m_A=" << s1.Base::m_A << endl;//¸¸Àà×÷ÓÃÓò  s1.Base::m_A
+    cout << "m_A=" << s1.m_A << endl;         //é»˜è®¤æ‰“å°å­ç±»è‡ªèº«çš„å±žæ€§
+    cout << "Son-m_A=" << s1.Base::m_A << endl;//çˆ¶ç±»ä½œç”¨åŸŸ  s1.Base::m_A
 }
 
-//Í¬Ãû³ÉÔ±º¯Êýº¯Êý´¦Àí·½Ê½
+//åŒåæˆå‘˜å‡½æ•°å‡½æ•°å¤„ç†æ–¹å¼
 void test02() {
     Son s2;
-    s2.func();           //Ä¬ÈÏµ÷ÓÃ×ÓÀàº¯Êý
-    s2.Base::func();     //Ê¹ÓÃ¸¸Àà×÷ÓÃÓòµ÷ÓÃ¸¸Ààfunc()
-    ///Èç¹û×ÓÀàÖÐ³öÏÖºÍ¸¸ÀàÍ¬ÃûµÄº¯Êý³ÉÔ±º¯Êý,×ÓÀàµÄÍ¬Ãû³ÉÔ±»áÒþ²Øµô¸¸ÀàÖÐËùÓÐµÄÍ¬Ãûº¯Êý(ÖØÔØº¯ÊýÒ²»á±»Òþ²Ø)
-    ///ÒªÓÃBase::·½Ê½·ÃÎÊ¸¸ÀàÖÐµÄÖØÔØº¯Êý
+    s2.func();           //é»˜è®¤è°ƒç”¨å­ç±»å‡½æ•°
+    s2.Base::func();     //ä½¿ç”¨çˆ¶ç±»ä½œç”¨åŸŸè°ƒç”¨çˆ¶ç±»func()
+    ///å¦‚æžœå­ç±»ä¸­å‡ºçŽ°å’Œçˆ¶ç±»åŒåçš„å‡½æ•°æˆå‘˜å‡½æ•°,å­ç±»çš„åŒåæˆå‘˜ä¼šéšè—æŽ‰çˆ¶ç±»ä¸­æ‰€æœ‰çš„åŒåå‡½æ•°(é‡è½½å‡½æ•°ä¹Ÿä¼šè¢«éšè—)
+    ///è¦ç”¨Base::æ–¹å¼è®¿é—®çˆ¶ç±»ä¸­çš„é‡è½½å‡½æ•°
     s2.Base::func(10);
 }
 

@@ -3,21 +3,21 @@
 using namespace std;
 
 /**
- * cubeÀà,ÇóÁ¢·½ÌåµÄÌå»ıºÍÃæ»ı
- * ·Ö±ğÓÃÈ«¾Öº¯ÊıºÍ³ÉÔ±º¯ÊıÅĞ¶ÏÁ½¸öÁ¢·½ÌåÊÇ·ñÏàµÈ
+ * cubeç±»,æ±‚ç«‹æ–¹ä½“çš„ä½“ç§¯å’Œé¢ç§¯
+ * åˆ†åˆ«ç”¨å…¨å±€å‡½æ•°å’Œæˆå‘˜å‡½æ•°åˆ¤æ–­ä¸¤ä¸ªç«‹æ–¹ä½“æ˜¯å¦ç›¸ç­‰
  */
 class Cube {
-    //Ä¬ÈÏË½ÓĞ
+    //é»˜è®¤ç§æœ‰
     int m_l, m_w, m_h;
 public:
-    //ÉèÖÃ³¤¿í¸ß
+    //è®¾ç½®é•¿å®½é«˜
     void set_lmh(int l, int w, int h) {
         m_l = l;
         m_w = w;
         m_h = h;
     }
 
-    //·µ»Ø³¤¿í¸ß
+    //è¿”å›é•¿å®½é«˜
     int getL() {
         return m_l;
     }
@@ -30,19 +30,19 @@ public:
         return m_h;
     }
 
-    //Ãæ»ı
+    //é¢ç§¯
     int calculateArea() {
         return 2 * (m_l * m_w + m_l * m_h + m_w * m_h);
     }
 
-    //Ìå»ı
+    //ä½“ç§¯
     int calculateVolume() {
         return m_l * m_w * m_h;
     }
 
-    //ÀûÓÃ³ÉÔ±º¯ÊıÅĞ¶ÏÁ½¸öÁ¢·½ÌåÊÇ·ñÏàµÈ
-    //Ö»ÓÃ´«ÈëÒ»¸öCube¼´¿É,ÒòÎªÕâ¸öÀàÖĞÓĞÒ»¸öCubeÁË
-    bool isSame00(Cube &c1) {  //ÒıÓÃ´«µİ,½ÚÊ¡ÄÚ´æ
+    //åˆ©ç”¨æˆå‘˜å‡½æ•°åˆ¤æ–­ä¸¤ä¸ªç«‹æ–¹ä½“æ˜¯å¦ç›¸ç­‰
+    //åªç”¨ä¼ å…¥ä¸€ä¸ªCubeå³å¯,å› ä¸ºè¿™ä¸ªç±»ä¸­æœ‰ä¸€ä¸ªCubeäº†
+    bool isSame00(Cube &c1) {  //å¼•ç”¨ä¼ é€’,èŠ‚çœå†…å­˜
         if (c1.m_l == m_l && c1.m_w == m_w && c1.m_h == m_h) {
             return true;
         } else {
@@ -51,8 +51,8 @@ public:
     }
 };
 
-//ÀûÓÃÈ«¾Öº¯ÊıÅĞ¶ÏÁ½¸öÁ¢·½ÌåÊÇ·ñÏàµÈ
-bool isSamebyClass(Cube &c1, Cube &c2) {  //ÒıÓÃ´«µİ,½ÚÊ¡ÄÚ´æ
+//åˆ©ç”¨å…¨å±€å‡½æ•°åˆ¤æ–­ä¸¤ä¸ªç«‹æ–¹ä½“æ˜¯å¦ç›¸ç­‰
+bool isSamebyClass(Cube &c1, Cube &c2) {  //å¼•ç”¨ä¼ é€’,èŠ‚çœå†…å­˜
     if (c1.getL() == c2.getL() && c1.getW() == c2.getW() && c1.getH() == c2.getH()) {
         return true;
     } else {
@@ -62,22 +62,22 @@ bool isSamebyClass(Cube &c1, Cube &c2) {  //ÒıÓÃ´«µİ,½ÚÊ¡ÄÚ´æ
 
 int main() {
     Cube c1;
-    //ÉèÖÃ³¤¿í¸ß
+    //è®¾ç½®é•¿å®½é«˜
     c1.set_lmh(10, 20, 30);
-    cout << "Ãæ»ıÊÇ:" << c1.calculateArea() << endl;  //2200
-    cout << "Ìå»ıÊÇ:" << c1.calculateVolume() << endl;//6000
+    cout << "é¢ç§¯æ˜¯:" << c1.calculateArea() << endl;  //2200
+    cout << "ä½“ç§¯æ˜¯:" << c1.calculateVolume() << endl;//6000
     Cube c2;
     c2.set_lmh(10, 20, 30);
-    //Ê¹ÓÃÈ«¾Öº¯Êı
-    cout << "È«¾Öº¯ÊıÅĞ¶Ï:\t" << (isSamebyClass(c1, c2) == true ? "ÏàµÈ" : "²»ÏàµÈ") << endl;
-    //Ê¹ÓÃ³ÉÔ±º¯Êı,Ö»ĞèÒª´«ÈëÒ»¸ö
-    cout << "³ÉÔ±º¯ÊıÅĞ¶Ï:\t" << (c2.isSame00(c1) == true ? "ÏàµÈ" : "²»ÏàµÈ") << endl;
+    //ä½¿ç”¨å…¨å±€å‡½æ•°
+    cout << "å…¨å±€å‡½æ•°åˆ¤æ–­:\t" << (isSamebyClass(c1, c2) == true ? "ç›¸ç­‰" : "ä¸ç›¸ç­‰") << endl;
+    //ä½¿ç”¨æˆå‘˜å‡½æ•°,åªéœ€è¦ä¼ å…¥ä¸€ä¸ª
+    cout << "æˆå‘˜å‡½æ•°åˆ¤æ–­:\t" << (c2.isSame00(c1) == true ? "ç›¸ç­‰" : "ä¸ç›¸ç­‰") << endl;
 
     system("pause");
     return 0;
 }
 
-/*bool isSame00(Cube &c1,Cube &c2){  //ÒıÓÃ´«µİ,½ÚÊ¡ÄÚ´æ
+/*bool isSame00(Cube &c1,Cube &c2){  //å¼•ç”¨ä¼ é€’,èŠ‚çœå†…å­˜
     if(c1.m_l==c2.m_l && c1.m_w==c2.m_w && c1.m_h==c2.m_h){
         return true;
     }else{

@@ -2,54 +2,54 @@
 
 using namespace std;
 #define A 10
-//È«¾Ö±äÁ¿
+//å…¨å±€å˜é‡
 int g_a = 10;
 int g_b = 10;
-//constĞŞÊÎµÄÈ«¾Ö±äÁ¿,È«¾Ö³£Á¿
+//constä¿®é¥°çš„å…¨å±€å˜é‡,å…¨å±€å¸¸é‡
 const int c_g_a = 10;
 const int c_g_b = 10;
 
 
 int main() {
-    //È«¾ÖÇø
+    //å…¨å±€åŒº
 
-    //È«¾Ö±äÁ¿,¾²Ì¬±äÁ¿,³£Á¿
+    //å…¨å±€å˜é‡,é™æ€å˜é‡,å¸¸é‡
 
-    //´´½¨ÆÕÍ¨¾Ö²¿±äÁ¿,²»ÔÚÈ«¾ÖÇø
+    //åˆ›å»ºæ™®é€šå±€éƒ¨å˜é‡,ä¸åœ¨å…¨å±€åŒº
     int a = 10;
     int b = 10;
 
-    cout << "¾Ö²¿±äÁ¿aµÄµØÖ·ÊÇ:\t" << (long long) &a << endl;  //6487580    (int)&aÇ¿ÖÆ×ª»»³É10½øÖÆ,µ«ÊÇclionÒªÊ¹ÓÃlong long
-    cout << "¾Ö²¿±äÁ¿bµÄµØÖ·ÊÇ:\t" << (long long) &b << endl;  //6487576
+    cout << "å±€éƒ¨å˜é‡açš„åœ°å€æ˜¯:\t" << (long long) &a << endl;  //6487580    (int)&aå¼ºåˆ¶è½¬æ¢æˆ10è¿›åˆ¶,ä½†æ˜¯clionè¦ä½¿ç”¨long long
+    cout << "å±€éƒ¨å˜é‡bçš„åœ°å€æ˜¯:\t" << (long long) &b << endl;  //6487576
 
-    //ÄÚ´æµØÖ·¿ªÍ·Î»ÖÃ²»Í¬,ÔÚÈ«¾ÖÇø
-    cout << "È«¾Ö±äÁ¿g_aµÄµØÖ·ÊÇ:\t" << (long long) &g_a << endl;  //4206608
-    cout << "È«¾Ö±äÁ¿g_bµÄµØÖ·ÊÇ:\t" << (long long) &g_b << endl;  //4206612
+    //å†…å­˜åœ°å€å¼€å¤´ä½ç½®ä¸åŒ,åœ¨å…¨å±€åŒº
+    cout << "å…¨å±€å˜é‡g_açš„åœ°å€æ˜¯:\t" << (long long) &g_a << endl;  //4206608
+    cout << "å…¨å±€å˜é‡g_bçš„åœ°å€æ˜¯:\t" << (long long) &g_b << endl;  //4206612
 
-    //¾²Ì¬±äÁ¿,ÔÚÈ«¾ÖÇø
+    //é™æ€å˜é‡,åœ¨å…¨å±€åŒº
     static int s_a = 10;
     static int s_b = 10;
-    cout << "¾²Ì¬±äÁ¿s_aµÄµØÖ·ÊÇ:\t" << (long long) &s_a << endl;  //4206616
-    cout << "¾²Ì¬±äÁ¿s_bµÄµØÖ·ÊÇ:\t" << (long long) &s_b << endl;  //4206620
+    cout << "é™æ€å˜é‡s_açš„åœ°å€æ˜¯:\t" << (long long) &s_a << endl;  //4206616
+    cout << "é™æ€å˜é‡s_bçš„åœ°å€æ˜¯:\t" << (long long) &s_b << endl;  //4206620
 
-    //³£Á¿
-    //×Ö·û´®³£Á¿  "hello world" ,ÔÚÈ«¾ÖÇø
-    cout << "×Ö·û´®³£Á¿µÄµØÖ·Îª:\t" << (long long) &"hello world" << endl;  //4210845
+    //å¸¸é‡
+    //å­—ç¬¦ä¸²å¸¸é‡  "hello world" ,åœ¨å…¨å±€åŒº
+    cout << "å­—ç¬¦ä¸²å¸¸é‡çš„åœ°å€ä¸º:\t" << (long long) &"hello world" << endl;  //4210845
 
-    //constĞŞÊÎµÄ±äÁ¿
-    //constĞŞÊÎµÄÈ«¾Ö±äÁ¿,ÔÚÈ«¾ÖÇø
-    cout << "constĞŞÊÎµÄÈ«¾Ö±äÁ¿c_g_aµÄµØÖ·Îª:\t" << (long long) &c_g_a << endl;  //4210688
-    cout << "constĞŞÊÎµÄÈ«¾Ö±äÁ¿c_g_bµÄµØÖ·Îª:\t" << (long long) &c_g_b << endl;  //4210692
+    //constä¿®é¥°çš„å˜é‡
+    //constä¿®é¥°çš„å…¨å±€å˜é‡,åœ¨å…¨å±€åŒº
+    cout << "constä¿®é¥°çš„å…¨å±€å˜é‡c_g_açš„åœ°å€ä¸º:\t" << (long long) &c_g_a << endl;  //4210688
+    cout << "constä¿®é¥°çš„å…¨å±€å˜é‡c_g_bçš„åœ°å€ä¸º:\t" << (long long) &c_g_b << endl;  //4210692
 
-    //constĞŞÊÎµÄ¾Ö²¿±äÁ¿,²»ÔÚÈ«¾ÖÇø
+    //constä¿®é¥°çš„å±€éƒ¨å˜é‡,ä¸åœ¨å…¨å±€åŒº
     const int c_l_a = 10;
     const int c_l_b = 10;
-    cout << "constĞŞÊÎµÄ¾Ö²¿±äÁ¿c_l_aµÄµØÖ·Îª:\t" << (long long) &c_l_a << endl;  //6487572
-    cout << "constĞŞÊÎµÄ¾Ö²¿±äÁ¿c_l_bµÄµØÖ·Îª:\t" << (long long) &c_l_b << endl;  //6487568
+    cout << "constä¿®é¥°çš„å±€éƒ¨å˜é‡c_l_açš„åœ°å€ä¸º:\t" << (long long) &c_l_a << endl;  //6487572
+    cout << "constä¿®é¥°çš„å±€éƒ¨å˜é‡c_l_bçš„åœ°å€ä¸º:\t" << (long long) &c_l_b << endl;  //6487568
 
 
     //#define A 10
-    //cout << "define³£Á¿Á¿AµÄµØÖ·Îª:\t" << (long long)&A << endl;  //»á±¨´í
+    //cout << "defineå¸¸é‡é‡Açš„åœ°å€ä¸º:\t" << (long long)&A << endl;  //ä¼šæŠ¥é”™
 
     system("pause");
     return 0;

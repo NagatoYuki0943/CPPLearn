@@ -33,6 +33,9 @@ int main() {
     //2.3 在定义结构体时顺便创建结构体变量:上面
     cout << "姓名:" << s3.name << " 年龄:" << s3.age << " 分数:" << s3.score << endl;
 
+    struct Student s4 = {"小兰", 15, 80};
+    cout << "姓名:" << s4.name << " 年龄:" << s4.age << " 分数:" << s4.score << endl;
+
     return 0;
 }
 /**

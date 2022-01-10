@@ -2,21 +2,21 @@
 
 using namespace std;
 /**
- * ¶ÑÇø:ÓÉ³ÌÐòÔ±·ÖÅäÊÍ·Å,Èç¹û³ÌÐòÔ±²»ÊÍ·Å,³ÌÐò½áÊøÊ±ÓÐ²Ù×÷ÏµÍ³»ØÊÕ
- * Ê¹ÓÃ new ÔÚ¶ÑÇø¿ª±ÙÄÚ´æ           new·µ»ØµÄÊÇ¸ÃÀàÐÍµÄÖ¸Õë,ÓÃÖ¸Õë´æ·Å
- * Ê¹ÓÃdelete É¾³ýÖ¸Õë¾ÍÉ¾³ý¶ÑÇøµÄÊý¾Ý
- * É¾³ýÆÕÍ¨±äÁ¿:delete p;  É¾³ýÊý×é:delete[] arr;
+ * å †åŒº:ç”±ç¨‹åºå‘˜åˆ†é…é‡Šæ”¾,å¦‚æžœç¨‹åºå‘˜ä¸é‡Šæ”¾,ç¨‹åºç»“æŸæ—¶æœ‰æ“ä½œç³»ç»Ÿå›žæ”¶
+ * ä½¿ç”¨ new åœ¨å †åŒºå¼€è¾Ÿå†…å­˜           newè¿”å›žçš„æ˜¯è¯¥ç±»åž‹çš„æŒ‡é’ˆ,ç”¨æŒ‡é’ˆå­˜æ”¾
+ * ä½¿ç”¨delete åˆ é™¤æŒ‡é’ˆå°±åˆ é™¤å †åŒºçš„æ•°æ®
+ * åˆ é™¤æ™®é€šå˜é‡:delete p;  åˆ é™¤æ•°ç»„:delete[] arr;
  */
 /**
- * ÔÚÕ»Çø´´½¨¶þÎ¬Êý×é
- * Worker **ÊÇÖ¸ÏòWorker*µÄÖ¸Õë,ÓÃÁ½¸ö**Ö¸Ïò
+ * åœ¨æ ˆåŒºåˆ›å»ºäºŒç»´æ•°ç»„
+ * Worker **æ˜¯æŒ‡å‘Worker*çš„æŒ‡é’ˆ,ç”¨ä¸¤ä¸ª**æŒ‡å‘
  * Worker ** newSpace=new Worker* [newSize];
  */
 int *func() {
-    //ÀûÓÃnew¹Ø¼ü×Ö¿ÉÒÔ½«Êý¾Ý¿ª±Ùµ½¶ÑÇø
-    //new·µ»ØµÄÊÇ¸ÃÀàÐÍµÄÖ¸Õë,ÓÃÖ¸Õë´æ·Å
-    //Ö¸Õë±¾ÖÊÒ²ÊÇ¾Ö²¿±äÁ¿,´æ·ÅÔÚÕ»ÉÏ,Ö¸Õë±£´æµÄÊý¾ÝÊÇ·ÅÔÚ¶ÑÇø
-    int *p = new int(10); //int(10) intÀàÐÍ,ÊýÖµÎª10
+    //åˆ©ç”¨newå…³é”®å­—å¯ä»¥å°†æ•°æ®å¼€è¾Ÿåˆ°å †åŒº
+    //newè¿”å›žçš„æ˜¯è¯¥ç±»åž‹çš„æŒ‡é’ˆ,ç”¨æŒ‡é’ˆå­˜æ”¾
+    //æŒ‡é’ˆæœ¬è´¨ä¹Ÿæ˜¯å±€éƒ¨å˜é‡,å­˜æ”¾åœ¨æ ˆä¸Š,æŒ‡é’ˆä¿å­˜çš„æ•°æ®æ˜¯æ”¾åœ¨å †åŒº
+    int *p = new int(10); //int(10) intç±»åž‹,æ•°å€¼ä¸º10
     return p;
 }
 
@@ -24,22 +24,22 @@ void test01() {
     int *p = func();
     cout << *p << endl;
     cout << *p << endl;
-    //¶ÑÇøµÄÊý¾ÝÓÉ³ÌÐòÔ±¹ÜÀíÊÍ·Å
-    //ÊÍ·ÅÊ¹ÓÃdelete p ÊÍ·ÅµØÖ·
+    //å †åŒºçš„æ•°æ®ç”±ç¨‹åºå‘˜ç®¡ç†é‡Šæ”¾
+    //é‡Šæ”¾ä½¿ç”¨delete p é‡Šæ”¾åœ°å€
     delete p;
-    cout << *p << endl;   //7493760,Ëæ»úÊý,ÒòÎªdeleteÒÑ¾­ÊÍ·ÅÁËp
+    cout << *p << endl;   //7493760,éšæœºæ•°,å› ä¸ºdeleteå·²ç»é‡Šæ”¾äº†p
 }
 
 void test02() {
-    int *arr = new int[10];//´´½¨³¤¶ÈÎª10µÄÊý×é
+    int *arr = new int[10];//åˆ›å»ºé•¿åº¦ä¸º10çš„æ•°ç»„
     for (int i = 0; i < 10; i++) {
-        arr[i] = i + 100;     //ºÍÆÕÍ¨µÄÊý×é´æ·ÅÊý¾ÝÒ»Ñù
+        arr[i] = i + 100;     //å’Œæ™®é€šçš„æ•°ç»„å­˜æ”¾æ•°æ®ä¸€æ ·
     }
     for (int i = 0; i < 10; i++) {
         cout << arr[i] << " ";
     }
     cout << endl;
-    //ÊÍ·ÅÊý×é,
+    //é‡Šæ”¾æ•°ç»„,
     delete[] arr;
     for (int i = 0; i < 10; i++) {
         cout << arr[i] << " ";
@@ -49,9 +49,9 @@ void test02() {
 int main() {
 
     /*int *p=func();
-    cout << (long long)p << endl; //¶ÑÇøµØÖ·
+    cout << (long long)p << endl; //å †åŒºåœ°å€
     cout << *p << endl;
-    cout << *p << endl;   //Êä³ö¶à´ÎÒ²¿ÉÒÔ,²»»áÏñÕ»ÇøÒ»Ñù±»Ïú»Ù
+    cout << *p << endl;   //è¾“å‡ºå¤šæ¬¡ä¹Ÿå¯ä»¥,ä¸ä¼šåƒæ ˆåŒºä¸€æ ·è¢«é”€æ¯
     cout << *p << endl;*/
 
     //test01();

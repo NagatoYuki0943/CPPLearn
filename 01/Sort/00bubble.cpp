@@ -22,6 +22,8 @@ void func1(int *arr, int len) {  //传入数组头的指针，可以直接传入
         //判断有无交换的标志
         bool flag = true;
         for (int j = 0; j < len - 1 - i; j++) { //j每次都从第一个开始比,到小于len-1-I,第一次比9次,第二次比8次,以此类推
+
+            //升序降序只要改这里的大于号就可以
             if (arr[j] > arr[j + 1]) {         //遇到后面比自己小就交换位置
                 flag = false;
                 int tmp = arr[j];

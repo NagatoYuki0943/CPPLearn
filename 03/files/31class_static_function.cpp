@@ -3,44 +3,44 @@
 using namespace std;
 
 /**
- * ¾²Ì¬³ÉÔ±±äÁ¿:
- *      ËùÓÐ¶ÔÏó¹²ÏíÍ¬Ò»·ÝÊý¾Ý   ¾²Ì¬³ÉÔ±²»ÊôÓÚÄ³¸ö¶ÔÏóÉÏ,ËùÓÐ¶ÔÏó¹²ÏíÍ¬Ò»·ÝÊý¾Ý
- *      ÔÚ±àÒë½×¶Î·ÖÅäÄÚ´æ:È«¾ÖÇø
- *      ÀàÄÚÉùÃ÷,ÀàÍâ³õÊ¼»¯,±ØÐëÓÐ³õÊ¼Öµ,²»ÄÜ¶¨ÒåµÄÊ±ºò¸³Öµ,»á±¨´í,±ØÐëÔÚÍâÃæ   ÉùÃ÷:static int m_A;    ³õÊ¼»¯:int Person::m_A=100;
- *   ¾²Ì¬³ÉÔ±±äÁ¿Ò²ÓÐ·ÃÎÊÈ¨ÏÞ:¹«¹²ÔÚÀàÍâ¿ÉÒÔ·ÃÎÊ,Ë½ÓÐÈ¨ÏÞÔÚÀàÍâ²»ÄÜ·ÃÎÊ
- * ¾²Ì¬³ÉÔ±º¯Êý:
- *      ËùÓÐ¶ÔÏó¹²ÏíÍ¬Ò»¸öº¯Êý
- *      ¾²Ì¬³ÉÔ±º¯ÊýÖ»ÄÜ·ÃÎÊ¾²Ì¬³ÉÔ±±äÁ¿,ÒòÎª·Ç¾²Ì¬±äÁ¿Ö»ÓÐÍ¨¹ý¶ÔÏó·ÃÎÊ,¶ø¾²Ì¬³ÉÔ±º¯Êý²»ÖªµÀÈ¥·ÃÎÊÄÄÒ»¸öobjectµÄ±äÁ¿
- *   ¾²Ì¬³ÉÔ±º¯ÊýÒ²ÓÐ·ÃÎÊÈ¨ÏÞ:¹«¹²ÔÚÀàÍâ¿ÉÒÔ·ÃÎÊ,Ë½ÓÐÈ¨ÏÞÔÚÀàÍâ²»ÄÜ·ÃÎÊ
+ * é™æ€æˆå‘˜å˜é‡:
+ *      æ‰€æœ‰å¯¹è±¡å…±äº«åŒä¸€ä»½æ•°æ®   é™æ€æˆå‘˜ä¸å±žäºŽæŸä¸ªå¯¹è±¡ä¸Š,æ‰€æœ‰å¯¹è±¡å…±äº«åŒä¸€ä»½æ•°æ®
+ *      åœ¨ç¼–è¯‘é˜¶æ®µåˆ†é…å†…å­˜:å…¨å±€åŒº
+ *      ç±»å†…å£°æ˜Ž,ç±»å¤–åˆå§‹åŒ–,å¿…é¡»æœ‰åˆå§‹å€¼,ä¸èƒ½å®šä¹‰çš„æ—¶å€™èµ‹å€¼,ä¼šæŠ¥é”™,å¿…é¡»åœ¨å¤–é¢   å£°æ˜Ž:static int m_A;    åˆå§‹åŒ–:int Person::m_A=100;
+ *   é™æ€æˆå‘˜å˜é‡ä¹Ÿæœ‰è®¿é—®æƒé™:å…¬å…±åœ¨ç±»å¤–å¯ä»¥è®¿é—®,ç§æœ‰æƒé™åœ¨ç±»å¤–ä¸èƒ½è®¿é—®
+ * é™æ€æˆå‘˜å‡½æ•°:
+ *      æ‰€æœ‰å¯¹è±¡å…±äº«åŒä¸€ä¸ªå‡½æ•°
+ *      é™æ€æˆå‘˜å‡½æ•°åªèƒ½è®¿é—®é™æ€æˆå‘˜å˜é‡,å› ä¸ºéžé™æ€å˜é‡åªæœ‰é€šè¿‡å¯¹è±¡è®¿é—®,è€Œé™æ€æˆå‘˜å‡½æ•°ä¸çŸ¥é“åŽ»è®¿é—®å“ªä¸€ä¸ªobjectçš„å˜é‡
+ *   é™æ€æˆå‘˜å‡½æ•°ä¹Ÿæœ‰è®¿é—®æƒé™:å…¬å…±åœ¨ç±»å¤–å¯ä»¥è®¿é—®,ç§æœ‰æƒé™åœ¨ç±»å¤–ä¸èƒ½è®¿é—®
  */
 
 class Person {
 public:
-    //¾²Ì¬³ÉÔ±º¯Êý
+    //é™æ€æˆå‘˜å‡½æ•°
     static void func() {
-        m_A = 100;  //¾²Ì¬º¯Êý¿ÉÒÔ·ÃÎÊ¾²Ì¬±äÁ¿
-        //m_B=99; //»á±¨´í,¾²Ì¬º¯Êý²»ÄÜ·ÃÎÊ·Ñ¾²Ì¬±äÁ¿
-        cout << "static void func()µ÷ÓÃ" << endl;
+        m_A = 100;  //é™æ€å‡½æ•°å¯ä»¥è®¿é—®é™æ€å˜é‡
+        //m_B=99; //ä¼šæŠ¥é”™,é™æ€å‡½æ•°ä¸èƒ½è®¿é—®è´¹é™æ€å˜é‡
+        cout << "static void func()è°ƒç”¨" << endl;
     }
 
     static int m_A;
     int m_B = 0;
 private:
     static void func1() {
-        cout << "static void func1()µ÷ÓÃ" << endl;
+        cout << "static void func1()è°ƒç”¨" << endl;
     }
 };
 
 int Person::m_A = 10;
 
 void test01() {
-    //1.Í¨¹ý¶ÔÏóÀ´·ÃÎÊ
+    //1.é€šè¿‡å¯¹è±¡æ¥è®¿é—®
     Person p;
     p.func();
-    //p.func1();        //²»ÄÜµ÷ÓÃ,ÊÇË½ÓÐµÄ
-    //2.Í¨¹ýÀàÃûÀ´·ÃÎÊ
+    //p.func1();        //ä¸èƒ½è°ƒç”¨,æ˜¯ç§æœ‰çš„
+    //2.é€šè¿‡ç±»åæ¥è®¿é—®
     Person::func();
-    //Person::func1();  //²»ÄÜµ÷ÓÃ,ÊÇË½ÓÐµÄ
+    //Person::func1();  //ä¸èƒ½è°ƒç”¨,æ˜¯ç§æœ‰çš„
 
 }
 

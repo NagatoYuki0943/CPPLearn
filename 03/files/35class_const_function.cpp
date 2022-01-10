@@ -3,30 +3,30 @@
 using namespace std;
 
 /**
- * const ³£Á¿  static ¾²Ì¬
- * constÐÞÊÎ³ÉÔ±º¯Êý
- *  ³£º¯Êý:
- *      ³ÉÔ±º¯Êýºó¼ÓconstÎÒÃÇ³ÆÎªÕâ¸öº¯ÊýÎª³£º¯Êý      void showPerson () const {}
- *      ³£º¯Êý²»¿ÉÒÔÐÞ¸Ä³ÉÔ±º¯Êý
- *      ³ÉÔ±ÊôÐÔÉùÃ÷Ê±¼Ó¹Ø¼ü×Ömutableºó,ÔÚ³£º¯ÊýÖÐÒÀÈ»¿ÉÒÔÐÞ¸Ä   mutable int m_B;
- *  ³£¶ÔÏó:
- *      ÉùÃ÷¶ÔÏóÇ°¼Óconst³Æ¸Ã¶ÔÏóÎª³£¶ÔÏó
- *      ³£¶ÔÏóÖ»ÄÜµ÷ÓÃ³£º¯Êý,²»ÄÜÐÞ¸Ä±äÁ¿
- *      ³ÉÔ±ÊôÐÔÉùÃ÷Ê±¼Ó¹Ø¼ü×Ömutableºó,ÔÚ¶ÔÏóÖÐÒ²ÒÀÈ»¿ÉÒÔÐÞ¸Ä   mutable int m_B;
+ * const å¸¸é‡  static é™æ€
+ * constä¿®é¥°æˆå‘˜å‡½æ•°
+ *  å¸¸å‡½æ•°:
+ *      æˆå‘˜å‡½æ•°åŽåŠ constæˆ‘ä»¬ç§°ä¸ºè¿™ä¸ªå‡½æ•°ä¸ºå¸¸å‡½æ•°      void showPerson () const {}
+ *      å¸¸å‡½æ•°ä¸å¯ä»¥ä¿®æ”¹æˆå‘˜å‡½æ•°
+ *      æˆå‘˜å±žæ€§å£°æ˜Žæ—¶åŠ å…³é”®å­—mutableåŽ,åœ¨å¸¸å‡½æ•°ä¸­ä¾ç„¶å¯ä»¥ä¿®æ”¹   mutable int m_B;
+ *  å¸¸å¯¹è±¡:
+ *      å£°æ˜Žå¯¹è±¡å‰åŠ constç§°è¯¥å¯¹è±¡ä¸ºå¸¸å¯¹è±¡
+ *      å¸¸å¯¹è±¡åªèƒ½è°ƒç”¨å¸¸å‡½æ•°,ä¸èƒ½ä¿®æ”¹å˜é‡
+ *      æˆå‘˜å±žæ€§å£°æ˜Žæ—¶åŠ å…³é”®å­—mutableåŽ,åœ¨å¯¹è±¡ä¸­ä¹Ÿä¾ç„¶å¯ä»¥ä¿®æ”¹   mutable int m_B;
  */
 class Person {
 public:
-    //³£º¯Êý
+    //å¸¸å‡½æ•°
     /**
-     * thisÖ¸ÕëµÄ±¾ÖÊÊÇÖ¸Õë³£Á¿,Ö¸ÕëµÄÖ¸ÏòÊÇ²»¿ÉÒÔÐÞ¸ÄµÄ
+     * thisæŒ‡é’ˆçš„æœ¬è´¨æ˜¯æŒ‡é’ˆå¸¸é‡,æŒ‡é’ˆçš„æŒ‡å‘æ˜¯ä¸å¯ä»¥ä¿®æ”¹çš„
      * Person * const this;
-     * this=NULL; //thisÖ¸Õë²»¿ÉÒÔÐÞ¸ÄÖ¸ÕëµÄÖ¸Ïò
+     * this=NULL; //thisæŒ‡é’ˆä¸å¯ä»¥ä¿®æ”¹æŒ‡é’ˆçš„æŒ‡å‘
      * const Person * const this; === void showPerson () const{}
-     * const ÐÞÊÎµÄÊÇthisÖ¸Ïò,ÈÃÖ¸ÕëÖ¸ÏòµÄÖµÒ²²»¿ÉÒÔÐÞ¸Ä==³£º¯Êý
+     * const ä¿®é¥°çš„æ˜¯thisæŒ‡å‘,è®©æŒ‡é’ˆæŒ‡å‘çš„å€¼ä¹Ÿä¸å¯ä»¥ä¿®æ”¹==å¸¸å‡½æ•°
      */
 
     void showPerson() const {
-        //m_A=100; //ÕâÑù¾Í²»ÄÜÐÞ¸ÄÁËÆÕÍ¨±äÁ¿ÁË
+        //m_A=100; //è¿™æ ·å°±ä¸èƒ½ä¿®æ”¹äº†æ™®é€šå˜é‡äº†
         m_B = 100;
     }
 
@@ -35,7 +35,7 @@ public:
     }
 
     int m_A;
-    mutable int m_B; //ÌØÊâ±äÁ¿,¼´Ê¹ÔÚ³£º¯ÊýÖÐÒ²¿ÉÒÔÐÞ¸ÄÕâ¸öÖµ     ³ÉÔ±ÊôÐÔÉùÃ÷Ê±¼Ó¹Ø¼ü×Ömutableºó,ÔÚ³£º¯ÊýÖÐÒÀÈ»¿ÉÒÔÐÞ¸Ä
+    mutable int m_B; //ç‰¹æ®Šå˜é‡,å³ä½¿åœ¨å¸¸å‡½æ•°ä¸­ä¹Ÿå¯ä»¥ä¿®æ”¹è¿™ä¸ªå€¼     æˆå‘˜å±žæ€§å£°æ˜Žæ—¶åŠ å…³é”®å­—mutableåŽ,åœ¨å¸¸å‡½æ•°ä¸­ä¾ç„¶å¯ä»¥ä¿®æ”¹
 };
 
 void test01() {
@@ -43,15 +43,15 @@ void test01() {
     p.showPerson();
 };
 
-//³£¶ÔÏó
+//å¸¸å¯¹è±¡
 void test02() {
-    const Person p{}; //ÔÚ¶ÔÏóÇ°¼Óconst,±äÎª³£¶ÔÏó
-    //p.m_A=100;    //»á±¨´í,²»ÄÜÐÞ¸Ä
-    p.m_B = 110;      //mutable Ò²¿ÉÒÔÐÞ¸Ä
+    const Person p{}; //åœ¨å¯¹è±¡å‰åŠ const,å˜ä¸ºå¸¸å¯¹è±¡
+    //p.m_A=100;    //ä¼šæŠ¥é”™,ä¸èƒ½ä¿®æ”¹
+    p.m_B = 110;      //mutable ä¹Ÿå¯ä»¥ä¿®æ”¹
 
-    //³£¶ÔÏóÖ»ÄÜµ÷ÓÃ³£º¯Êý
-    p.showPerson(); //¿ÉÒÔµ÷ÓÃ³£º¯Êý
-    //p.func();     //»á±¨´í,ÆÕÍ¨º¯Êý¿ÉÄÜÐÞ¸Ä±äÁ¿,µ«ÊÇ³£¶ÔÏó²»ÄÜÐÞ¸Ä,Òò´Ë²»ÄÜµ÷ÓÃ
+    //å¸¸å¯¹è±¡åªèƒ½è°ƒç”¨å¸¸å‡½æ•°
+    p.showPerson(); //å¯ä»¥è°ƒç”¨å¸¸å‡½æ•°
+    //p.func();     //ä¼šæŠ¥é”™,æ™®é€šå‡½æ•°å¯èƒ½ä¿®æ”¹å˜é‡,ä½†æ˜¯å¸¸å¯¹è±¡ä¸èƒ½ä¿®æ”¹,å› æ­¤ä¸èƒ½è°ƒç”¨
 }
 
 int main() {

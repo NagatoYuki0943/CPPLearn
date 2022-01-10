@@ -2,59 +2,59 @@
 
 using namespace std;
 /**
- * Èç¹ûÎÒÃÇ²»Ìá¹©¹¹ÔìºÍÎö¹¹,±àÒëÆ÷»áÌá¹©,±àÒëÆ÷Ìá¹©µÄ¹¹Ôìº¯ÊýºÍÎö¹¹º¯ÊýÊÇ¿ÕµÄ
- * ¹¹Ôìº¯Êý:Ö÷Òª×÷ÓÃÔÚÓÚ´´½¨Ê±Îª¶ÔÏóµÄ³ÉÔ±ÊôÐÔ¸³Öµ,¹¹Ôìº¯ÊýÓÉ±àÒëÆ÷×Ô¶¯µ÷ÓÃ,ÎÞÐèÊÖ¶¯µ÷ÓÃ
- * Îö¹¹º¯Êý:Ö÷Òª×÷ÓÃÔÚÓÚ¶ÔÏóÏú»ÙÇ°ÏµÍ³×Ô¶¯µ÷ÓÃ,Ö´ÐÐÒ»Ð©ÇåÀí¹¤×÷
- * Á½ÕßÔÚÔÚpublicÏÂÍâÃæ²ÅÄÜ·ÃÎÊ
+ * å¦‚æžœæˆ‘ä»¬ä¸æä¾›æž„é€ å’Œæžæž„,ç¼–è¯‘å™¨ä¼šæä¾›,ç¼–è¯‘å™¨æä¾›çš„æž„é€ å‡½æ•°å’Œæžæž„å‡½æ•°æ˜¯ç©ºçš„
+ * æž„é€ å‡½æ•°:ä¸»è¦ä½œç”¨åœ¨äºŽåˆ›å»ºæ—¶ä¸ºå¯¹è±¡çš„æˆå‘˜å±žæ€§èµ‹å€¼,æž„é€ å‡½æ•°ç”±ç¼–è¯‘å™¨è‡ªåŠ¨è°ƒç”¨,æ— éœ€æ‰‹åŠ¨è°ƒç”¨
+ * æžæž„å‡½æ•°:ä¸»è¦ä½œç”¨åœ¨äºŽå¯¹è±¡é”€æ¯å‰ç³»ç»Ÿè‡ªåŠ¨è°ƒç”¨,æ‰§è¡Œä¸€äº›æ¸…ç†å·¥ä½œ
+ * ä¸¤è€…åœ¨åœ¨publicä¸‹å¤–é¢æ‰èƒ½è®¿é—®
  */
 
 /**
- * ¹¹Ôìº¯ÊýÓï·¨: ÀàÃû(){}
- * 1.¹¹Ôìº¯Êý,Ã»ÓÐ·µ»ØÖµÒ²²»Ð´void
- * 2.º¯ÊýÃû³ÆÓëÀàÃûÏàÍ¬
- * 3.¹¹Ôìº¯Êý¿ÉÒÔÓÐ²ÎÊý,Òò´Ë¿ÉÒÔ·¢ÉúÖØÔØ
- * 4.³ÌÐòÔÚµ÷ÓÃ¶ÔÏóµÄÊ±ºò»á×Ô¶¯µ÷ÓÃ¹¹Ôì,ÎÞÐèÊÖ¶¯µ÷ÓÃ,ÇÒÖ»»áµ÷ÓÃÒ»´Î
+ * æž„é€ å‡½æ•°è¯­æ³•: ç±»å(){}
+ * 1.æž„é€ å‡½æ•°,æ²¡æœ‰è¿”å›žå€¼ä¹Ÿä¸å†™void
+ * 2.å‡½æ•°åç§°ä¸Žç±»åç›¸åŒ
+ * 3.æž„é€ å‡½æ•°å¯ä»¥æœ‰å‚æ•°,å› æ­¤å¯ä»¥å‘ç”Ÿé‡è½½
+ * 4.ç¨‹åºåœ¨è°ƒç”¨å¯¹è±¡çš„æ—¶å€™ä¼šè‡ªåŠ¨è°ƒç”¨æž„é€ ,æ— éœ€æ‰‹åŠ¨è°ƒç”¨,ä¸”åªä¼šè°ƒç”¨ä¸€æ¬¡
  */
 
 /**
- * Îö¹¹º¯ÊýÓï·¨: ~ÀàÃû(){}
- * 1.Îö¹¹º¯Êý,Ã»ÓÐ·µ»ØÖµÒ²²»Ð´void
- * 2.º¯ÊýÃû³ÆÓëÀàÃûÏàÍ¬,ÔÚÃû³ÆÖ®Ç°¼ÓÉÏ·ûºÅ~
- * 3.Îö¹¹º¯Êý²»¿ÉÒÔÓÐ²ÎÊý,Òò´Ë²»ÄÜ·¢ÉúÖØÔØ
- * 4.³ÌÐòÔÚ¶ÔÏóÏú»ÙÇ°»á×Ô¶¯µ÷ÓÃÎö¹¹,ÎÞÐèÊÖ¶¯µ÷ÓÃ,ÇÒÖ»»áµ÷ÓÃÒ»´Î
+ * æžæž„å‡½æ•°è¯­æ³•: ~ç±»å(){}
+ * 1.æžæž„å‡½æ•°,æ²¡æœ‰è¿”å›žå€¼ä¹Ÿä¸å†™void
+ * 2.å‡½æ•°åç§°ä¸Žç±»åç›¸åŒ,åœ¨åç§°ä¹‹å‰åŠ ä¸Šç¬¦å·~
+ * 3.æžæž„å‡½æ•°ä¸å¯ä»¥æœ‰å‚æ•°,å› æ­¤ä¸èƒ½å‘ç”Ÿé‡è½½
+ * 4.ç¨‹åºåœ¨å¯¹è±¡é”€æ¯å‰ä¼šè‡ªåŠ¨è°ƒç”¨æžæž„,æ— éœ€æ‰‹åŠ¨è°ƒç”¨,ä¸”åªä¼šè°ƒç”¨ä¸€æ¬¡
  */
 class Person {
-public: //ÔÚpublicÏÂÍâÃæ²ÅÄÜ·ÃÎÊ
-    //¹¹Ôìº¯Êý:¿ÉÒÔÓÐ²ÎÊý
-    Person() {   //Ã»ÓÐ·µ»ØÖµÒ²²»Ð´void
-        cout << "Person(){}¹¹Ôìº¯Êýµ÷ÓÃ" << endl;
+public: //åœ¨publicä¸‹å¤–é¢æ‰èƒ½è®¿é—®
+    //æž„é€ å‡½æ•°:å¯ä»¥æœ‰å‚æ•°
+    Person() {   //æ²¡æœ‰è¿”å›žå€¼ä¹Ÿä¸å†™void
+        cout << "Person(){}æž„é€ å‡½æ•°è°ƒç”¨" << endl;
     }
 
-    //Îö¹¹º¯Êý:²»¿ÉÒÔÓÐ²ÎÊý
-    ~Person() {  //Ã»ÓÐ·µ»ØÖµÒ²²»Ð´void
-        cout << "~Person(){}Îö¹¹º¯Êýµ÷ÓÃ" << endl;
+    //æžæž„å‡½æ•°:ä¸å¯ä»¥æœ‰å‚æ•°
+    ~Person() {  //æ²¡æœ‰è¿”å›žå€¼ä¹Ÿä¸å†™void
+        cout << "~Person(){}æžæž„å‡½æ•°è°ƒç”¨" << endl;
     }
 };
 
-///c++µÄÀàµÄ¹¹Ôìº¯Êý¿ÉÒÔÔÙÀàÄÚÉùÃ÷,ÀàÍâÊµÏÖ
-//½¨ÖþÎï
+///c++çš„ç±»çš„æž„é€ å‡½æ•°å¯ä»¥å†ç±»å†…å£°æ˜Ž,ç±»å¤–å®žçŽ°
+//å»ºç­‘ç‰©
 class Building {
 public:
     Building();
 
-    string m_SittingRoom; //¿ÍÌü
+    string m_SittingRoom; //å®¢åŽ…
 private:
-    string m_Bedroom;     //ÎÔÊÒ
+    string m_Bedroom;     //å§å®¤
 };
 
-//ÀàÍâÐ´³ÉÔ±º¯Êý
+//ç±»å¤–å†™æˆå‘˜å‡½æ•°
 Building::Building() {
-    m_SittingRoom = "¿ÍÌü";
-    m_Bedroom = "ÎÔÊÒ";
+    m_SittingRoom = "å®¢åŽ…";
+    m_Bedroom = "å§å®¤";
 }
 
 void test01() {
-    Person p1; //»á×Ô¶¯µ÷ÓÃPerson¹¹Ôìº¯Êý,Îö¹¹º¯Êý
+    Person p1; //ä¼šè‡ªåŠ¨è°ƒç”¨Personæž„é€ å‡½æ•°,æžæž„å‡½æ•°
 }
 
 int main() {

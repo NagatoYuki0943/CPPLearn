@@ -7,7 +7,7 @@ using namespace std;
  * 功能描述：
  *   对vector容器进行插入、删除操作
  * 函数原型：
- *   push_back(elem);                              //尾部插入元素elem
+ *   push_back(elem)/emplace_back;                 //尾部插入元素elem
  *   pop_back();                                   //删除最后一个元素,直接删除,不返回值
  *   insert(iterator pos, elem);                   //迭代器指向位置pos插入元素elem
  *   insert(iterator pos, int count,elem);         //迭代器指向位置pos插入count个元素elem

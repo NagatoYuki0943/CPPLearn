@@ -4,14 +4,14 @@
 using namespace std;
 
 /**
- * ÔÚ³ÌĞòÀï,ÓĞĞ©Ë½ÓĞÊôĞÔ,Ò²ÏëÈÃÀàÍâÌØÊâµÄÒ»Ğ©º¯Êı»òÕßÀà½øĞĞ·ÃÎÊ,¾ÍĞèÒªÓÃµ½ÓÃµ½ÓÑÔªµÄ¼¼Êõ
- * ÓÑÔªµÄÄ¿µÄÊÇÈÃÒ»¸öº¯Êı»òÕßÀà·ÃÎÊÁíÒ»¸öÀàµÄË½ÓĞ³ÉÔ±
- * ¹Ø¼ü×Ö:friend
+ * åœ¨ç¨‹åºé‡Œ,æœ‰äº›ç§æœ‰å±æ€§,ä¹Ÿæƒ³è®©ç±»å¤–ç‰¹æ®Šçš„ä¸€äº›å‡½æ•°æˆ–è€…ç±»è¿›è¡Œè®¿é—®,å°±éœ€è¦ç”¨åˆ°ç”¨åˆ°å‹å…ƒçš„æŠ€æœ¯
+ * å‹å…ƒçš„ç›®çš„æ˜¯è®©ä¸€ä¸ªå‡½æ•°æˆ–è€…ç±»è®¿é—®å¦ä¸€ä¸ªç±»çš„ç§æœ‰æˆå‘˜
+ * å…³é”®å­—:friend
  *
- * ÓÑÔªµÄÈıÖÖÊµÏÖ:
- *      È«¾Öº¯Êı×öÓÑÔª(²»ÔÚÈÎºÎÀà»òÕßº¯ÊıÖĞ)
- *      Àà×öÓÑÔª(ÆäËûµÄÀà)
- *      ³ÉÔ±º¯Êı×öÓÑÔª
+ * å‹å…ƒçš„ä¸‰ç§å®ç°:
+ *      å…¨å±€å‡½æ•°åšå‹å…ƒ(ä¸åœ¨ä»»ä½•ç±»æˆ–è€…å‡½æ•°ä¸­)
+ *      ç±»åšå‹å…ƒ(å…¶ä»–çš„ç±»)
+ *      æˆå‘˜å‡½æ•°åšå‹å…ƒ
  */
 
 
@@ -21,16 +21,16 @@ class GoodFriend {
 public:
     GoodFriend();
 
-    void visit1();  //ÈÃvisit1·ÃÎÊbuildingÖĞµÄË½ÓĞ³ÉÔ±
-    void visit2();  //ÈÃvisit1²»ÄÜ·ÃÎÊbuildingÖĞµÄË½ÓĞ³ÉÔ±
+    void visit1();  //è®©visit1è®¿é—®buildingä¸­çš„ç§æœ‰æˆå‘˜
+    void visit2();  //è®©visit1ä¸èƒ½è®¿é—®buildingä¸­çš„ç§æœ‰æˆå‘˜
 
     Building *building;
 };
 
 
 class Building {
-    ///¸æËß±àÒëÆ÷,GoodFriend::visit1()ÊÇÓÑÔªÀàÄÚº¯Êı
-    friend void GoodFriend::visit1();  ///BuildingÒªÔÚGoodFriendÏÂÃæ,ÒòÎªËüÒªÉùÃ÷ÓÑÔª
+    ///å‘Šè¯‰ç¼–è¯‘å™¨,GoodFriend::visit1()æ˜¯å‹å…ƒç±»å†…å‡½æ•°
+    friend void GoodFriend::visit1();  ///Buildingè¦åœ¨GoodFriendä¸‹é¢,å› ä¸ºå®ƒè¦å£°æ˜å‹å…ƒ
 public:
     Building();
 
@@ -39,26 +39,26 @@ private:
     string m_BedRoom;
 };
 
-//ÀàÍâÊµÏÖ
+//ç±»å¤–å®ç°
 Building::Building() {
-    m_SittingRoom = "¿ÍÌü";
-    m_BedRoom = "ÎÔÊÒ";
+    m_SittingRoom = "å®¢å…";
+    m_BedRoom = "å§å®¤";
 }
 
-//GoodFriendÒªÓÃµ½BuildingÀà,Òò´ËÒª·Åµ½BuildingÏÂÃæ
+//GoodFriendè¦ç”¨åˆ°Buildingç±»,å› æ­¤è¦æ”¾åˆ°Buildingä¸‹é¢
 GoodFriend::GoodFriend() {
-    building = new Building;     ///newÔÚ¶ÑÇø´´½¨¶ÔÏó,·µ»ØÖ¸Õë,ÓÃ buildingÖ¸Õë±£´æ
+    building = new Building;     ///newåœ¨å †åŒºåˆ›å»ºå¯¹è±¡,è¿”å›æŒ‡é’ˆ,ç”¨ buildingæŒ‡é’ˆä¿å­˜
 }
 
 void GoodFriend::visit1() {
-    cout << "visit1 ºÃÅóÓÑÕâ¸öÀàÕıÔÚ·ÃÎÊ:" << building->m_SittingRoom << endl;
-    cout << "visit1 ºÃÅóÓÑÕâ¸öÀàÕıÔÚ·ÃÎÊ:" << building->m_BedRoom << endl;
+    cout << "visit1 å¥½æœ‹å‹è¿™ä¸ªç±»æ­£åœ¨è®¿é—®:" << building->m_SittingRoom << endl;
+    cout << "visit1 å¥½æœ‹å‹è¿™ä¸ªç±»æ­£åœ¨è®¿é—®:" << building->m_BedRoom << endl;
     cout << endl;
 }
 
 void GoodFriend::visit2() {
-    cout << "visit2 ºÃÅóÓÑÕâ¸öÀàÕıÔÚ·ÃÎÊ:" << building->m_SittingRoom << endl;
-    //cout << "visit2 ºÃÅóÓÑÕâ¸öÀàÕıÔÚ·ÃÎÊ:" << building->m_BedRoom <<endl;  //²»ÄÜ·ÃÎÊ
+    cout << "visit2 å¥½æœ‹å‹è¿™ä¸ªç±»æ­£åœ¨è®¿é—®:" << building->m_SittingRoom << endl;
+    //cout << "visit2 å¥½æœ‹å‹è¿™ä¸ªç±»æ­£åœ¨è®¿é—®:" << building->m_BedRoom <<endl;  //ä¸èƒ½è®¿é—®
 }
 
 
