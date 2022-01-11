@@ -64,7 +64,7 @@ void printPerson3(T &p) {
 }
 
 void test03(){
-    Person<string, int> p("沙和尚", 300);
+    Person p("沙和尚", 300);
     printPerson3(p);
     //名字:沙和尚
     //年龄:300

@@ -59,6 +59,10 @@ public:
             cout << i << endl;
         }
     }
+
+    ~Friend(){
+        delete this->student;
+    }
 };
 
 int main(){

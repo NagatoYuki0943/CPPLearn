@@ -3,19 +3,19 @@
 using namespace std;
 
 /**
- * ´¿Ðéº¯ÊýºÍ³éÏóÀà
- * ÔÚ¶àÌ¬ÖÐ,Í¨³£¸¸ÀàÖÐÐéº¯ÊýµÄÊµÏÖÊÇºÁÎÞÒâÒåµÄ,Ö÷Òª¶¼ÊÇµ÷ÓÃ×ÓÀàÖØÐ´µÄÄÚÈÝ,Òò´Ë¿ÉÒÔ½«Ðéº¯Êý¸ÄÎª´¿Ðéº¯Êý
- * ´¿Ðéº¯ÊýÓï·¨ : virtual ·µ»ØÖµÀàÐÍ º¯ÊýÃû (²ÎÊýÁÐ±í) = 0;
- * µ±ÀàÖÐÓÐÁË´¿Ðéº¯Êý,Õâ¸öÀàÒ²³É³éÏóÀà
- *      ³éÏóÀàÌØµã:
- *          1.ÎÞ·¨ÊµÀý»¯¶ÔÏó
- *          2.×ÓÀà±ØÐëÖØÐ´³éÏóÀàÖÐµÄ´¿Ðéº¯Êý,·ñÔòÒ²ÊôÓÚ³éÏóÀà
+ * çº¯è™šå‡½æ•°å’ŒæŠ½è±¡ç±»
+ * åœ¨å¤šæ€ä¸­,é€šå¸¸çˆ¶ç±»ä¸­è™šå‡½æ•°çš„å®žçŽ°æ˜¯æ¯«æ— æ„ä¹‰çš„,ä¸»è¦éƒ½æ˜¯è°ƒç”¨å­ç±»é‡å†™çš„å†…å®¹,å› æ­¤å¯ä»¥å°†è™šå‡½æ•°æ”¹ä¸ºçº¯è™šå‡½æ•°
+ * çº¯è™šå‡½æ•°è¯­æ³• : virtual è¿”å›žå€¼ç±»åž‹ å‡½æ•°å (å‚æ•°åˆ—è¡¨) = 0;
+ * å½“ç±»ä¸­æœ‰äº†çº¯è™šå‡½æ•°,è¿™ä¸ªç±»ä¹ŸæˆæŠ½è±¡ç±»
+ *      æŠ½è±¡ç±»ç‰¹ç‚¹:
+ *          1.æ— æ³•å®žä¾‹åŒ–å¯¹è±¡
+ *          2.å­ç±»å¿…é¡»é‡å†™æŠ½è±¡ç±»ä¸­çš„çº¯è™šå‡½æ•°,å¦åˆ™ä¹Ÿå±žäºŽæŠ½è±¡ç±»
  */
 
 class Base {
 public:
-    ///´¿Ðéº¯Êý,Ç°Ãæ±ØÐëÓÐvirtualºóÃæ²ÅÄÜµÈÓÚ0
-    ///µ±ÀàÖÐÓÐÁË´¿Ðéº¯Êý,Õâ¸öÀàÒ²³É³éÏóÀà
+    ///çº¯è™šå‡½æ•°,å‰é¢å¿…é¡»æœ‰virtualåŽé¢æ‰èƒ½ç­‰äºŽ0
+    ///å½“ç±»ä¸­æœ‰äº†çº¯è™šå‡½æ•°,è¿™ä¸ªç±»ä¹ŸæˆæŠ½è±¡ç±»
     virtual void func() = 0;
 
 
@@ -25,17 +25,17 @@ public:
 class Son : public Base {
 public:
     void func() override {
-        cout << "funcº¯Êýµ÷ÓÃ" << endl;
+        cout << "funcå‡½æ•°è°ƒç”¨" << endl;
     }
 
     ~Son() override = default;
 };
 
 void test01() {
-    //Base b1;  //±¨´í,³éÏóÀà²»ÄÜÊµÀý»¯
-    //new Base; //±¨´í,³éÏóÀà²»ÄÜÊµÀý»¯
-    Son s1;  //×ÓÀàÈç¹û²»ÖØÐ´¸¸ÀàµÄ´¿Ðéº¯Êý,×ÓÀàÒ²ÊÇ³éÏóÀà,Ò²²»ÄÜÊµÀý»¯
-    Base *pointer;    //¸¸ÀàÖ¸Õëµ÷ÓÃ×ÓÀà
+    //Base b1;  //æŠ¥é”™,æŠ½è±¡ç±»ä¸èƒ½å®žä¾‹åŒ–
+    //new Base; //æŠ¥é”™,æŠ½è±¡ç±»ä¸èƒ½å®žä¾‹åŒ–
+    Son s1;  //å­ç±»å¦‚æžœä¸é‡å†™çˆ¶ç±»çš„çº¯è™šå‡½æ•°,å­ç±»ä¹Ÿæ˜¯æŠ½è±¡ç±»,ä¹Ÿä¸èƒ½å®žä¾‹åŒ–
+    Base *pointer;    //ä»»ä½•çˆ¶ç±»æŒ‡é’ˆéƒ½èƒ½æŒ‡å‘å­ç±»
     pointer = new Son;
     pointer->func();
     delete pointer;

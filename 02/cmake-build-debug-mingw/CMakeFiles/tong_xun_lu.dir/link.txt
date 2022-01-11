@@ -1,0 +1,3 @@
+C:\ABC\JetBrains\CLion\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\tong_xun_lu.dir/objects.a
+D:\C++\mingw64\bin\ar.exe qc CMakeFiles\tong_xun_lu.dir/objects.a @CMakeFiles\tong_xun_lu.dir\objects1.rsp
+D:\C++\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\tong_xun_lu.dir/objects.a -Wl,--no-whole-archive -o tong_xun_lu.exe -Wl,--out-implib,libtong_xun_lu.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\tong_xun_lu.dir\linklibs.rsp

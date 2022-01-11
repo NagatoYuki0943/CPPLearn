@@ -2,11 +2,11 @@
 
 using namespace std;
 /**
- * µçÄÔ·ÖÎªCPU,GPU,ÄÚ´æ,Ó²ÅÌ....
- * Ã¿¸öÁã¼ş³éÏó³ö³éÏó»ùÀà,Ìá¹©²»Í¬³§ÉÌÉú²ú²»Í¬Áã¼ş,
- * ´´½¨ÈÃµçÄÔ¹¤×÷µÄº¯Êı,µ÷ÓÃÃ¿¸öÁã¼ş¹¤×÷µÄ½ÜÀ«
+ * ç”µè„‘åˆ†ä¸ºCPU,GPU,å†…å­˜,ç¡¬ç›˜....
+ * æ¯ä¸ªé›¶ä»¶æŠ½è±¡å‡ºæŠ½è±¡åŸºç±»,æä¾›ä¸åŒå‚å•†ç”Ÿäº§ä¸åŒé›¶ä»¶,
+ * åˆ›å»ºè®©ç”µè„‘å·¥ä½œçš„å‡½æ•°,è°ƒç”¨æ¯ä¸ªé›¶ä»¶å·¥ä½œçš„æ°é˜”
  */
-//Èı¸ö»ùÀà
+//ä¸‰ä¸ªåŸºç±»
 class CPU {
 public:
     virtual void Calculator() = 0;
@@ -28,55 +28,55 @@ public:
     }
 
     ~Computer() {
-        //Îö¹¹Èı¸öÖ¸Õë
-        if (m_cpu != NULL) {
-            delete m_cpu;
-            m_cpu = NULL;
+        //ææ„ä¸‰ä¸ªæŒ‡é’ˆ
+        if (this->m_cpu != NULL) {
+            delete this->m_cpu;
+            this->m_cpu = NULL;
         }
-        if (m_gpu != NULL) {
-            delete m_gpu;
-            m_gpu = NULL;
+        if (this->m_gpu != NULL) {
+            delete this->m_gpu;
+            this->m_gpu = NULL;
         }
-        if (m_mem != NULL) {
-            delete m_mem;
-            m_mem = NULL;
+        if (this->m_mem != nullptr) {
+            delete this->m_mem;
+            this->m_mem = nullptr;
         }
     }
 
-    //Ìá¹©¹¤×÷µÄº¯Êı
+    //æä¾›å·¥ä½œçš„å‡½æ•°
     void work() {
-        //µ÷ÓÃ¾ßÌå½Ó¿Ú
-        m_cpu->Calculator();
-        m_gpu->Display();
-        m_mem->Storage();
+        //è°ƒç”¨å…·ä½“æ¥å£
+        this->m_cpu->Calculator();
+        this->m_gpu->Display();
+        this->m_mem->Storage();
     };
 
 private:
-    CPU *m_cpu;    //CPUÁã¼şÖ¸Õë
-    GPU *m_gpu;    //ÏÔ¿¨Áã¼şÖ¸Õë
-    Mem *m_mem; //ÄÚ´æÌõÁã¼şÖ¸Õë
+    CPU *m_cpu;    //CPUé›¶ä»¶æŒ‡é’ˆ
+    GPU *m_gpu;    //æ˜¾å¡é›¶ä»¶æŒ‡é’ˆ
+    Mem *m_mem; //å†…å­˜æ¡é›¶ä»¶æŒ‡é’ˆ
 };
 
-//¾ßÌå³§ÉÌ
+//å…·ä½“å‚å•†
 //Intel
 class IntelCPU : public CPU {
 public:
     void Calculator() override {
-        cout << "ÕâÊÇintelµÄCPU¿ªÊ¼¼ÆËãÁË!" << endl;
+        cout << "è¿™æ˜¯intelçš„CPUå¼€å§‹è®¡ç®—äº†!" << endl;
     }
 };
 
 class IntelGPU : public GPU {
 public:
     void Display() override {
-        cout << "ÕâÊÇintelµÄGPU¿ªÊ¼ÏÔÊ¾ÁË!" << endl;
+        cout << "è¿™æ˜¯intelçš„GPUå¼€å§‹æ˜¾ç¤ºäº†!" << endl;
     }
 };
 
 class IntelMEM : public Mem {
 public:
     void Storage() override {
-        cout << "ÕâÊÇintelµÄMEM¿ªÊ¼´æ´¢ÁËÁË!" << endl;
+        cout << "è¿™æ˜¯intelçš„MEMå¼€å§‹å­˜å‚¨äº†äº†!" << endl;
     }
 };
 
@@ -84,48 +84,48 @@ public:
 class LenovoCPU : public CPU {
 public:
     void Calculator() override {
-        cout << "ÕâÊÇLenovoµÄCPU¿ªÊ¼¼ÆËãÁË!" << endl;
+        cout << "è¿™æ˜¯Lenovoçš„CPUå¼€å§‹è®¡ç®—äº†!" << endl;
     }
 };
 
 class LenovoGPU : public GPU {
 public:
     void Display() override {
-        cout << "ÕâÊÇLenovoµÄGPU¿ªÊ¼ÏÔÊ¾ÁË!" << endl;
+        cout << "è¿™æ˜¯Lenovoçš„GPUå¼€å§‹æ˜¾ç¤ºäº†!" << endl;
     }
 };
 
 class LenovoMEM : public Mem {
 public:
     void Storage() override {
-        cout << "ÕâÊÇLenovoµÄMEM¿ªÊ¼´æ´¢ÁËÁË!" << endl;
+        cout << "è¿™æ˜¯Lenovoçš„MEMå¼€å§‹å­˜å‚¨äº†äº†!" << endl;
     }
 };
 
 void test01() {
-    //µÚÒ»Ì¨µçÄÔ
-    CPU *intelCPU = new IntelCPU;   //¸¸ÀàÖ¸ÕëÖ¸Ïò×ÓÀà
+    //ç¬¬ä¸€å°ç”µè„‘
+    CPU *intelCPU = new IntelCPU;   //çˆ¶ç±»æŒ‡é’ˆæŒ‡å‘å­ç±»
     GPU *intelGPU = new IntelGPU;
     Mem *intelMEM = new IntelMEM;
     auto *computer1 = new Computer(intelCPU, intelGPU, intelMEM);
     computer1->work();
     cout << "----------" << endl;
-    delete computer1; //ComputerÀàµÄÎö¹¹º¯Êı»áÉ¾³ıÈı¸öÖ¸Õë,¾Í²»ÓÃÊÖĞ´ÁË
+    delete computer1; //Computerç±»çš„ææ„å‡½æ•°ä¼šåˆ é™¤ä¸‰ä¸ªæŒ‡é’ˆ,å°±ä¸ç”¨æ‰‹å†™äº†
 
-    //µÚ¶şÌ¨µçÄÔ
+    //ç¬¬äºŒå°ç”µè„‘
     auto *computer2 = new Computer(new LenovoCPU, new LenovoGPU, new LenovoMEM);
     /**
-     * computer1->work();  //ÕâÒ»ĞĞ»á´òÓ¡computer2µÄÊı¾İ,Èç¹û×¢ÊÍÁËÉÏÃæµÄdelete computer1¾Í»á´òÓ¡computer1µÄ
+     * computer1->work();  //è¿™ä¸€è¡Œä¼šæ‰“å°computer2çš„æ•°æ®,å¦‚æœæ³¨é‡Šäº†ä¸Šé¢çš„delete computer1å°±ä¼šæ‰“å°computer1çš„
      */
     computer2->work();
     cout << "----------" << endl;
-    delete computer2; //ComputerÀàµÄÎö¹¹º¯Êı»áÉ¾³ıÈı¸öÖ¸Õë,¾Í²»ÓÃÊÖĞ´ÁË
+    delete computer2; //Computerç±»çš„ææ„å‡½æ•°ä¼šåˆ é™¤ä¸‰ä¸ªæŒ‡é’ˆ,å°±ä¸ç”¨æ‰‹å†™äº†
 
-    //µÚÈıÌ¨µçÄÔ
+    //ç¬¬ä¸‰å°ç”µè„‘
     auto *computer3 = new Computer(new IntelCPU, new LenovoGPU, new IntelMEM);
     computer3->work();
     cout << "----------" << endl;
-    delete computer3; //ComputerÀàµÄÎö¹¹º¯Êı»áÉ¾³ıÈı¸öÖ¸Õë,¾Í²»ÓÃÊÖĞ´ÁË
+    delete computer3; //Computerç±»çš„ææ„å‡½æ•°ä¼šåˆ é™¤ä¸‰ä¸ªæŒ‡é’ˆ,å°±ä¸ç”¨æ‰‹å†™äº†
 }
 
 

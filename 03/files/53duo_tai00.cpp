@@ -44,7 +44,8 @@ public:
 //狗类
 class Dog : public Animal {
 public:
-    void speak() {
+    //可以加上override指明
+    void speak() override{
         cout << "小狗在说话" << endl;
     }
 };

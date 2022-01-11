@@ -14,7 +14,7 @@ public:
     }
 
     void header() {
-        cout << "Ê×Ò³,¹«¿ª¿Î,µÇÂ¼,×¢²á...(¹«¹²Í·²¿)" << endl;
+        cout << "é¦–é¡µ,å…¬å¼€è¯¾,ç™»å½•,æ³¨å†Œ...(å…¬å…±å¤´éƒ¨)" << endl;
     }
 
     void content(){
@@ -51,19 +51,18 @@ int main(){
     Java java = Java(1, 2);
     java.header();
 
-    //Í¬Ãûº¯Êıµ÷ÓÃ·½·¨
+    //åŒåå‡½æ•°è°ƒç”¨æ–¹æ³•
     java.content();
     java.Basic::content();
 
-
     cout << java.a << endl;
-    //Í¬Ãû±äÁ¿µ÷ÓÃ·½·¨
+    //åŒåå˜é‡è°ƒç”¨æ–¹æ³•
     cout << java.b << "\t" << java.Basic::b << endl;
 
-    //Í¬Ãû¾²Ì¬±äÁ¿µ÷ÓÃ·½·¨
+    //åŒåé™æ€å˜é‡è°ƒç”¨æ–¹æ³•
     cout << Java::c << "\t" << Java::Basic::c << endl;
 
-    //Í¬Ãû¾²Ì¬·½·¨µ÷ÓÃ·½·¨
+    //åŒåé™æ€æ–¹æ³•è°ƒç”¨æ–¹æ³•
     Java::printC();
     Java::Basic::printC();
     return 0;

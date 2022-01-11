@@ -3,25 +3,25 @@
 using namespace std;
 
 /**
- * °¸ÀıÃèÊö:
- *      Ö»×öÒûÆ·µÄ´óÖÂÁ÷³ÌÎª:ÖóË®-³åÅİ-µ¹Èë±­ÖĞ-¼ÓÈë¸¨ÁÏ
- *      ÀûÓÃ¶àÌ¬¼¼ÊõÊµÏÖ±¾°¸Àı,Ìá¹©³éÏóÖÆ×÷ÒûÆ·»ùÀà,Ìá¹©×ÓÀàÖÆ×÷¿§·ÈºÈ²èÒ¶
+ * æ¡ˆä¾‹æè¿°:
+ *      åªåšé¥®å“çš„å¤§è‡´æµç¨‹ä¸º:ç…®æ°´-å†²æ³¡-å€’å…¥æ¯ä¸­-åŠ å…¥è¾…æ–™
+ *      åˆ©ç”¨å¤šæ€æŠ€æœ¯å®ç°æœ¬æ¡ˆä¾‹,æä¾›æŠ½è±¡åˆ¶ä½œé¥®å“åŸºç±»,æä¾›å­ç±»åˆ¶ä½œå’–å•¡å–èŒ¶å¶
  */
 class AbstractDrinking {
 public:
-    //ÖóË®
+    //ç…®æ°´
     virtual void Boil() = 0;
 
-    //³åÅİ
+    //å†²æ³¡
     virtual void Brew() = 0;
 
-    //µ¹Èë±­ÖĞ
+    //å€’å…¥æ¯ä¸­
     virtual void PourInCup() = 0;
 
-    //¼ÓÈë¸¨ÁÏ
+    //åŠ å…¥è¾…æ–™
     virtual void AddSomething() = 0;
 
-    //Ö»×öÒûÆ·
+    //åªåšé¥®å“
     void makeDrink() {
         Boil();
         Brew();
@@ -30,64 +30,64 @@ public:
     }
 };
 
-//¿§·È
+//å’–å•¡
 class Coffee : public AbstractDrinking {
-    //ÖóË®
+    //ç…®æ°´
     void Boil() {
-        cout << "Öó¿óÈªË®" << endl;
+        cout << "ç…®çŸ¿æ³‰æ°´" << endl;
     }
 
-    //³åÅİ
+    //å†²æ³¡
     void Brew() {
-        cout << "³åÅİ¿§·È" << endl;
+        cout << "å†²æ³¡å’–å•¡" << endl;
     }
 
-    //µ¹Èë±­ÖĞ
+    //å€’å…¥æ¯ä¸­
     void PourInCup() {
-        cout << "µ¹Èë±­ÖĞ" << endl;
+        cout << "å€’å…¥æ¯ä¸­" << endl;
     }
 
-    //¼ÓÈë¸¨ÁÏ
+    //åŠ å…¥è¾…æ–™
     void AddSomething() {
-        cout << "¼ÓÈëÌÇºÍÅ£ÄÌ" << endl;
+        cout << "åŠ å…¥ç³–å’Œç‰›å¥¶" << endl;
     }
 };
 
-//²èÒ¶
+//èŒ¶å¶
 class Tea : public AbstractDrinking {
-    //ÖóË®
-    // ĞÂµÄĞ´·¨¿ÉÒÔÊ¹ÓÃ override ¹Ø¼ü×Ö
+    //ç…®æ°´
+    // æ–°çš„å†™æ³•å¯ä»¥ä½¿ç”¨ override å…³é”®å­—
     void Boil() override {
-        cout << "Öó´¿¾»Ë®" << endl;
+        cout << "ç…®çº¯å‡€æ°´" << endl;
     }
 
-    //³åÅİ
+    //å†²æ³¡
     void Brew() override {
-        cout << "³åÅİ²èÒ¶" << endl;
+        cout << "å†²æ³¡èŒ¶å¶" << endl;
     }
 
-    //µ¹Èë±­ÖĞ
+    //å€’å…¥æ¯ä¸­
     void PourInCup() override {
-        cout << "µ¹Èë±­ÖĞ" << endl;
+        cout << "å€’å…¥æ¯ä¸­" << endl;
     }
 
-    //¼ÓÈë¸¨ÁÏ
+    //åŠ å…¥è¾…æ–™
     void AddSomething() override {
-        cout << "¼ÓÈëÄûÃÊ" << endl;
+        cout << "åŠ å…¥æŸ æª¬" << endl;
     }
 };
 
-//¹¤×÷º¯Êı
+//å·¥ä½œå‡½æ•°
 void doWork(AbstractDrinking &drinking) {
     drinking.makeDrink();
 }
 
 void test01() {
-    //ÖÆ×÷¿§·È
+    //åˆ¶ä½œå’–å•¡
     Coffee coffee;
     doWork(coffee);
     cout << "-------------------" << endl;
-    //ÖÆ×÷²èÒ¶
+    //åˆ¶ä½œèŒ¶å¶
     Tea tea;
     doWork(tea);
 }

@@ -3,15 +3,15 @@
 
 using namespace std;
 /**
- * C++Ìá³«Ê¹ÓÃ¶àÌ¬Éè¼Æ³ÌĞò½á¹¹
- * ¶àÌ¬µÄÓÅµã:
- *      1.´úÂë×éÖ¯½á¹¹ÇåÎú(¸÷¸öÀà·Ö¿ª´æ´¢,»¥²»Ó°Ïì)
- *      2.¿É¶ÁĞÔÇ¿
- *      3.ÀûÓÚÇ°ÆÚºÍºóÆÚµÄÀ©Õ¹ÒÔ¼°Î¬»¤   ÕæÊµ¿ª·¢ÖĞ,Ìá³« ¿ª±ÕÔ­Ôò : ¶ÔÀ©Õ¹½øĞĞ¿ª·¢,¶ÔĞŞ¸Ä½øĞĞ¹Ø±Õ
- *      È±µã:
- *      1.´úÂëÁ¿¶à;
+ * C++æå€¡ä½¿ç”¨å¤šæ€è®¾è®¡ç¨‹åºç»“æ„
+ * å¤šæ€çš„ä¼˜ç‚¹:
+ *      1.ä»£ç ç»„ç»‡ç»“æ„æ¸…æ™°(å„ä¸ªç±»åˆ†å¼€å­˜å‚¨,äº’ä¸å½±å“)
+ *      2.å¯è¯»æ€§å¼º
+ *      3.åˆ©äºå‰æœŸå’ŒåæœŸçš„æ‰©å±•ä»¥åŠç»´æŠ¤   çœŸå®å¼€å‘ä¸­,æå€¡ å¼€é—­åŸåˆ™ : å¯¹æ‰©å±•è¿›è¡Œå¼€å‘,å¯¹ä¿®æ”¹è¿›è¡Œå…³é—­
+ *      ç¼ºç‚¹:
+ *      1.ä»£ç é‡å¤š;
  */
-//ÆÕÍ¨ÊµÏÖ
+//æ™®é€šå®ç°
 class Calculator {
 public:
     int getResult(string oper) {
@@ -28,11 +28,11 @@ public:
         } else {
             return 0;
         }
-        //Èç¹ûÏëÒªÀ©Õ¹ĞÂµÄ¹¦ÄÜ,ĞèÒªĞŞ¸ÄÔ´Âë
-        ///ÕæÊµ¿ª·¢ÖĞ,Ìá³« ¿ª±ÕÔ­Ôò : ¶ÔÀ©Õ¹½øĞĞ¿ª·¢,¶ÔĞŞ¸Ä½øĞĞ¹Ø±Õ
+        //å¦‚æœæƒ³è¦æ‰©å±•æ–°çš„åŠŸèƒ½,éœ€è¦ä¿®æ”¹æºç 
+        ///çœŸå®å¼€å‘ä¸­,æå€¡ å¼€é—­åŸåˆ™ : å¯¹æ‰©å±•è¿›è¡Œå¼€å‘,å¯¹ä¿®æ”¹è¿›è¡Œå…³é—­
     }
 
-    int m_Num1;  //²Ù×÷Êı1&2
+    int m_Num1;  //æ“ä½œæ•°1&2
     int m_Num2;
 };
 
@@ -47,8 +47,8 @@ void test01() {
     cout << c.m_Num1 << "%" << c.m_Num2 << "=" << c.getResult("%") << endl;
 }
 
-///ÀûÓÃ¶àÌ¬ÊµÏÖ¼ÆËãÆ÷
-//ÊµÏÖ¼ÆËãÆ÷µÄ³éÏóÀà
+///åˆ©ç”¨å¤šæ€å®ç°è®¡ç®—å™¨
+//å®ç°è®¡ç®—å™¨çš„æŠ½è±¡ç±»
 class AbstractCalculator {
 public:
     virtual int getResult() {
@@ -59,7 +59,7 @@ public:
     int m_Num2;
 };
 
-//Éè¼Æ¼Ó·¨¼ÆËãÆ÷Àà
+//è®¾è®¡åŠ æ³•è®¡ç®—å™¨ç±»
 class AddCalculator : public AbstractCalculator {
 public:
     int getResult() {
@@ -67,7 +67,7 @@ public:
     }
 };
 
-//¼õ·¨Àà
+//å‡æ³•ç±»
 class SubstractCalculator : public AbstractCalculator {
 public:
     int getResult() {
@@ -75,7 +75,7 @@ public:
     }
 };
 
-//³Ë·¨Àà
+//ä¹˜æ³•ç±»
 class MultiplyCalculator : public AbstractCalculator {
 public:
     int getResult() {
@@ -83,7 +83,7 @@ public:
     }
 };
 
-//³ı·¨Àà
+//é™¤æ³•ç±»
 class DivideCalculator : public AbstractCalculator {
 public:
     int getResult() {
@@ -92,28 +92,28 @@ public:
 };
 
 void test02() {
-    //¶àÌ¬Ê¹ÓÃ
-    ///¸¸ÀàµÄÖ¸Õë(ÒıÓÃ)Ö¸Ïò×ÓÀàµÄ¶ÔÏó
+    //å¤šæ€ä½¿ç”¨
+    ///çˆ¶ç±»çš„æŒ‡é’ˆ(å¼•ç”¨)æŒ‡å‘å­ç±»çš„å¯¹è±¡
     AbstractCalculator *abc;
-    //¼Ó·¨
-    abc = new AddCalculator; //ÔÚ¶ÑÇø´´½¨¼Ó·¨ÀàµÄÖ¸Õë
+    //åŠ æ³•
+    abc = new AddCalculator; //åœ¨å †åŒºåˆ›å»ºåŠ æ³•ç±»çš„æŒ‡é’ˆ
     abc->m_Num1 = 10, abc->m_Num2 = 6;
-    cout << abc->m_Num1 << "+" << abc->m_Num2 << "=" << abc->getResult() << endl;  //abcÊÇÖ¸Ïò¸¸ÀàµÄÖ¸Õë,ÀïÃæµÄÖµÊÇ×ÓÀà
-    //ÓÃÍê¼Ç×ÅÏú»Ù
+    cout << abc->m_Num1 << "+" << abc->m_Num2 << "=" << abc->getResult() << endl;  //abcæ˜¯æŒ‡å‘çˆ¶ç±»çš„æŒ‡é’ˆ,é‡Œé¢çš„å€¼æ˜¯å­ç±»
+    //ç”¨å®Œè®°ç€é”€æ¯
     delete abc;
 
-    //¼õ·¨
+    //å‡æ³•
     abc = new SubstractCalculator;
-    abc->m_Num1 = 10, abc->m_Num2 = 6;  //×¢Òâ,ÓÃÍêÒ»´ÎÒª¼Ç×Å¸³Öµ
-    cout << abc->m_Num1 << "-" << abc->m_Num2 << "=" << abc->getResult() << endl;  //abcÊÇÖ¸Ïò¸¸ÀàµÄÖ¸Õë,ÀïÃæµÄÖµÊÇ×ÓÀà
-    //ÓÃÍê¼Ç×ÅÏú»Ù
+    abc->m_Num1 = 10, abc->m_Num2 = 6;  //æ³¨æ„,ç”¨å®Œä¸€æ¬¡è¦è®°ç€èµ‹å€¼
+    cout << abc->m_Num1 << "-" << abc->m_Num2 << "=" << abc->getResult() << endl;  //abcæ˜¯æŒ‡å‘çˆ¶ç±»çš„æŒ‡é’ˆ,é‡Œé¢çš„å€¼æ˜¯å­ç±»
+    //ç”¨å®Œè®°ç€é”€æ¯
     delete abc;
 
-    //³Ë·¨
+    //ä¹˜æ³•
     abc = new MultiplyCalculator;
-    abc->m_Num1 = 10, abc->m_Num2 = 6;  //×¢Òâ,ÓÃÍêÒ»´ÎÒª¼Ç×Å¸³Öµ
-    cout << abc->m_Num1 << "*" << abc->m_Num2 << "=" << abc->getResult() << endl;  //abcÊÇÖ¸Ïò¸¸ÀàµÄÖ¸Õë,ÀïÃæµÄÖµÊÇ×ÓÀà
-    //ÓÃÍê¼Ç×ÅÏú»Ù
+    abc->m_Num1 = 10, abc->m_Num2 = 6;  //æ³¨æ„,ç”¨å®Œä¸€æ¬¡è¦è®°ç€èµ‹å€¼
+    cout << abc->m_Num1 << "*" << abc->m_Num2 << "=" << abc->getResult() << endl;  //abcæ˜¯æŒ‡å‘çˆ¶ç±»çš„æŒ‡é’ˆ,é‡Œé¢çš„å€¼æ˜¯å­ç±»
+    //ç”¨å®Œè®°ç€é”€æ¯
     delete abc;
 }
 
