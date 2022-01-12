@@ -50,8 +50,6 @@ void assign() {
     vector<int> v5;
     v5.assign(10, 100);
     printVector(v5);    //100 100 100 100 100 100 100 100 100 100
-
-
 }
 
 int main() {

@@ -49,7 +49,7 @@ public:
     }
 
     //重载 == 号,让底层知道如何对比Person数据类型
-    bool operator==(const Person &p) {
+    bool operator==(const Person &p) const {
         if (this->m_Name == p.m_Name && this->m_Age == p.m_Age) {
             return true;
         } else {

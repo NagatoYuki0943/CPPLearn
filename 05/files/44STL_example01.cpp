@@ -80,7 +80,7 @@ void printScore(vector<Person> &v) {
 
 int main() {
     //随机数种子
-    srand((unsigned int) time(NULL));
+    srand((unsigned int) time(nullptr));
 
     //1.创建5名选手
     vector<Person> v;

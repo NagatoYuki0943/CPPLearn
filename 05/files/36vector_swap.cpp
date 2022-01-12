@@ -12,7 +12,7 @@ using namespace std;
  */
 
 template<typename T>
-void printVector(vector<T> v) {
+void printVector(vector<T> &v) {
     for (int i = 0; i < v.size(); ++i) {
         cout << v[i] << " ";
     }
@@ -50,7 +50,8 @@ void test02() {
     //大小为3,容量还是131072,浪费空间
 
     //使用swap收缩内存
-    vector<int> (v).swap(v);
+    //vector<int> (v).swap(v);
+    v.shrink_to_fit();  //新写法
     //vector<int> (v) 是匿名对象,它没有名字,(v)是按照v进行初始化对象,容量和大小都是3,
     //再和v交换内容,交换完之后匿名对象的资源会被回收,v就保存了新的匿名函数的数据
 

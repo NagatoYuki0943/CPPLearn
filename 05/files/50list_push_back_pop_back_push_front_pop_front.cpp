@@ -12,6 +12,13 @@ using namespace std;
  *  list(n,elem);               //构造函数将n个elem拷贝给本身。
  *  list(const list &lst);      //拷贝构造函数
  *   = {值1,值2,值3,...}  构造
+ *
+ *  push_back(elem);         //在容器尾部加入一个元素
+ *  pop_back();              //删除容器中最后一个元素
+ *  push_front(elem);        //在容器开头插入一个元素
+ *  pop_front();             //从容器开头移除第一个元素
+ *
+ *  没有 [] at
  */
 void printList(const list<int> &l) {
     for (list<int>::const_iterator i = l.begin(); i != l.end(); ++i) {

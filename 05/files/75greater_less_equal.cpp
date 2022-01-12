@@ -8,12 +8,12 @@ using namespace std;
  * 关系仿函数
  *  实现关系对比
  * 仿函数原型：
- *  template<class T> bool equal_to<T>                  //等于
- *  template<class T> bool not_equal_to<T>              //不等于
- *  template<class T> bool greater<T>                   //大于        greater<int>()
- *  template<class T> bool greater_equal<T>             //大于等于
- *  template<class T> bool less<T>                      //小于
- *  template<class T> bool less_equal<T>                //小于等于
+ *  bool equal_to<T>                  //等于
+ *  bool not_equal_to<T>              //不等于
+ *  bool greater<T>                   //大于        greater<int>()
+ *  bool greater_equal<T>             //大于等于
+ *  bool less<T>                      //小于
+ *  bool less_equal<T>                //小于等于
  */
 void printVector(const vector<int> &v) {
     for (int i = 0; i < v.size(); ++i) {

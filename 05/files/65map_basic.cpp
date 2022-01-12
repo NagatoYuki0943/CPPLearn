@@ -30,9 +30,9 @@ using namespace std;
  * 赋值：
  *  map& operator=(const map &mp);    //重载等号操作符
  *  没有assign()方法赋值
- *  也没有push和pop方法,要使用insert插入,erase删除
+ *  也没有push和pop方法,要使用insert插入,erase clear删除
  */
-void printMap(const map<int,int> m) {
+void printMap(const map<int,int> &m) {
     for (map<int,int>::const_iterator i =m.begin(); i !=m.end() ; ++i) {
         cout << i->first << " " << i->second << " | ";
     }

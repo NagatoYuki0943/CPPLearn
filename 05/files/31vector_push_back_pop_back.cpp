@@ -32,7 +32,7 @@ void printVector(vector<int> &v) {
 //    for (vector<int>::iterator it = v.begin(); it != v.end(); it++) {
 //        cout << *it << " ";
 //    }
-    for (int & it : v) {
+    for (auto & it : v) {
         cout << it << " ";
     }
     cout << endl;
@@ -41,6 +41,7 @@ void printVector(vector<int> &v) {
 void test01() {
     //默认构造
     vector<int> v1;
+    //预留空间
     v1.reserve(10);
     for (int i = 0; i < 10; ++i) {
         v1.push_back(i);

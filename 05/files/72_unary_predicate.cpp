@@ -28,7 +28,7 @@ void test01() {
 
     //使用对象
     GreaterFive greaterFive;
-    vector<int>::iterator res = find_if(v.begin(), v.end(), greaterFive);
+    auto res = find_if(v.begin(), v.end(), greaterFive);
     if (res != v.end()) {
         cout << *res << endl;   //6
     } else {

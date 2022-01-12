@@ -3,8 +3,8 @@
 using namespace std;
 
 /**
- * ÖØÔØ¹ØÏµÔËËã·û,> >= < <= Ö÷ÒªÊÇ== !=
- * Ö§³Ö³ÉÔ±º¯ÊıºÍÈ«¾Öº¯ÊıĞ´·¨
+ * é‡è½½å…³ç³»è¿ç®—ç¬¦,> >= < <= ä¸»è¦æ˜¯== !=
+ * æ”¯æŒæˆå‘˜å‡½æ•°å’Œå…¨å±€å‡½æ•°å†™æ³•
  */
 
 class Person {
@@ -13,7 +13,7 @@ public:
 
     string m_Name;
     int m_Age;
-    /*//ÖØÔØ==
+    /*//é‡è½½==
     bool operator==(Person &p){
         if (this->m_Name==p.m_Name && this->m_Age==p.m_Age){
             return true;
@@ -30,7 +30,7 @@ public:
     }*/
 };
 
-//È«¾Öº¯ÊıÖØÔØ,¿ÉÒÔ
+//å…¨å±€å‡½æ•°é‡è½½,å¯ä»¥
 bool operator==(Person &p1, Person &p2) {
     if (p1.m_Name == p2.m_Name && p1.m_Age == p2.m_Age) {
         return true;
@@ -51,15 +51,15 @@ void test01() {
     Person p1("tom", 18);
     Person p2("tom", 18);
     Person p3("jerry", 16);
-    if (p1 == p2) {  //µ÷ÓÃ==ÖØÔØ
-        cout << "p1ºÍp2ÏàµÈ" << endl;
+    if (p1 == p2) {  //è°ƒç”¨==é‡è½½
+        cout << "p1å’Œp2ç›¸ç­‰" << endl;
     } else {
-        cout << "p1ºÍp2²»ÏàµÈ" << endl;
+        cout << "p1å’Œp2ä¸ç›¸ç­‰" << endl;
     }
-    if (p1 != p3) {  //µ÷ÓÃ!=ÖØÔØ
-        cout << "p1ºÍp3²»ÏàµÈ" << endl;
+    if (p1 != p3) {  //è°ƒç”¨!=é‡è½½
+        cout << "p1å’Œp3ä¸ç›¸ç­‰" << endl;
     } else {
-        cout << "p1ºÍp3ÏàµÈ" << endl;
+        cout << "p1å’Œp3ç›¸ç­‰" << endl;
     }
 }
 

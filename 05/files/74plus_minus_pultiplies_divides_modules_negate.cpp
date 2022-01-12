@@ -19,12 +19,12 @@ using namespace std;
  *  实现四则运算
  *  其中negate是一元运算，其他都是二元运算
  * 仿函数原型：
- *  template<class T> T plus<T>             //加法仿函数     plus<int> plus;
- *  template<class T> T minus<T>            //减法仿函数     minus<int> minus;
- *  template<class T> T multiplies<T>       //乘法仿函数     multiplies<int> multiplies;
- *  template<class T> T divides<T>          //除法仿函数     divides<int> divides;
- *  template<class T> T modulus<T>          //取模仿函数     modulus<int> modulus;
- *  template<class T> T negate<T>           //取反仿函数     negate<int> negate;
+ *  plus<T>             //加法仿函数     plus<int> plus;
+ *  minus<T>            //减法仿函数     minus<int> minus;
+ *  multiplies<T>       //乘法仿函数     multiplies<int> multiplies;
+ *  divides<T>          //除法仿函数     divides<int> divides;
+ *  modulus<T>          //取模仿函数     modulus<int> modulus;
+ *  negate<T>           //取反仿函数     negate<int> negate;
  */
 
 void test01() {

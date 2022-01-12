@@ -25,7 +25,7 @@ void test01() {
         v4.push_back(i + 4);
     }
 
-    //将小容器插入到大的容器中
+    //将小容器插入到大的容器中,必须写在填入数字后面,不然插入不了数字
     v.push_back(v1);
     v.push_back(v2);
     v.push_back(v3);
