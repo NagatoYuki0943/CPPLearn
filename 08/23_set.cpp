@@ -10,6 +10,7 @@ using namespace std;
  *
  * 本质：
  *  set/multiset属于关联式容器，底层结构是用二叉树实现。map底层也是二叉树
+ *  set/map不允许随机访问
  *
  * set和multiset区别：
  *  set不允许容器中有重复的元素
@@ -22,7 +23,7 @@ using namespace std;
  *  没有assign()方法
  *  也没有push和pop方法,要使用insert插入,erase,clear删除
  *
- *  insert erase clear
+ *  insert erase(pos) clear
  *  empty size
  *  swap
  *  find 查找key是否存在,若存在，返回该键的元素的迭代器；若不存在，返回set.end(); end()代表最后一个数据的下一个

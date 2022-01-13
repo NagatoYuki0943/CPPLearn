@@ -2,6 +2,7 @@
 #include <map>
 using namespace std;
 /**
+ * *  set/map不允许随机访问
  *
  *  map中所有元素都是pair
  *  pair中第一个元素为key（键值），起到索引作用，第二个元素为value（实值）

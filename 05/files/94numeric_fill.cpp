@@ -11,7 +11,6 @@ using namespace std;
  *  向容器中填充指定的元素
  * 函数原型：
  *  fill(iterator beg, iterator end, value);
- *
  *  向容器中填充元素
  *  beg 开始迭代器
  *  end 结束迭代器

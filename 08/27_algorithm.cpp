@@ -1,7 +1,10 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
 #include <deque>
+#include <list>
+#include <map>
+#include <algorithm>
+
 
 using namespace std;
 
@@ -110,6 +113,62 @@ void test4(){
     cout << endl;
     reverse(d1.begin(), d1.end());
     for_each(d1.begin(), d1.end(), print1); //10 9 5 4 3 1
+    cout << endl;
+}
+
+/**
+ * copy
+ * 功能描述：
+ *  容器内指定范围的元素拷贝到另一容器中
+ * 函数原型：
+ *  copy(iterator beg, iterator end, iterator dest);
+ *
+ * transform
+ * 功能描述：
+ *  搬运容器到另一个容器中
+ * 函数原型：
+ *  transform(iterator beg1, iterator end1, iterator beg2, _func);
+ */
+void test5(){
+    list<int> l1 = {1, 2, 3, 4, 5};
+    list<int> l2;
+    l2.resize(l1.size());
+    copy(l1.begin(), l1.end(), l2.begin());
+    for(int &i: l2){
+        cout << i << " ";
+    }
+    //1 2 3 4 5
+    cout << endl;
+
+    list<int> l3;
+    l3.resize(l1.size());
+    //transform(l1.begin(), l1.end(), l3.begin());
+}
+
+
+/**
+ * replace
+ * 功能描述：
+ *  将容器内指定范围的旧元素修改为新元素  所有元素都替换
+ * 函数原型：
+ *  replace(iterator beg, iterator end, oldvalue, newvalue);
+ *
+ * replace_if
+ * 功能描述:
+ *  将区间内满足条件的元素，替换成指定元素
+ * 函数原型：
+ *  replace_if(iterator beg, iterator end, _pred, newvalue);
+ */
+void test6(){
+    vector<int> v1{1, 2, 2, 4, 5, 6};
+    replace(v1.begin(),v1.end()-3, 2, 9);
+    for_each(v1.begin(), v1.end(), print1);     //1 9 9 4 5 6
+    cout << endl;
+
+    vector<int> v2{1, 2, 3, 7, 6, 6};
+    replace_if(v2.begin(), v2.end(), Greater5(), -1);
+    for_each(v2.begin(), v2.end(), print1);     //1 2 3 -1 -1 -1
+    cout << endl;
 }
 
 
@@ -122,5 +181,10 @@ int main(){
     test3();
     cout << endl;
     test4();
+    cout << endl;
+    test5();
+    cout << endl;
+    test6();
+    cout << endl;
     return 0;
 }
