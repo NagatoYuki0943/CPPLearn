@@ -6,10 +6,18 @@ using namespace std;
  * 归并算法
  * 将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为二路归并。
  * 归并排序主要分为三步，一是对数组的划分，二是对数组的排序，三是对数组的合并
+ *
+ * 时间复杂度约为 O(N)
  */
 
-///合并算法
-void merge(int *arr, int start, int end, int *result) {
+/**
+ * 合并算法
+ * @param arr
+ * @param start 0
+ * @param end   len-1
+ * @param result
+ */
+void merge(int arr[], int start, int end, int *result) {
     int left_length = (end - start + 1) / 2 + 1;
     int left_index = start;
     int right_index = start + left_length;
@@ -27,8 +35,14 @@ void merge(int *arr, int start, int end, int *result) {
         result[result_index++] = arr[right_index++];
 }
 
-///分割排序
-void merge_sort(int *arr, int start, int end, int *result) {
+/**
+ * 分割排序
+ * @param arr
+ * @param start 0
+ * @param end   len-1
+ * @param result
+ */
+void mergeSort(int arr[], int start, int end, int *result) {
     if (1 == end - start)   //只有两个数
     {
         if (arr[start] > arr[end]) {
@@ -41,8 +55,8 @@ void merge_sort(int *arr, int start, int end, int *result) {
         return;
     else {
         //多余两个数，进行分割，直到不大于二位置
-        merge_sort(arr, start, (end - start + 1) / 2 + start, result);
-        merge_sort(arr, (end - start + 1) / 2 + start + 1, end, result);
+        mergeSort(arr, start, (end - start + 1) / 2 + start, result);
+        mergeSort(arr, (end - start + 1) / 2 + start + 1, end, result);
         //合并算法
         merge(arr, start, end, result);
 
@@ -62,7 +76,7 @@ int main() {
         cout << arr[i] << ' ';
     cout << '\n'
          << "after sorted:" << '\n';
-    merge_sort(arr, 0, length - 1, result);
+    mergeSort(arr, 0, length - 1, result);
     for (int i = 0; i < length; i++)
         cout << result[i] << ' ';
     return 0;

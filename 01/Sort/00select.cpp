@@ -1,7 +1,13 @@
 #include <iostream>
 
 using namespace std;
-///选择排序
+/**
+ * 选择排序
+ * 时间复杂度：最坏情况：O(N^2)
+ *            最好情况：O(N^2)
+ * 空间复杂度：O(1)
+ */
+
 /**
  *先认为第一个是最小的或者最大的,从下一个开始找,如果找到比第一个小的或者大的,交换两者位置
  */
@@ -15,7 +21,7 @@ void OutPut(int a[], int len) {
 }
 
 //升序
-void UpSort(int a[], int len) {
+void upSelectSort(int a[], int len) {
     cout << "升序排列" << endl;
     int min;
     for (int i = 0; i < len - 1; i++) {   // i从0开始,到小于len-1结束
@@ -31,11 +37,10 @@ void UpSort(int a[], int len) {
             a[i] = tmp;
         }
     }
-    OutPut(a, len);
 }
 
 //降序
-void DownSort(int a[], int len) {
+void downSelectSort(int a[], int len) {
     cout << "降序排列" << endl;
     int max;
     for (int i = 0; i < len - 1; i++) {    // i从0开始,到小于len-1结束
@@ -51,15 +56,16 @@ void DownSort(int a[], int len) {
             a[i] = tmp;
         }
     }
-    OutPut(a, len);
 }
 
 int main() {
     int arr[] = {9, 8, 3, 2, 1, 7, 0, 6, 5, 4, 0};
     int len = sizeof(arr) / sizeof(arr[0]);
     OutPut(arr, len);
-    UpSort(arr, len);
-    DownSort(arr, len);
+    upSelectSort(arr, len);
+    OutPut(arr, len);
+    downSelectSort(arr, len);
+    OutPut(arr, len);
     //OutPut(a);
     return 0;
 }

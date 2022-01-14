@@ -3,9 +3,15 @@
 using namespace std;
 /**
  * 快速排序,假定第一个值为中间值,先从右往左找一个比它小的,再从左边找一个比它大的数,交换两者位置,最后i==j,用中间值和i的值交换
+ * 时间复杂度: N*log(N/2)
  */
-//升序排列
-void UpQuickSort(int left, int right, int arr[]) {
+/**
+ * 升序排列
+ * @param left  0
+ * @param right len-1
+ * @param arr
+ */
+void upQuickSort(int left, int right, int arr[]) {
     //左边为第一个，就从右往左找
     if (left >= right) {
         return;
@@ -35,12 +41,18 @@ void UpQuickSort(int left, int right, int arr[]) {
     //基准数归位,最终i的位置的值和开始基准位置的值交换位置
     arr[left] = arr[i];
     arr[i] = base;
-    UpQuickSort(left, i - 1, arr); //左边递归
-    UpQuickSort(i + 1, right, arr); //递归右边
+    upQuickSort(left, i - 1, arr); //左边递归
+    upQuickSort(i + 1, right, arr); //递归右边
 }
 
-//降序排列
-void DownQuickSort(int left, int right, int arr[]) {
+/**
+ * 降序排列
+ * @param left  0
+ * @param right len-1
+ * @param arr
+ */
+void downQuickSort(int left, int right, int arr[]) {
+
     //左边为第一个，就从右往左找
     if (left >= right) {
         return;
@@ -70,8 +82,8 @@ void DownQuickSort(int left, int right, int arr[]) {
     //基准数归位,最终i的位置的值和开始基准位置的值交换位置
     arr[left] = arr[i];
     arr[i] = base;
-    DownQuickSort(left, i - 1, arr); //左边递归
-    DownQuickSort(i + 1, right, arr); //递归右边
+    downQuickSort(left, i - 1, arr); //左边递归
+    downQuickSort(i + 1, right, arr); //递归右边
 }
 
 void OutPut(int arr[], int len) {
@@ -88,11 +100,11 @@ int main() {
     OutPut(arr, len);
 
     //升序排列
-    UpQuickSort(0, len - 1, arr);
+    upQuickSort(0, len - 1, arr);
     OutPut(arr, len);
 
     //降序排列
-    DownQuickSort(0, len - 1, arr);
+    downQuickSort(0, len - 1, arr);
     OutPut(arr, len);
     return 0;
 }
