@@ -14,7 +14,7 @@ void shellSort(int* arr, int len)
         //每次对gap折半操作
         gap = gap / 2;
         //单趟排序
-        for (int i = 0; i < len - gap; ++i){
+        for (int i = 0; i < len - gap; i++){
             int end = i;
             int tmp = arr[end + gap];
             while (end >= 0){
