@@ -67,3 +67,5 @@ add_executable(00merge Sort/00merge.cpp)
 add_executable(00shell Sort/00shell.cpp)
 add_executable(test00 test00.cpp)
 
+
+add_executable(test Sort/test.cpp)

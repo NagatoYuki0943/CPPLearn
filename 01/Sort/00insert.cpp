@@ -14,14 +14,14 @@ void UpInsertSort(int arr[], int len) {
     for (int i = 1; i < len; i++)  //i从第一个开始,到最后一个
     {
         //获取初值
-        int temp = arr[i];
+        int min = arr[i];
         //判断有无交换的条件
         bool flag = false;
         //从i开始,从右往左比较,直到最左侧
         int j = i - 1;  //要从外面赋值,不然下面无法交换
         for (; j >= 0; j--)  //j从i-1开始,往左找到第0个
         {
-            if (arr[j] > temp) {    //升序降序只要改这里的大于号就可以
+            if (min < arr[j]) {    //升序降序只要改这里的大于号就可以
                 //数据后移
                 arr[j + 1] = arr[j];
 
@@ -33,7 +33,7 @@ void UpInsertSort(int arr[], int len) {
             }
         }
         if (flag) {
-            arr[j + 1] = temp; //j运行完之后会-1,到要交换的前一个位置, 所以要+1
+            arr[j + 1] = min; //j运行完之后会-1,到要交换的前一个位置, 所以要+1
         }
     }
 }
