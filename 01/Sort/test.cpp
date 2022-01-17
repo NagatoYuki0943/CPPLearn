@@ -17,10 +17,11 @@ void chooseSort(int arr[], int len){
         int min = i;
         for (int j = i+1; j < len; ++j) {
             //升序,降序在于 > <
-            if (arr[min] > arr[j])     //大于号
+            if(arr[min] > arr[j]){      //大于号
                 min = j;
+            }
         }
-        if(min != i){
+        if (min != i){
             int temp = arr[min];
             arr[min] = arr[i];
             arr[i] = temp;
@@ -34,12 +35,12 @@ void insertSort(int arr[], int len){
         int temp = arr[i];           //取出值,不是下标
         bool flag = false;
         int j = i-1;
-        //升序,降序在于 > <
         for (; j >= 0; --j) {
+            //升序,降序在于 > <
             if (temp < arr[j]){      //注意这里的temp
-                flag = true;
+                flag= true;
                 arr[j+1] = arr[j];
-            } else{
+            }else{
                 break;               //不要忘了break
             }
         }
@@ -50,7 +51,7 @@ void insertSort(int arr[], int len){
 
 
 void bubbleSort(int arr[], int len){
-    for (int i = 0; i < len-1; ++i) {
+    for (int i = 0; i < len - 1; ++i) {
         bool flag = true;       //排好了
         for (int j = 0; j < len-1-i; ++j) {
             //升序,降序在于 > <

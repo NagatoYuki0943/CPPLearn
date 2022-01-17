@@ -58,7 +58,6 @@ add_executable(72union study01/72union.cpp)
 add_executable(73enum study01/73enum.cpp)
 add_executable(74vector study01/74vector.cpp)
 add_executable(75array_template study01/75array_template.cpp)
-
 add_executable(00bubble Sort/00bubble.cpp)
 add_executable(00select Sort/00select.cpp)
 add_executable(00insert Sort/00insert.cpp)
@@ -66,6 +65,4 @@ add_executable(00quick Sort/00quick.cpp)
 add_executable(00merge Sort/00merge.cpp)
 add_executable(00shell Sort/00shell.cpp)
 add_executable(test00 test00.cpp)
-
-
 add_executable(test Sort/test.cpp)
