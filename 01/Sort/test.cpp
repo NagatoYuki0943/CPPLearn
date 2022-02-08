@@ -29,7 +29,6 @@ void chooseSort(int arr[], int len){
     }
 }
 
-
 void insertSort(int arr[], int len){
     for (int i = 1; i < len; ++i) {
         int temp = arr[i];           //取出值,不是下标
@@ -49,6 +48,9 @@ void insertSort(int arr[], int len){
     }
 }
 
+void insert(int arr[], int len){
+
+}
 
 void bubbleSort(int arr[], int len){
     for (int i = 0; i < len - 1; ++i) {
@@ -74,7 +76,7 @@ void bubbleSort(int arr[], int len){
 void reverseList(){
     int arr[] = {1, 2, 3, 4, 5};
     stack<int> s;
-    for(int i: arr){
+    for (int i: arr) {
         s.push(i);
     }
     while (!s.empty()){
@@ -84,7 +86,6 @@ void reverseList(){
     cout << endl;
 }
 
-
 int main(){
     int arr[] = {10,5,9,1,3,5,7,-10};
     int len = sizeof (arr) / sizeof (int);
@@ -93,9 +94,8 @@ int main(){
 
     int arr1[] = {10,5,9,1,3,5,7,-10};
     len = sizeof (arr1) / sizeof (int);
-    insertSort(arr1, len);
+    insert(arr1, len);
     printArr(arr1, len);
-
 
     int arr2[] = {10,5,9,1,3,5,7,-10};
     len = sizeof (arr2) / sizeof (int);
