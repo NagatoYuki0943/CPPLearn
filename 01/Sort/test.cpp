@@ -29,6 +29,10 @@ void chooseSort(int arr[], int len){
     }
 }
 
+void choose(int arr[], int len){
+
+}
+
 void insertSort(int arr[], int len){
     for (int i = 1; i < len; ++i) {
         int temp = arr[i];           //取出值,不是下标
@@ -69,6 +73,9 @@ void bubbleSort(int arr[], int len){
     }
 }
 
+void bubble(int arr[], int len){
+
+}
 
 /**
  * 列表逆序,放入栈中
@@ -89,7 +96,7 @@ void reverseList(){
 int main(){
     int arr[] = {10,5,9,1,3,5,7,-10};
     int len = sizeof (arr) / sizeof (int);
-    chooseSort(arr, len);
+    choose(arr, len);
     printArr(arr, len);
 
     int arr1[] = {10,5,9,1,3,5,7,-10};
@@ -99,7 +106,7 @@ int main(){
 
     int arr2[] = {10,5,9,1,3,5,7,-10};
     len = sizeof (arr2) / sizeof (int);
-    bubbleSort(arr2, len);
+    bubble(arr2, len);
     printArr(arr2, len);
 
     reverseList();
