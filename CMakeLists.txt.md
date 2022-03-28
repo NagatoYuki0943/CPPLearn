@@ -88,6 +88,8 @@ link_directories("D:/ai/libtorch/iib")
 
 
 
+https://www.jianshu.com/p/54292d374584
+
 # link_libraries(文件)
 
 `target_link_libraries([item1] [item2] [...]`
@@ -100,7 +102,7 @@ link_libraries("/opt/MATLAB/R2012a/bin/glnxa64/libeng.so"　"/opt/MATLAB/R2012a/
 
 
 
-# target_link_libraries
+# target_link_libraries(文件)
 
 `target_link_libraries(<target> [item1] [item2] [...]`
 
