@@ -48,7 +48,7 @@ set(CMAKE_CXX_STANDARD 11)
 
 
 
-# include_directories
+# include_directories(路径)
 
 > 指定头文件目录
 >
@@ -68,7 +68,9 @@ export CPLUS_INCLUDE_PATH=CPLUS_INCLUDE_PATH:~/libtorch/include
 include_directories("D:/ai/libtorch/include" "D:/ai/libtorch/include/torch/csrc/api/include")
 ```
 
-# link_directories
+
+
+# link_directories(路径)
 
 `link_directories(directory1 directory2 …)`
 
@@ -84,6 +86,20 @@ include_directories("D:/ai/libtorch/include" "D:/ai/libtorch/include/torch/csrc/
 link_directories("D:/ai/libtorch/iib")
 ```
 
+
+
+# link_libraries(文件)
+
+`target_link_libraries([item1] [item2] [...]`
+
+> 添加需要链接的库文件路径，注意这里是全路径
+
+```cmake
+link_libraries("/opt/MATLAB/R2012a/bin/glnxa64/libeng.so"　"/opt/MATLAB/R2012a/bin/glnxa64/libmx.so")
+```
+
+
+
 # target_link_libraries
 
 `target_link_libraries(<target> [item1] [item2] [...]`
@@ -91,9 +107,10 @@ link_directories("D:/ai/libtorch/iib")
 > 为将目标文件与库文件进行链接
 
 ```cmake
-target_link_libraries(程序名 库名称)
-target_link_libraries(helloSLAM hello)
+target_link_libraries(helloSLAM hello.so)  #连接libhello.so库
 ```
+
+
 
 #　add_library
 
@@ -300,6 +317,17 @@ PATH
 
 
 
+# if() endif() _FOUND message
+
+```cmake
+find_package(Torch REQUIRED)
+if (Torch_FOUND)
+    message("Torch found!")
+endif ()
+```
+
+
+
 # win
 
 > CLion编译的程序是用cmake方法编译的，在windows上exe文件需要libgcc才能运行
@@ -321,31 +349,49 @@ set(CMAKE_EXE_LINKER_FLAGS "-static")
 > linux
 
 ```cmake
+cmake_minimum_required(VERSION 3.21)
+project(test)
 set(CMAKE_CXX_STANDARD 14)
+
+add_executable(test main.cpp)
 
 # cuda
 set(CMAKE_CUDA_COMPILER "/usr/local/cuda/bin/nvcc")
 
-set(CMAKE_PREFIX_PATH "~/libtorch")
-set(Torch_DIR "~/libtorch/share/cmake/Torch")
+set(Torch_DIR "/home/ubuntu/libtorch/share/cmake/Torch")
+set(CMAKE_PREFIX_PATH "/home/ubuntu/libtorch/share/cmake/Torch")
 find_package(Torch REQUIRED)
-# 或者
-include_directories("~/libtorch/include" "~/libtorch/include/torch/csrc/api/include")
-link_directories("~/libtorch/lib")
+if (Torch_FOUND)
+    message("Torch found!")
+endif ()
+
+include_directories("/home/ubuntu/libtorch/include" "/home/ubuntu/libtorch/include/torch/csrc/api/include")
+link_directories("/home/ubuntu/libtorch/lib")
+
+target_link_libraries(test ${Torch_LIBS})
 ```
 
 > win
 
 ```cmake
+cmake_minimum_required(VERSION 3.21)
+project(test)
 set(CMAKE_CXX_STANDARD 14)
+
+add_executable(test main.cpp)
 
 # cuda
 set(CMAKE_CUDA_COMPILER "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.3/bin/nvcc.exe")
 
-set(CMAKE_PREFIX_PATH "D:/ai/libtorch")
 set(Torch_DIR "D:/ai/libtorch/share/cmake/Torch")
+set(CMAKE_PREFIX_PATH "D:/ai/libtorch")
 find_package(Torch REQUIRED)
-# 或者
+if (Torch_FOUND)
+    message("Torch found!")
+endif ()
+
 include_directories("D:/ai/libtorch/include" "D:/ai/libtorch/include/torch/csrc/api/include")
 link_directories("D:/ai/libtorch/lib")
+
+target_link_libraries(test ${Torch_LIBS})
 ```
