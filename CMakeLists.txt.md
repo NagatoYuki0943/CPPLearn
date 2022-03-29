@@ -57,7 +57,7 @@ set(CMAKE_CXX_STANDARD 11)
 > 比如:
 
 ```cmake
-include_directories("~/libtorch/include")
+include_directories(~/libtorch/include)
 与
 export CPLUS_INCLUDE_PATH=CPLUS_INCLUDE_PATH:~/libtorch/include
 ```
@@ -65,7 +65,7 @@ export CPLUS_INCLUDE_PATH=CPLUS_INCLUDE_PATH:~/libtorch/include
 > 例子
 
 ```cmake
-include_directories("D:/ai/libtorch/include" "D:/ai/libtorch/include/torch/csrc/api/include")
+include_directories(/home/ubuntu/libtorch/include /home/ubuntu/libtorch/include/torch/csrc/api/include)
 ```
 
 
@@ -79,11 +79,17 @@ include_directories("D:/ai/libtorch/include" "D:/ai/libtorch/include/torch/csrc/
 > 不过你自己写的动态库文件放在自己新建的目录下时，可以用该指令指定该目录的路径以便工程能够找到。
 >
 > 它相当于g++命令的-L选项的作用，也相当于环境变量中增加LD_LIBRARY_PATH的路径的作用。
+>
+> **link_directories之后再选择库文件就不需要写全路径了，直接写库文件名即可**
 
 > 例子
 
 ```cmake
-link_directories("D:/ai/libtorch/iib")
+link_directories(/home/ubuntu/libtorch/lib)      
+
+link_libraries(libtorch.so libtorch_cpu.so ...)				# 直接写库文件名
+
+target_link_libraries(test libtorch.so libtorch_cpu.so ...) # 直接写库文件名
 ```
 
 
@@ -97,7 +103,8 @@ https://www.jianshu.com/p/54292d374584
 > 添加需要链接的库文件路径，注意这里是全路径
 
 ```cmake
-link_libraries("/opt/MATLAB/R2012a/bin/glnxa64/libeng.so"　"/opt/MATLAB/R2012a/bin/glnxa64/libmx.so")
+link_libraries(/home/ubuntu/libtorch/lib/libtorch.so　/home/ubuntu/libtorch/lib/libtorch_cpu.so ...)
+link_libraries(${Torch_LIBS})	# 全部引入
 ```
 
 
@@ -109,7 +116,39 @@ link_libraries("/opt/MATLAB/R2012a/bin/glnxa64/libeng.so"　"/opt/MATLAB/R2012a/
 > 为将目标文件与库文件进行链接
 
 ```cmake
-target_link_libraries(helloSLAM hello.so)  #连接libhello.so库
+add_executable(test main.cpp)
+
+target_link_libraries(test ${Torch_LIBS})	# 全部引入
+```
+
+
+
+## link_libraries target_link_libraries 实现相同功能
+
+```cmake
+link_libraries(${Torch_LIBS})	# 全部引入
+
+add_executable(test main.cpp)
+```
+
+```cmake
+add_executable(test main.cpp)
+
+target_link_libraries(test ${Torch_LIBS})	# 全部引入
+```
+
+> link_directories 配合 link_libraries target_link_libraries
+>
+> link_directories引入路径之后，后面直接写lib文件名即可
+
+```cmake
+add_executable(test main.cpp) 
+
+link_directories("/home/ubuntu/libtorch/lib")      
+
+link_libraries(libtorch.so libtorch_cpu.so ...)				# 直接写库文件名
+
+target_link_libraries(test libtorch.so libtorch_cpu.so ...) # 直接写库文件名
 ```
 
 
@@ -346,54 +385,157 @@ set(CMAKE_EXE_LINKER_FLAGS "-static")
 
 
 
-# libtorch
+# 示例
 
-> linux
+## lite.ai.toolkit
+
+
+
+```cmake
+set(LITE_AI_DIR ${CMAKE_SOURCE_DIR}/lite.ai.toolkit)
+
+# 头文件目录
+include_directories(${LITE_AI_DIR}/include)
+
+# lib目录
+link_directories(${LITE_AI_DIR}/lib})
+
+# 设置需要的lib
+set(TOOLKIT_LIBS lite.ai.toolkit onnxruntime)
+set(OpenCV_LIBS opencv_core opencv_imgcodecs opencv_imgproc opencv_video opencv_videoio)
+
+# 链接需要的lib
+link_libraries(${TOOLKIT_LIBS} ${OpenCV_LIBS})
+
+#  
+add_executable(lite_yolov5 examples/test_lite_yolov5.cpp)
+```
+
+
+
+
+
+## libtorch示例
+
+### linux
+
+#### link_libraries
 
 ```cmake
 cmake_minimum_required(VERSION 3.21)
 project(test)
+
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(test main.cpp)
-
 # cuda
-set(CMAKE_CUDA_COMPILER "/usr/local/cuda/bin/nvcc")
+set(CMAKE_CUDA_COMPILER /usr/local/cuda/bin/nvcc)
 
-set(Torch_DIR "/home/ubuntu/libtorch/share/cmake/Torch")
-set(CMAKE_PREFIX_PATH "/home/ubuntu/libtorch/share/cmake/Torch")
+# Torch
+set(Torch_DIR /home/ubuntu/libtorch/share/cmake/Torch)
 find_package(Torch REQUIRED)
 if (Torch_FOUND)
     message("Torch found!")
 endif ()
 
-include_directories("/home/ubuntu/libtorch/include" "/home/ubuntu/libtorch/include/torch/csrc/api/include")
-link_directories("/home/ubuntu/libtorch/lib")
+include_directories(/home/ubuntu/libtorch/include /home/ubuntu/libtorch/include/torch/csrc/api/include)
 
-target_link_libraries(test ${Torch_LIBS})
+# 链接所有库，不指定cpp文件
+link_libraries(${Torch_LIBS})
+
+# add_executable写在下面
+add_executable(main main.cpp)
 ```
 
-> win
+#### target_link_libraries
 
 ```cmake
 cmake_minimum_required(VERSION 3.21)
 project(test)
 set(CMAKE_CXX_STANDARD 14)
 
+# add_executable写在上面
+add_executable(main main.cpp)
+
+# cuda
+set(CMAKE_CUDA_COMPILER /usr/local/cuda/bin/nvcc)
+
+set(Torch_DIR /home/ubuntu/libtorch/share/cmake/Torch)
+find_package(Torch REQUIRED)
+if (Torch_FOUND)
+    message("Torch found!")
+endif ()
+
+include_directories(/home/ubuntu/libtorch/include /home/ubuntu/libtorch/include/torch/csrc/api/include)
+
+# 链接所有库，指定cpp文件
+target_link_libraries(main ${Torch_LIBS})
+```
+
+### win
+
+#### link_libraries
+
+```cmake
+cmake_minimum_required(VERSION 3.19)
+project(CLion)
+
+set(CMAKE_CXX_STANDARD 14)
+
+# cuda
+set(CMAKE_CUDA_COMPILER "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.3/bin/nvcc.exe")
+
+# Torch
+set(Torch_DIR D:/ai/libtorch/share/cmake/Torch)
+find_package(Torch REQUIRED)
+if (Torch_FOUND)
+   message("Torch found!")
+endif ()
+
+include_directories(D:/ai/libtorch/include D:/ai/libtorch/include/torch/csrc/api/include)
+
+# 链接所有库，不指定cpp文件
+link_libraries(${Torch_LIBS})
+
+# add_executable写在下面
+add_executable(main main.cpp)
+```
+
+#### target_link_libraries
+
+```cmake
+cmake_minimum_required(VERSION 3.21)
+project(test)
+set(CMAKE_CXX_STANDARD 14)
+
+# add_executable写在上面
 add_executable(test main.cpp)
 
 # cuda
 set(CMAKE_CUDA_COMPILER "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.3/bin/nvcc.exe")
 
-set(Torch_DIR "D:/ai/libtorch/share/cmake/Torch")
-set(CMAKE_PREFIX_PATH "D:/ai/libtorch")
+set(Torch_DIR D:/ai/libtorch/share/cmake/Torch)
 find_package(Torch REQUIRED)
 if (Torch_FOUND)
     message("Torch found!")
 endif ()
 
-include_directories("D:/ai/libtorch/include" "D:/ai/libtorch/include/torch/csrc/api/include")
-link_directories("D:/ai/libtorch/lib")
+include_directories(D:/ai/libtorch/include D:/ai/libtorch/include/torch/csrc/api/include)
 
-target_link_libraries(test ${Torch_LIBS})
+# 链接所有库，指定cpp文件
+target_link_libraries(main ${Torch_LIBS})
 ```
+
+
+
+# .a .so .lib .dll
+
+https://www.cnblogs.com/yelao/p/9546021.html
+
+- Linux下的静态库以.a结尾(Winodws下为.lib)
+- Linux下的动态库以.so 或 .so.y结尾，其中y代表版本号(Windows下为.dll)，而且，Linux下的库必须以lib开头，用于系统识别(如：libjpeg.a libsdl.so)
+
+静态库必要的目标代码的是在对程序编译的时候被加入到程序中,而运行时不再需要.a的库了
+
+而动态库，则是在运行时转载
+
+所以，动态链接的可执行代码比静态链接的可执行代码小的多
