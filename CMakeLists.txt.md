@@ -369,6 +369,58 @@ endif ()
 
 
 
+# function
+
+```cmake
+# 创建函数
+function(函数名 参数)
+    ...
+endfunction()
+
+# 调用函数
+函数名(参数)
+```
+
+
+
+```cmake
+cmake_minimum_required(VERSION 3.21)
+project(mmdeploy_test)
+
+set(CMAKE_CXX_STANDARD 11)
+
+# opencv2
+set(OpenCV_DIR /usr/local)
+find_package(OpenCV REQUIRED)
+if (OpenCV_FOUND)
+    message("OpenCV Found!")
+    message(${OpenCV_INCLUDE_DIRS})
+endif ()
+include_directories(${OpenCV_INCLUDE_DIRS})
+
+# mmdeploy
+set(MMDeploy_DIR /home/ubuntu/Program/mm/mmdeploy/build/install/lib/cmake/MMDeploy)
+find_package(MMDeploy REQUIRED)
+
+include_directories(/home/ubuntu/Program/mm/mmdeploy/build/install/include)
+
+function(add_example name)
+    file(GLOB _SRCS ${name}.c*)
+    add_executable(${name} ${_SRCS})
+    if (NOT MSVC)
+        # disable new dtags so that executables can run even without LD_LIBRARY_PATH set
+        target_link_libraries(${name} PRIVATE -Wl,--disable-new-dtags)
+    endif ()
+    mmdeploy_load_static(${name} MMDeployStaticModules)
+    mmdeploy_load_dynamic(${name} MMDeployDynamicModules)
+    target_link_libraries(${name} PRIVATE MMDeployLibs ${OpenCV_LIBS})
+endfunction()
+
+add_example(main)
+```
+
+
+
 # win
 
 > CLion编译的程序是用cmake方法编译的，在windows上exe文件需要libgcc才能运行
@@ -389,8 +441,6 @@ set(CMAKE_EXE_LINKER_FLAGS "-static")
 
 ## lite.ai.toolkit
 
-
-
 ```cmake
 set(LITE_AI_DIR ${CMAKE_SOURCE_DIR}/lite.ai.toolkit)
 
@@ -404,14 +454,12 @@ link_directories(${LITE_AI_DIR}/lib})
 set(TOOLKIT_LIBS lite.ai.toolkit onnxruntime)
 set(OpenCV_LIBS opencv_core opencv_imgcodecs opencv_imgproc opencv_video opencv_videoio)
 
-# 链接需要的lib
-link_libraries(${TOOLKIT_LIBS} ${OpenCV_LIBS})
 
-#  
 add_executable(lite_yolov5 examples/test_lite_yolov5.cpp)
+
+# 链接需要的lib
+target_link_libraries(lite_yolov5 ${TOOLKIT_LIBS} ${OpenCV_LIBS})
 ```
-
-
 
 
 
@@ -434,13 +482,13 @@ set(CMAKE_CUDA_COMPILER /usr/local/cuda/bin/nvcc)
 set(Torch_DIR /home/ubuntu/libtorch/share/cmake/Torch)
 find_package(Torch REQUIRED)
 if (Torch_FOUND)
-    message("Torch found!")
+    message(${TORCH_INCLUDE_DIRS})  # /home/ubuntu/libtorch/include /home/ubuntu/libtorch/include/torch/csrc/api/include
+    message(${TORCH_LIBRARIES})
 endif ()
-
-include_directories(/home/ubuntu/libtorch/include /home/ubuntu/libtorch/include/torch/csrc/api/include)
+include_directories(${TORCH_INCLUDE_DIRS})
 
 # 链接所有库，不指定cpp文件
-link_libraries(${Torch_LIBS})
+link_libraries(${TORCH_LIBRARIES})
 
 # add_executable写在下面
 add_executable(main main.cpp)
@@ -453,22 +501,23 @@ cmake_minimum_required(VERSION 3.21)
 project(test)
 set(CMAKE_CXX_STANDARD 14)
 
-# add_executable写在上面
-add_executable(main main.cpp)
-
 # cuda
 set(CMAKE_CUDA_COMPILER /usr/local/cuda/bin/nvcc)
 
+# Torch
 set(Torch_DIR /home/ubuntu/libtorch/share/cmake/Torch)
 find_package(Torch REQUIRED)
 if (Torch_FOUND)
-    message("Torch found!")
+    message(${TORCH_INCLUDE_DIRS})  # /home/ubuntu/libtorch/include /home/ubuntu/libtorch/include/torch/csrc/api/include
+    message(${TORCH_LIBRARIES})
 endif ()
+include_directories(${TORCH_INCLUDE_DIRS})
 
-include_directories(/home/ubuntu/libtorch/include /home/ubuntu/libtorch/include/torch/csrc/api/include)
+# add_executable写在上面
+add_executable(main main.cpp)
 
 # 链接所有库，指定cpp文件
-target_link_libraries(main ${Torch_LIBS})
+target_link_libraries(main ${TORCH_LIBRARIES})
 ```
 
 ### win
@@ -485,16 +534,16 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CUDA_COMPILER "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.3/bin/nvcc.exe")
 
 # Torch
-set(Torch_DIR D:/ai/libtorch/share/cmake/Torch)
+set(Torch_DIR "D:/ai/libtorch/share/cmake/Torch")
 find_package(Torch REQUIRED)
 if (Torch_FOUND)
-   message("Torch found!")
+    message(${TORCH_INCLUDE_DIRS})  # D:/ai/libtorch/include D:/ai/libtorch/include/torch/csrc/api/include
+    message(${TORCH_LIBRARIES})
 endif ()
-
-include_directories(D:/ai/libtorch/include D:/ai/libtorch/include/torch/csrc/api/include)
+include_directories(${TORCH_INCLUDE_DIRS})
 
 # 链接所有库，不指定cpp文件
-link_libraries(${Torch_LIBS})
+link_libraries(${TORCH_LIBRARIES})  # 是TORCH_LIBRARIES 不是 TORCH_LIBS
 
 # add_executable写在下面
 add_executable(main main.cpp)
@@ -503,26 +552,28 @@ add_executable(main main.cpp)
 #### target_link_libraries
 
 ```cmake
-cmake_minimum_required(VERSION 3.21)
-project(test)
-set(CMAKE_CXX_STANDARD 14)
+cmake_minimum_required(VERSION 3.19)
+project(CLion)
 
-# add_executable写在上面
-add_executable(test main.cpp)
+set(CMAKE_CXX_STANDARD 14)
 
 # cuda
 set(CMAKE_CUDA_COMPILER "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.3/bin/nvcc.exe")
 
-set(Torch_DIR D:/ai/libtorch/share/cmake/Torch)
+# Torch
+set(Torch_DIR "D:/ai/libtorch/share/cmake/Torch")
 find_package(Torch REQUIRED)
 if (Torch_FOUND)
-    message("Torch found!")
+    message(${TORCH_INCLUDE_DIRS})  # D:/ai/libtorch/include D:/ai/libtorch/include/torch/csrc/api/include
+    message(${TORCH_LIBRARIES})
 endif ()
+include_directories(${TORCH_INCLUDE_DIRS})
 
-include_directories(D:/ai/libtorch/include D:/ai/libtorch/include/torch/csrc/api/include)
+# add_executable写在上面
+add_executable(main main.cpp)
 
 # 链接所有库，指定cpp文件
-target_link_libraries(main ${Torch_LIBS})
+target_link_libraries(main ${TORCH_LIBRARIES})  # 是TORCH_LIBRARIES 不是 TORCH_LIBS
 ```
 
 
