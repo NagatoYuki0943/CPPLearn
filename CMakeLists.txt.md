@@ -1,4 +1,5 @@
 # 声明要求的cmake最低版本
+
 ```cmake
 cmake_minimum_required(VERSION 2.8)
 ```
@@ -423,6 +424,10 @@ add_example(main)
 
 # win
 
+> vs添加环境变量 `C:\ABC\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin`
+>
+> 或者使用mingw编译
+>
 > CLion编译的程序是用cmake方法编译的，在windows上exe文件需要libgcc才能运行
 >
 > 解决方法
@@ -534,7 +539,7 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CUDA_COMPILER "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.3/bin/nvcc.exe")
 
 # Torch
-set(Torch_DIR "D:/ai/libtorch/share/cmake/Torch")
+set(Torch_DIR D:/ai/libtorch/share/cmake/Torch)
 find_package(Torch REQUIRED)
 if (Torch_FOUND)
     message(${TORCH_INCLUDE_DIRS})  # D:/ai/libtorch/include D:/ai/libtorch/include/torch/csrc/api/include
@@ -561,7 +566,7 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CUDA_COMPILER "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.3/bin/nvcc.exe")
 
 # Torch
-set(Torch_DIR "D:/ai/libtorch/share/cmake/Torch")
+set(Torch_DIR D:/ai/libtorch/share/cmake/Torch")
 find_package(Torch REQUIRED)
 if (Torch_FOUND)
     message(${TORCH_INCLUDE_DIRS})  # D:/ai/libtorch/include D:/ai/libtorch/include/torch/csrc/api/include
