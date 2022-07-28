@@ -16,7 +16,7 @@ using namespace std;
  *
  * front()和back()代表第一个和最后一个数据
  * push_back()和pop_back()对尾部数据进行操作
- * push_front()和poop_back()对头部数据进行操作
+ * push_front()和pop_back()对头部数据进行操作
  *
  * deque内部工作原理:
  * deque内部有个中控器，维护每段缓冲区中的内容，缓冲区中存放真实数据
