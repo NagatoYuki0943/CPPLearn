@@ -6,7 +6,7 @@ int main() {
 	std::time_t t1 = std::time(0); // 获取当前时间戳（秒）
 	std::cout << t1 << " seconds since 01-Jan-1970" << std::endl;
 	
-	auto t2 = std::chrono::high_resolution_clock::now();
+	std::chrono::high_resolution_clock::time_point t2 = std::chrono::high_resolution_clock::now();
 
 	auto ms1 = std::chrono::duration_cast<std::chrono::seconds>(t2.time_since_epoch());
 	std::cout << ms1.count() << " seconds since 01-Jan-1970"  << std::endl; // 输毫秒级时间戳
@@ -24,8 +24,7 @@ int main() {
 	std::cout << ms5.count() << " minutes since 01-Jan-1970"  << std::endl; // 输出分钟级时间戳
 	
 	auto ms6 = std::chrono::duration_cast<std::chrono::hours>(t2.time_since_epoch());
-	std::cout << ms6.count() << " hours since 01-Jan-1970"  << std::endl; // 输出分钟级时间戳
+	std::cout << ms6.count() << " hours since 01-Jan-1970"  << std::endl; // 输出小时级时间戳
 
 	return 0;
 }
-
