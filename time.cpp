@@ -30,5 +30,9 @@ int main() {
 	auto ms6 = std::chrono::duration_cast<std::chrono::hours>(t3.time_since_epoch());
 	std::cout << ms6.count() << " hours since 01-Jan-1970"  << std::endl; // 输出小时级时间戳
 
+	auto t4 = std::chrono::high_resolution_clock::now();
+	auto ms7 = std::chrono::duration_cast<std::chrono::nanoseconds>(t4 - t3);
+	std::cout << "interval = " << ms7.count() << " nanoseconds"  << std::endl;
+	
 	return 0;
 }
