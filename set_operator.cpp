@@ -58,45 +58,39 @@ std::set<T> set_difference(const std::set<T> &a, const std::set<T> &b) {
 void test1(std::set<int> a, std::set<int> b) {
 	std::set<int> c;
 
-	std::cout << "a = [";
-	for (auto i : a) {
+	std::cout << "a = (";
+	for (auto i : a)
 		std::cout << i << ", ";
-	}
-	std::cout << "]" << std::endl;
+	std::cout << ")" << std::endl;
 
-	std::cout << "b = [";
-	for (auto i : b) {
+	std::cout << "b = (";
+	for (auto i : b)
 		std::cout << i << ", ";
-	}
-	std::cout << "]" << std::endl;
+	std::cout << ")" << std::endl;
 
 	c = set_intersection(a, b);
-	std::cout << "set_intersection result = [";
-	for (auto i : c) {
+	std::cout << "set_intersection result = (";
+	for (auto i : c)
 		std::cout << i << ", ";
-	}
-	std::cout << "]" << std::endl;
+	std::cout << ")" << std::endl;
 
 	c = set_union(a, b);
-	std::cout << "set_union result = [";
-	for (auto i : c) {
+	std::cout << "set_union result = (";
+	for (auto i : c)
 		std::cout << i << ", ";
-	}
-	std::cout << "]" << std::endl;
+	std::cout << ")" << std::endl;
 
 	c = set_difference(a, b);
-	std::cout << "a, b set_difference result = [";
-	for (auto i : c) {
+	std::cout << "a, b set_difference result = (";
+	for (auto i : c)
 		std::cout << i << ", ";
-	}
-	std::cout << "]" << std::endl;
+	std::cout << ")" << std::endl;
 
 	c = set_difference(b, a);
-	std::cout << "b, a set_difference result = [";
-	for (auto i : c) {
+	std::cout << "b, a set_difference result = (";
+	for (auto i : c)
 		std::cout << i << ", ";
-	}
-	std::cout << "]" << std::endl;
+	std::cout << ")" << std::endl;
 }
 
 /**
@@ -154,43 +148,37 @@ void test2(std::vector<int> a, std::vector<int> b) {
 	std::vector<int> c;
 
 	std::cout << "a = [";
-	for (auto i : a) {
+	for (auto i : a)
 		std::cout << i << ", ";
-	}
 	std::cout << "]" << std::endl;
 
 	std::cout << "b = [";
-	for (auto i : b) {
+	for (auto i : b)
 		std::cout << i << ", ";
-	}
 	std::cout << "]" << std::endl;
 
 	c = vector_intersection(a, b);
 	std::cout << "vector_intersection result = [";
-	for (auto i : c) {
+	for (auto i : c)
 		std::cout << i << ", ";
-	}
 	std::cout << "]" << std::endl;
 
 	c = vector_union(a, b);
 	std::cout << "vector_union result = [";
-	for (auto i : c) {
+	for (auto i : c)
 		std::cout << i << ", ";
-	}
 	std::cout << "]" << std::endl;
 
 	c = vector_difference(a, b);
 	std::cout << "a, b vector_difference result = [";
-	for (auto i : c) {
+	for (auto i : c)
 		std::cout << i << ", ";
-	}
 	std::cout << "]" << std::endl;
 
 	c = vector_difference(b, a);
 	std::cout << "b, a vector_difference result = [";
-	for (auto i : c) {
+	for (auto i : c)
 		std::cout << i << ", ";
-	}
 	std::cout << "]" << std::endl;
 }
 
