@@ -13,7 +13,7 @@ int main() {
 	std::chrono::high_resolution_clock::time_point t3 = std::chrono::high_resolution_clock::now();
 
 	auto ms1 = std::chrono::duration_cast<std::chrono::seconds>(t3.time_since_epoch());
-	std::cout << ms1.count() << " seconds since 01-Jan-1970"  << std::endl; // 输毫秒级时间戳
+	std::cout << ms1.count() << " seconds since 01-Jan-1970"  << std::endl; // 输秒级时间戳
 	
 	auto ms2 = std::chrono::duration_cast<std::chrono::milliseconds>(t3.time_since_epoch());
 	std::cout << ms2.count() << " milliseconds since 01-Jan-1970"  << std::endl; // 输出毫秒级时间戳
