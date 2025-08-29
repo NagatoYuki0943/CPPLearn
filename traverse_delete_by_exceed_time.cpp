@@ -122,8 +122,10 @@ void traverse_delete_files_by_exceed_hours(
 
 			std::time_t timestamp = convert_str_to_timet(sub_stem, timestamp_format);
 			bool is_exceeded = is_exceed_n_hours(timestamp, exceed_n_hours);
-			if (is_exceeded)
+			if (is_exceeded) {
 				fs::remove_all(path);
+				std::cout << "delete file: " << full_path << std::endl;
+			}
 		} catch (const std::exception &e) {
 			std::cerr << "traverse_delete_files_by_exceed_hours error: " << e.what() << std::endl;
 		}
@@ -169,8 +171,10 @@ void traverse_delete_dirs_by_exceed_hours(
 
 			std::time_t timestamp = convert_str_to_timet(sub_stem, timestamp_format);
 			bool is_exceeded = is_exceed_n_hours(timestamp, exceed_n_hours);
-			if (is_exceeded)
+			if (is_exceeded) {
 				fs::remove_all(path);
+				std::cout << "delete dir: " << full_path << std::endl;
+			}
 		} catch (const std::exception &e) {
 			std::cerr << "traverse_delete_dirs_by_exceed_hours error: " << e.what() << std::endl;
 		}
