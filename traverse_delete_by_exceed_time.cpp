@@ -70,7 +70,7 @@ bool is_file(const std::string &path) {
 /**
  * @brief 遍历删除文件，根据文件名和后缀和超时时间决定，删除超时的指定格式的文件，文件名为 `2025-05-13 15-36-45.png` 格式
  *
- * @param path 遍历路径
+ * @param dir 遍历路径
  * @param delete_ext 文件后缀名
  * @param timestamp_format 时间戳格式
  * @param exceed_n_hours 超时时间
@@ -78,18 +78,18 @@ bool is_file(const std::string &path) {
  * @param stem_cut_len 截取文件名长度
  */
 void traverse_delete_files_by_exceed_hours(
-    const std::string &path,
+    const std::string &dir,
     const std::string &delete_ext = "",
     const std::string &timestamp_format = "%Y-%m-%d %H-%M-%S",
     int exceed_n_hours = 36,
     int stem_cut_start = 0,
     int stem_cut_len = 19) {
-	if (!is_directory(path))
+	if (!is_directory(dir))
 		return;
 
 	// 遍历一层 directory_iterator
 	// 递归遍历 recursive_directory_iterator
-	for (const auto &entry : fs::directory_iterator(path)) {
+	for (const auto &entry : fs::directory_iterator(dir)) {
 		try {
 			auto path = entry.path();
 			std::string full_path = path.string();
@@ -133,24 +133,24 @@ void traverse_delete_files_by_exceed_hours(
 /**
  * @brief 遍历删除文件夹，根据文件名和超时时间决定，删除超时的文件夹，文件夹名为 `2025-05-13 15-36-45` 格式
  *
- * @param path 遍历路径
+ * @param dir 遍历路径
  * @param timestamp_format 时间戳格式
  * @param exceed_n_hours 超时时间
  * @param stem_cut_start 截取文件名开始位置
  * @param stem_cut_len 截取文件名长度
  */
 void traverse_delete_dirs_by_exceed_hours(
-    const std::string &path,
+    const std::string &dir,
     const std::string &timestamp_format = "%Y-%m-%d %H-%M-%S",
     int exceed_n_hours = 36,
     int stem_cut_start = 0,
     int stem_cut_len = 19) {
-	if (!is_directory(path))
+	if (!is_directory(dir))
 		return;
 
 	// 遍历一层 directory_iterator
 	// 递归遍历 recursive_directory_iterator
-	for (const auto &entry : fs::directory_iterator(path)) {
+	for (const auto &entry : fs::directory_iterator(dir)) {
 		try {
 			auto path = entry.path();
 			std::string full_path = path.string();
