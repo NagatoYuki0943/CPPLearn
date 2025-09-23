@@ -55,16 +55,32 @@ void test2() {
               << std::endl;
 }
 
-std::tm get_now_time_tm() {
+/**
+ * @brief 获取当前时间，返回 std::tm 结构
+ *
+ * @param use_normal_tm 是否使用正常格式时间，比如年为 2025，月份从 1 开始
+ *
+ * @return std::tm
+ */
+std::tm get_now_time_tm(const bool use_normal_tm = true) {
     auto now = std::chrono::system_clock::now();
     // 转换为秒数时间戳
     auto t = std::chrono::system_clock::to_time_t(now);
     std::tm local_tm = *std::localtime(&t);
-    local_tm.tm_year += 1900;
-    local_tm.tm_mon += 1;
+	if (use_normal_tm){
+		local_tm.tm_year += 1900;
+		local_tm.tm_mon += 1;
+	}
     return local_tm;
 }
 
+/**
+ * @brief 获取当前时间戳字符串
+ *
+ * @param format 时间戳格式
+ *
+ * @return 时间戳字符串
+ */
 std::string get_now_timestamp_str(const std::string &format = "%Y-%m-%d %H:%M:%S") {
     auto now = std::chrono::system_clock::now();
     // 转换为秒数时间戳
