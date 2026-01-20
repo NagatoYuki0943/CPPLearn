@@ -71,7 +71,6 @@ void traverse_dir(
 	}
 
 
-
 int main() {
 	std::string path = "C:\\Users\\algorithm2\\Downloads\\check_images";
 	traverse_dir(path);
